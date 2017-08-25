@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Vitals from './Vitals'
 import Appointments from './AppointmentsP'
+import Notes from './Notes'
 
 export default class PatientProfile extends Component {
     constructor(props) {
@@ -12,13 +13,13 @@ export default class PatientProfile extends Component {
     render() {
         return (
             <div id="patients_profile_route" className="route_section">
-                <button onClick={() => this.props.remove_selected_patient()}>Go Back</button>
                 <div id="patient_tabs_container">
-                    <div className="patient_tab" onClick={() => this.set_active_tab("notes")}>Notes</div>
-                    <div className="patient_tab" onClick={() => this.set_active_tab("vitals")}>Vitals</div>
-                    <div className="patient_tab" onClick={() => this.set_active_tab("lab")}>Lab</div>
-                    <div className="patient_tab" onClick={() => this.set_active_tab("appointments")}>Appointments</div>
-                    <div className="patient_tab" onClick={() => this.set_active_tab("info")}>Info</div>
+                    <a className="patient_tab" onClick={(e) => this.set_active_tab("notes", e.target)}>Notes</a>
+                    <a className="patient_tab" onClick={(e) => this.set_active_tab("vitals", e.target)}>Vitals</a>
+                    <a className="patient_tab" onClick={(e) => this.set_active_tab("lab", e.target)}>Lab</a>
+                    <a className="patient_tab" onClick={(e) => this.set_active_tab("appointments", e.target)}>Appointments</a>
+                    <a className="patient_tab" onClick={(e) => this.set_active_tab("info", e.target)}>Info</a>
+                    <a className="patient_tab" onClick={(e) => this.props.remove_selected_patient()}>Back</a>
                 </div>
                 {this.show_route(this.props)}
             </div>
@@ -47,49 +48,19 @@ export default class PatientProfile extends Component {
         }
     }
 
-    set_active_tab(tab) { this.setState({ active_tab: tab }) }
+    set_active_tab(tab, el) {
+        let tabs = document.querySelectorAll(".patient_tab")
+
+        Array.prototype.map.call(tabs, (tab) => {
+            tab.className = "patient_tab"
+        })
+
+        el.className = "patient_tab active_patient_tab"
+
+        this.setState({ active_tab: tab })
+    }
 }
 
-
-const Notes = props => (
-    <div className="patient_profile_route">
-        <div className="notes_side">
-            {show_notes(props)}
-        </div>
-
-        <div className="add_note_sidebar">
-            <button onClick={() => construct_note(props)}>Add note</button>
-            <input type="text" placeholder="Title" name="note_title" />
-            <input type="text" placeholder="Date" name="note_date" />
-            <textarea name="note_content"></textarea>
-        </div>
-    </div>
-)
-
-function construct_note(props) {
-    let date = document.querySelector("input[name=note_date]"),
-        title = document.querySelector("input[name=note_title]"),
-        content = document.querySelector("textarea[name=note_content]"),
-
-        note = {
-            date: date.value,
-            title: title.value,
-            content: content.value
-        }
-    props.add_note(note, props.patient)
-}
-
-function show_notes(props) {
-    return <div id="notes_contaienr">
-        {props.patient.notes.map((note, x) =>
-            <div key={x} className="note">
-                <h3>Title: {note.title}</h3>
-                <strong>Date: {note.date}</strong>
-                <em>{note.content}</em>
-            </div>)
-        }
-    </div>
-}
 
 const Lab = props => (
     <div className="patient_profile_route">

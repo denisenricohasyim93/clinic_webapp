@@ -1,0 +1,90 @@
+#patients_route h3 {
+    display: inline-block;
+    width: 10rem;
+}
+
+.patients_list {
+
+}
+
+.patient {
+    color: black;
+    line-height: 2rem;
+    border-bottom: 1px solid black;
+    padding: 0.5rem;
+    font-weight: bold;
+}
+
+.patient:hover {
+    cursor: pointer;
+    background: white;
+}
+
+.patient span {
+    width: 10rem;
+    display: inline-block;
+}
+
+.search_patient {
+    display: block;
+    height: 2rem;
+    outline: none;
+    font-size: 1.3rem;
+    text-align: center;
+    width: 30rem;
+    margin-bottom: 2rem;
+    background: none;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+#patients_container {
+    width: 80%;
+    display: inline-block;
+}
+
+#add_usr_section {
+    vertical-align: top;
+    width: 20%;
+    display: inline-block;
+    border-left: 1px solid black;
+    height: 100%;
+    position: relative;
+}
+
+#add_usr_btn , #add_usr_section input, #add_usr_section select{
+    padding: 1rem;
+    font-size: 1rem;
+    width: 100%;
+}
+
+#patients_profile_route {
+    padding: 0;
+}
+
+#patient_tabs_container {
+
+}
+
+.patient_tab {
+    display: inline-block;
+    padding: 1rem;
+    font-size: 1.3rem;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.active_patient_tab {
+  background: floralwhite;
+}
+
+.patient_tab:hover {
+    cursor: pointer;
+    background: floralwhite;
+}
+
+.patient_profile_route {
+    padding-top: 2rem;
+    height: 90%;
+    position: relative;
+}

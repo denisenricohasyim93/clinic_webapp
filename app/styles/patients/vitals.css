@@ -1,0 +1,30 @@
+
+#vitals_head th{
+    text-align: left;
+    width: 10rem;
+    text-decoration: underline;
+}
+
+.vitals_records th {
+    text-align: left;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.add_vitals_container {
+    position: absolute;
+    bottom: 0;
+}
+
+.add_vitals_container input:first-child {
+    margin: 0;
+}
+
+
+
+.add_vitals_container input, .add_vitals_container button, .add_vitals_container select {
+    margin-left: 1.3rem;
+    text-align: center;
+    height: 2rem;
+    width: 7rem;
+}
