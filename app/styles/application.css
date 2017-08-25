@@ -1,0 +1,212 @@
+* {
+    font-family: "Consolas";
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body, #app, #content, #route_container {
+    height: 100%;
+}
+
+#content{
+}
+
+.route_tab {
+    line-height: 2.5;
+    padding: 1rem;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: black;
+}
+
+.route_tab:first-child, #home_route {
+    background: rgba(244, 164, 96, 0.7);
+}
+
+.route_tab:nth-child(2), #patients_route, #patients_profile_route {
+    background: powderblue;
+}
+
+.route_tab:nth-child(3), #appointments_route  {
+    background: rgba(152, 251, 152, 0.68);
+}
+
+.route_tab:nth-child(4),  #settings_route {
+    background: lightgray;
+}
+
+.route_section {
+    padding-top: 2rem;
+    padding-left: 1rem;
+    height: 92%;
+    position: relative;
+}
+
+#patients_route h3 {
+    display: inline-block;
+    width: 10rem;
+}
+
+.patients_list {
+
+}
+
+.patient {
+    color: black;
+    line-height: 2rem;
+    border-bottom: 1px solid black;
+    padding: 0.5rem;
+    font-weight: bold;
+}
+
+.patient:hover {
+    cursor: pointer;
+    background: white;
+}
+
+.patient span {
+    width: 10rem;
+    display: inline-block;
+}
+
+.search_patient {
+    display: block;
+    height: 2rem;
+    outline: none;
+    font-size: 1.3rem;
+    text-align: center;
+    width: 30rem;
+    margin-bottom: 2rem;
+    background: none;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+#patients_container {
+    width: 80%;
+    display: inline-block;
+}
+
+#add_usr_section {
+    vertical-align: top;
+    width: 20%;
+    display: inline-block;
+    border-left: 1px solid black;
+    height: 100%;
+    position: relative;
+}
+
+#add_usr_btn , #add_usr_section input, #add_usr_section select{
+    padding: 1rem;
+    font-size: 1rem;
+    width: 100%;
+}
+
+#patients_profile_route {
+    padding: 0;
+}
+
+#patient_tabs_container {
+
+}
+
+.patient_tab {
+    display: inline-block;
+    margin-right: 2rem;
+    padding: 1rem;
+    font-size: 1.3rem;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.patient_tab:hover {
+    cursor: pointer;
+    background: rgba(205, 205, 205, 0.82);
+}
+
+.patient_profile_route {
+    padding-top: 2rem;
+    background: #e2e2e2;
+    height: 90%;
+    position: relative;
+}
+
+#notes_container {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.note {
+    vertical-align: top;
+    display: inline-block;
+    width: 17rem;
+    height: 12rem;
+    padding: 0.3rem;
+    background: floralwhite;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+.note h3 {
+    display: block;
+}
+
+.note strong {
+    display: block;
+}
+
+.note em {
+    display: block;
+    padding-top: 2rem;
+}
+.notes_side {
+    padding-left: 3rem;
+    display: inline-block;
+    vertical-align: top;
+    width: 80%;
+}
+.add_note_sidebar {
+    display: inline-block;
+    height: 85%;
+    width: 20%;
+}
+
+.add_note_sidebar button, .add_note_sidebar input {
+    width: 100%;
+    height: 3rem;
+}
+.add_note_sidebar textarea {
+    width: 100%;
+   height: 65%;;
+}
+
+#vitals_head th{
+    text-align: left;
+    width: 10rem;
+    text-decoration: underline;
+}
+
+.vitals_records th {
+    text-align: left;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.add_vitals_container {
+    position: absolute;
+    bottom: 0;
+}
+
+.add_vitals_container input:first-child {
+    margin: 0;
+}
+
+
+
+.add_vitals_container input, .add_vitals_container button, .add_vitals_container select {
+    margin-left: 1.3rem;
+    text-align: center;
+    height: 2rem;
+    width: 7rem;
+}
