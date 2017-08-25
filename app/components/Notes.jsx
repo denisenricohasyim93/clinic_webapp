@@ -32,12 +32,21 @@ class Notes extends Component {
     show_notes() {
         return <div id="notes_container">
             {this.props.patient.notes.map((note, x) =>
-                <div key={x} className="note">
+                <div key={x} className="note" onClick={(e) => this.expand_note(e)}>
                     <span id="note_date">Date: {note.date}</span>
                     <span>{note.title}</span>
+                    <div id="note_content">{note.content}</div>
                 </div>)
             }
         </div>
+    }
+
+    expand_note(e) {
+        if (e.target.className !== "note") {
+            let parent = e.target.parentNode
+            return parent.lastChild.classList.toggle("show")
+        }
+        e.target.childNodes[2].classList.toggle("show")
     }
 }
 

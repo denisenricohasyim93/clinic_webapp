@@ -29,6 +29,15 @@
     margin-right: 2rem;
 }
 
+#note_content {
+    display: none;
+    border-top: dotted 1px black;
+}
+
+#note_content.show {
+    display: block;
+}
+
 .add_note_sidebar {
     display: inline-block;
     height: 85%;
