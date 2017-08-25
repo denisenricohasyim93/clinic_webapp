@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Vitals from './Vitals'
 import Appointments from './AppointmentsP'
 import Notes from './Notes'
+import Info from './Info'
+import Lab from './Lab'
 
 export default class PatientProfile extends Component {
     constructor(props) {
@@ -60,16 +62,3 @@ export default class PatientProfile extends Component {
         this.setState({ active_tab: tab })
     }
 }
-
-
-const Lab = props => (
-    <div className="patient_profile_route">
-
-    </div>
-)
-
-const Info = props => (
-    <div className="patient_profile_route">
-
-    </div>
-)

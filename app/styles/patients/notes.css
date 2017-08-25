@@ -32,6 +32,7 @@
 #note_content {
     display: none;
     border-top: dotted 1px black;
+    padding-right: 7rem;
 }
 
 #note_content.show {
