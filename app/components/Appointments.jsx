@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 class Appointments extends Component {
     constructor(props) {
         super(props)
+        console.log(props);
         this.state = {
             show: false
         }
@@ -44,7 +45,7 @@ class Appointments extends Component {
                     </div>
 
                     <div className="add_appointment_sidebar">
-                        <button onClick={() => this.add_appointment()}>Create Appointment</button>
+                        <button disabled={!this.state.show} onClick={() => this.add_appointment()}>Create Appointment</button>
 
                         <select name="appointment_patient" onChange={(e) => this.check_option(e.target)}>
                             <option>Select Patient</option>
@@ -53,12 +54,13 @@ class Appointments extends Component {
                             )}
                         </select>
 
-                        {this.state.show ?
-                            <div>
-                                <input name="appointment_date" placeholder="date" />
-                                <input name="appointment_time" placeholder="time" />
-                                <input name="appointment_visiting" placeholder="visiting" />
-                            </div> : ""
+                        {
+                            this.state.show ?
+                                <div>
+                                    <input name="appointment_date" placeholder="date" />
+                                    <input name="appointment_time" placeholder="time" />
+                                    <input name="appointment_visiting" placeholder="visiting" />
+                                </div> : ""
                         }
 
                     </div>

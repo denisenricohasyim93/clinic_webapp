@@ -292,6 +292,8 @@ class App extends Component {
         patient_id: "derive from bd + gender 6 from bd, auto gen 6 last (odd for f, even for m)",
         address: address.value,
         notes: [],
+        appointments: [],
+        vitals: []
       })
 
       this.setState({ patients: updated_patients })
