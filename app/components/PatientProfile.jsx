@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Vitals from './Vitals'
+import Appointments from './AppointmentsP'
 
 export default class PatientProfile extends Component {
     constructor(props) {
@@ -40,7 +41,9 @@ export default class PatientProfile extends Component {
             return <Info patient={props.patient[0]} />
         }
         if (this.state.active_tab === "appointments") {
-            return <Appointments patient={props.patient[0]} />
+            return <Appointments
+                patient={props.patient[0]}
+                add_appointment={this.props.add_appointment} />
         }
     }
 
@@ -89,12 +92,6 @@ function show_notes(props) {
 }
 
 const Lab = props => (
-    <div className="patient_profile_route">
-
-    </div>
-)
-
-const Appointments = props => (
     <div className="patient_profile_route">
 
     </div>

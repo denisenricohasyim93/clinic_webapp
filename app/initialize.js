@@ -72,6 +72,28 @@ class App extends Component {
               saturation: "100%",
               oxygen: "2 liters"
             }
+          ],
+          appointments: [
+            {
+              time: "08.00am",
+              date: "03-07-2020",
+              visiting: "Dr. Kamal"
+            },
+            {
+              time: "08.00am",
+              date: "03-07-2010",
+              visiting: "Dr. Hardee"
+            },
+            {
+              time: "08.00am",
+              date: "03-07-2020",
+              visiting: "Sean Carrol"
+            },
+            {
+              time: "08.00am",
+              date: "03-07-2005",
+              visiting: "Neil Degrasse"
+            }
           ]
         }, {
           name: "Dilan",
@@ -106,6 +128,18 @@ class App extends Component {
               respiratory_rate: "10",
               saturation: "20%",
               oxygen: "6 liters"
+            }
+          ],
+          appointments: [
+            {
+              time: "08.00am",
+              date: "03-07-2040",
+              visiting: "test1"
+            },
+            {
+              time: "08.00am",
+              date: "03-07-2070",
+              visiting: "test32"
             }
           ]
         },
@@ -146,7 +180,19 @@ class App extends Component {
             saturation: "20%",
             oxygen: "6 liters"
 
-          }]
+          }],
+          appointments: [
+            {
+              time: "10.00am",
+              date: "03-07-2009",
+              visiting: "Sean Carrol"
+            },
+            {
+              time: "12.00am",
+              date: "03-07-2045",
+              visiting: "Neil Degrasse"
+            }
+          ]
         },
         {
           name: "Hawre",
@@ -177,7 +223,19 @@ class App extends Component {
             saturation: "20%",
             oxygen: "6 liters"
 
-          }]
+          }],
+          appointments: [
+            {
+              time: "11.00am",
+              date: "03-07-2025",
+              visiting: "Jhon Jones"
+            },
+            {
+              time: "07.00am",
+              date: "03-07-2010",
+              visiting: "Dr. Soran"
+            }
+          ]
         }
       ]
     }
@@ -200,9 +258,15 @@ class App extends Component {
                   patients={this.state.patients}
                   add_note={this.add_note.bind(this)}
                   add_user={this.add_user.bind(this)}
-                  add_vitals={this.add_vitals.bind(this)} />
+                  add_vitals={this.add_vitals.bind(this)}
+                  add_appointment={this.add_appointment.bind(this)} />
               } />
-              <Route path="/appointments" component={Appointments} />
+              <Route path="/appointments" render={props =>
+                <Appointments
+                  patients={this.state.patients}
+                  add_user={this.add_user.bind(this)}
+                  add_appointment={this.add_appointment.bind(this)} />
+              } /> />
               <Route path="/settings" component={Settings} />
             </Switch>
           </div>
@@ -235,7 +299,6 @@ class App extends Component {
       name.value = ""
       address.value = ""
     }
-
   }
 
   add_note(note, patient) {
@@ -262,6 +325,17 @@ class App extends Component {
     this.setState({ patients: patients })
   }
 
+  add_appointment(appointment, patient) {
+    let patients = this.state.patients.slice()
+
+    for (let i = 0; i < patients.length; i++) {
+      if (patients[i].name === patient.name || patients[i].name === patient) {
+        patients[i].appointments.push(appointment)
+      }
+    }
+
+    this.setState({ patients: patients })
+  }
 }
 
 

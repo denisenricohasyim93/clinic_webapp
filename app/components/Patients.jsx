@@ -25,7 +25,8 @@ export default class Patients extends Component {
                             patient={selected_patient}
                             add_note={this.props.add_note}
                             remove_selected_patient={this.remove_selected_patient.bind(this)}
-                            add_vitals={this.props.add_vitals}>
+                            add_vitals={this.props.add_vitals}
+                            add_appointment={this.props.add_appointment}>
                         </PatientProfile>
 
                         : <div>
