@@ -43,7 +43,8 @@ export default class PatientsContainer extends Component {
                             add_note={add_note}
                             remove_selected_patient={this.remove_selected_patient.bind(this)}
                             add_vitals={add_vitals}
-                            add_appointment={add_appointment} />
+                            add_appointment={add_appointment}
+                            selected_patient={selected_patient} />
 
                         : <PatientsList
                             patients={patients}

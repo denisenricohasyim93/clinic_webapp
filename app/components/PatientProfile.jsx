@@ -16,6 +16,13 @@ export default class PatientsList extends Component {
         return (
             <div id="patients_profile_route" className="route_section">
                 <div id="patient_tabs_container">
+
+                    <div id="selected_patient_container">
+                        <strong>
+                            {this.props.selected_patient[0].name}
+                        </strong>
+                    </div>
+
                     <a className="patient_tab" onClick={(e) => this.set_active_tab("notes", e.target)}>Notes</a>
                     <a className="patient_tab" onClick={(e) => this.set_active_tab("vitals", e.target)}>Vitals</a>
                     <a className="patient_tab" onClick={(e) => this.set_active_tab("lab", e.target)}>Lab</a>

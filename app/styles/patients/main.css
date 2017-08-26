@@ -6,6 +6,16 @@
 .patients_list {
 }
 
+#selected_patient_container {
+  width: 100%;
+  height: 3rem;
+  line-height: 3rem;
+  padding-left: 1rem;
+  font-size: 1.2rem;
+  background: floralwhite;
+  border: 1px solid black;
+}
+
 .patient {
   color: black;
   line-height: 2rem;
