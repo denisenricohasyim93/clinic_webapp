@@ -3,9 +3,15 @@ let data = {
         {
             "name": "Johnny",
             "birth": "26-07-1990",
+            "age": 27,
             "gender": "M",
-            "patient_id": 929939,
+            "id": 929939,
             "address": "gothenburg/Sweden",
+            "phone": "7778880003",
+            "smoker": "no",
+            "gravida": "no",
+            "hypertension": 3,
+            "diabetes": 5,
             "notes": [
                 {
                     "date": "05-08-2017",
@@ -119,9 +125,15 @@ let data = {
         {
             "name": "Max",
             "birth": "03-02-1998",
+            "age": 19,
             "gender": "M",
-            "patient_id": 924439,
+            "id": 924439,
             "address": "gothenburg/Sweden",
+            "phone": "7778880003",
+            "smoker": "no",
+            "gravida": "no",
+            "hypertension": 3,
+            "diabetes": 5,
             "notes": [
                 {
                     "date": "05-08-2017",
@@ -184,9 +196,15 @@ let data = {
         {
             "name": "Tyler",
             "birth": "23-09-1985",
+            "age": 32,
             "gender": "M",
-            "patient_id": 329939,
+            "id": 329939,
             "address": "Erbil/Iraq",
+            "phone": "7778880003",
+            "smoker": "no",
+            "gravida": "no",
+            "hypertension": 3,
+            "diabetes": 5,
             "notes": [
                 {
                     "date": "05-08-2017",
@@ -250,8 +268,14 @@ let data = {
             "name": "Julien",
             "birth": "23-09-1982",
             "gender": "M",
-            "patient_id": 729937,
+            "age": 35,
+            "id": 729937,
             "address": "Erbil/Iraq",
+            "phone": "7778880003",
+            "smoker": "no",
+            "gravida": "no",
+            "hypertension": 3,
+            "diabetes": 5,
             "notes": [{
                 "date": "05-08-2017",
                 "title": "note1",

@@ -85,3 +85,14 @@
   height: 90%;
   position: relative;
 }
+
+#patients_info_container p {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+#patients_info_container u {
+  font-weight: 600;
+  text-decoration: none;
+}

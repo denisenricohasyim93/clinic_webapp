@@ -80,7 +80,7 @@ class App extends Component {
         name: patient.name,
         birth: reversed_birth,
         gender: patient.gender,
-        patient_id: Math.floor(Math.random() * (999999 - 100000)) + 100000,
+        id: Math.floor(Math.random() * (999999 - 100000)) + 100000,
         gravida: patient.gravida,
         hypertension: patient.hypertension,
         diabetes: patient.diabetes,
