@@ -40,12 +40,10 @@ class App extends Component {
               <Route path="/patients" render={props =>
                 <PatientsContainer
                   patients={this.state.patients}
-                  add_note={this.add_note.bind(this)}
                   add_patient={this.add_patient.bind(this)}
-                  add_vitals={this.add_vitals.bind(this)}
                   add_appointment={this.add_appointment.bind(this)}
                   darken={this.darken.bind(this)}
-                  add_medicine={this.add_medicine.bind(this)} />
+                  add_item={this.add_item.bind(this)} />
               } />
               <Route path="/appointments" render={props =>
                 <Appointments
@@ -96,42 +94,20 @@ class App extends Component {
         appointments: [],
         vitals: [],
         "medicine": [],
+        "diagnosis": []
       })
 
       this.setState({ patients: updated_patients })
     }
   }
 
-  add_note(note, patient) {
+  add_item(item, patient, property) {
+
     let patients = this.state.patients.slice()
 
     for (let i = 0; i < patients.length; i++) {
       if (patients[i].name === patient.name) {
-        patients[i].notes.unshift(note)
-      }
-    }
-
-    this.setState({ patients: patients })
-  }
-
-  add_vitals(vitals, patient) {
-    let patients = this.state.patients.slice()
-
-    for (let i = 0; i < patients.length; i++) {
-      if (patients[i].name === patient.name) {
-        patients[i].vitals.unshift(vitals)
-      }
-    }
-
-    this.setState({ patients: patients })
-  }
-
-  add_medicine(medicine, patient) {
-    let patients = this.state.patients.slice()
-
-    for (let i = 0; i < patients.length; i++) {
-      if (patients[i].name === patient.name) {
-        patients[i].medicine.unshift(medicine)
+        patients[i][property].unshift(item)
       }
     }
 
@@ -150,8 +126,6 @@ class App extends Component {
     this.setState({ patients: patients })
   }
 }
-
-
 
 document.addEventListener("DOMContentLoaded", () => {
   ReactDOM.render(<App />, document.querySelector('#app'));

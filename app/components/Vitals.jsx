@@ -72,7 +72,7 @@ class Vitals extends Component {
             oxygen: oxygen.value
         }
 
-        this.props.add_vitals(vitals, this.props.patient)
+        this.props.add_vitals(vitals, this.props.patient, "vitals")
     }
 
     render_vitals() {

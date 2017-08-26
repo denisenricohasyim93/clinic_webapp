@@ -131,6 +131,28 @@ let data = {
                     "days": 4
                 }
             ],
+            "diagnosis": [
+                {
+                    "date": "Aug 26th 2017",
+                    "content": "diagnosed with some disease"
+                },
+                {
+                    "date": "Aug 26th 2017",
+                    "content": "diagnosed with some disease"
+                },
+                {
+                    "date": "Aug 26th 2017",
+                    "content": "diagnosed with some disease"
+                },
+                {
+                    "date": "Aug 26th 2017",
+                    "content": "diagnosed with some disease"
+                },
+                {
+                    "date": "Aug 26th 2017",
+                    "content": "diagnosed with some disease"
+                }
+            ],
             "appointments": [
                 {
                     "time": "08.00am",
@@ -166,6 +188,12 @@ let data = {
             "gravida": "no",
             "hypertension": 3,
             "diabetes": 5,
+            "diagnosis": [
+                {
+                    "date": "Aug 26th 2017",
+                    "content": "diagnosed with some disease"
+                }
+            ],
             "medicine": [
                 {
                     "date": "Aug 26th 2017",
@@ -266,6 +294,12 @@ let data = {
             "gravida": "no",
             "hypertension": 3,
             "diabetes": 5,
+            "diagnosis": [
+                {
+                    "date": "Aug 26th 2017",
+                    "content": "diagnosed with some disease"
+                }
+            ],
             "medicine": [
                 {
                     "date": "Aug 26th 2017",
@@ -366,6 +400,12 @@ let data = {
             "gravida": "no",
             "hypertension": 3,
             "diabetes": 5,
+            "diagnosis": [
+                {
+                    "date": "Aug 26th 2017",
+                    "content": "diagnosed with some disease"
+                }
+            ],
             "medicine": [
                 {
                     "date": "Aug 26th 2017",

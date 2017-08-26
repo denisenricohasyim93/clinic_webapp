@@ -42,12 +42,12 @@ export default class PatientsList extends Component {
         if (this.state.active_tab === "notes") {
             return <Notes
                 patient={props.patient[0]}
-                add_note={props.add_note} />
+                add_note={props.add_item} />
         }
         if (this.state.active_tab === "vitals") {
             return <Vitals
                 patient={props.patient[0]}
-                add_vitals={props.add_vitals} />
+                add_vitals={props.add_item} />
         }
         if (this.state.active_tab === "lab") {
             return <Lab
@@ -66,7 +66,7 @@ export default class PatientsList extends Component {
         if (this.state.active_tab === "medicine") {
             return <Medicine
                 patient={props.patient[0]}
-                add_medicine={props.add_medicine} />
+                add_medicine={props.add_item} />
         }
     }
 

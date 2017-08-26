@@ -29,7 +29,7 @@ class Notes extends Component {
             }
 
             title.value = "", content.value = ""
-            this.props.add_note(note, this.props.patient)
+            this.props.add_note(note, this.props.patient, "notes")
         }
 
     }

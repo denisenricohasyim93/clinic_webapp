@@ -23,15 +23,29 @@ class Medicine extends Component {
                 </div>
 
                 <div id="diagnosis_container">
+                    <button id="btn_add_diagnosis" onClick={() => this.create_diagnosis()}>Add Diagnosis</button>
+                    <textarea id="create_diagnosis_content"></textarea>
+                    {this.render_diagnosis()}
                 </div>
             </div>
         );
     }
 
+    render_diagnosis() {
+        return <div id="diagnosis_list_container">
+            {this.props.patient.diagnosis.map((diagnosis, x) =>
+                <div key={x} id="diagnosis">
+                    <h4>{diagnosis.date}</h4>
+                    <h4>{diagnosis.content}</h4>
+                </div>
+            )}
+        </div>
+    }
+
     render_medicine() {
         return <div id="medicine_list_container">
-            {this.props.patient.medicine.map((medicine) =>
-                <div id="medicine">
+            {this.props.patient.medicine.map((medicine, x) =>
+                <div key={x} id="medicine">
                     <h4>{medicine.date}</h4>
                     <h4>{medicine.name}</h4>
                     <h4>{medicine.strength}</h4>
@@ -42,24 +56,38 @@ class Medicine extends Component {
         </div>
     }
 
+    create_diagnosis() {
+        let content = document.querySelector("#create_diagnosis_content")
+
+        if (content) {
+            let diagnosis = {
+                "date": moment().format("MMM Do YYYY"),
+                "content": content.value
+            }
+
+            this.props.add_medicine(diagnosis, this.props.patient, "diagnosis")
+            content.value = "";
+        }
+    }
+
     create_medicine() {
-        let name = document.querySelector("select[name=medicine_name]").value,
-            dose = document.querySelector("input[name=medicine_dose]").value,
-            strength = document.querySelector("input[name=medicine_strength]").value,
-            days = document.querySelector("input[name=medicine_days]").value
+        let name = document.querySelector("select[name=medicine_name]"),
+            dose = document.querySelector("input[name=medicine_dose]"),
+            strength = document.querySelector("input[name=medicine_strength]"),
+            days = document.querySelector("input[name=medicine_days]")
 
         if (name.length > 0 && dose.length > 0 && strength.length > 0 && days.length > 0 && name !== "medicine") {
 
             let medicine = {
                 "date": moment().format("MMM Do YYYY"),
-                "name": name,
-                "dose": dose,
-                "strength": strength,
-                "days": days
+                "name": name.value,
+                "dose": dose.value,
+                "strength": strength.value,
+                "days": days.value
             }
 
-            name = "", dose = "", strength = "", days = ""
-            this.props.add_medicine(medicine, this.props.patient)
+            name.value = "", dose.value = "", strength.value = "", days.value = ""
+            this.props.add_medicine(medicine, this.props.patient, "medicine")
         }
     }
 }
