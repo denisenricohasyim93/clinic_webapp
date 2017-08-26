@@ -69,7 +69,10 @@ let data = {
                     "date": "03-07-2016",
                     "time": "10:00am",
                     "vitals_id": "object_id",
-                    "bloodpressure": "systolic",
+                    "bloodpressure": {
+                        "systolic": 70,
+                        "diastolic": 100
+                    },
                     "pulse": "500",
                     "temperature": "25C",
                     "respiratory_rate": "50",
@@ -80,7 +83,10 @@ let data = {
                     "date": "03-07-2019",
                     "time": "10:00am",
                     "vitals_id": "object_id",
-                    "bloodpressure": "diastolic",
+                    "bloodpressure": {
+                        "systolic": 70,
+                        "diastolic": 100
+                    },
                     "pulse": "200",
                     "temperature": "25C",
                     "respiratory_rate": "10",
@@ -91,7 +97,10 @@ let data = {
                     "date": "03-07-2016",
                     "time": "10:00am",
                     "vitals_id": "object_id",
-                    "bloodpressure": "systolic",
+                    "bloodpressure": {
+                        "systolic": 70,
+                        "diastolic": 100
+                    },
                     "pulse": "500",
                     "temperature": "25C",
                     "respiratory_rate": "50",
@@ -167,7 +176,10 @@ let data = {
                     "date": "03-07-2016",
                     "time": "10:00am",
                     "vitals_id": "object_id",
-                    "bloodpressure": "systolic",
+                    "bloodpressure": {
+                        "systolic": 70,
+                        "diastolic": 100
+                    },
                     "pulse": "500",
                     "temperature": "25C",
                     "respiratory_rate": "50",
@@ -178,7 +190,10 @@ let data = {
                     "date": "03-07-2019",
                     "time": "10:00am",
                     "vitals_id": "object_id",
-                    "bloodpressure": "diastolic",
+                    "bloodpressure": {
+                        "systolic": 70,
+                        "diastolic": 100
+                    },
                     "pulse": "200",
                     "temperature": "25C",
                     "respiratory_rate": "10",
@@ -241,7 +256,10 @@ let data = {
                     "date": "03-07-2016",
                     "time": "10:00am",
                     "vitals_id": "object_id",
-                    "bloodpressure": "systolic",
+                    "bloodpressure": {
+                        "systolic": 70,
+                        "diastolic": 100
+                    },
                     "pulse": "500",
                     "temperature": "25C",
                     "respiratory_rate": "50",
@@ -252,7 +270,10 @@ let data = {
                     "date": "03-07-2019",
                     "time": "10:00am",
                     "vitals_id": "object_id",
-                    "bloodpressure": "diastolic",
+                    "bloodpressure": {
+                        "systolic": 70,
+                        "diastolic": 100
+                    },
                     "pulse": "200",
                     "temperature": "25C",
                     "respiratory_rate": "10",
@@ -313,7 +334,10 @@ let data = {
                     "date": "03-07-2016",
                     "time": "10:00am",
                     "vitals_id": "object_id",
-                    "bloodpressure": "systolic",
+                    "bloodpressure": {
+                        "systolic": 70,
+                        "diastolic": 100
+                    },
                     "pulse": "500",
                     "temperature": "25C",
                     "respiratory_rate": "50",
@@ -324,7 +348,10 @@ let data = {
                     "date": "03-07-2019",
                     "time": "10:00am",
                     "vitals_id": "object_id",
-                    "bloodpressure": "diastolic",
+                    "bloodpressure": {
+                        "systolic": 70,
+                        "diastolic": 100
+                    },
                     "pulse": "200",
                     "temperature": "25C",
                     "respiratory_rate": "10",

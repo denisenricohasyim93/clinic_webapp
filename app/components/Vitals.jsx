@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import moment from 'moment'
 
 class Vitals extends Component {
     constructor(props) {
@@ -30,10 +31,9 @@ class Vitals extends Component {
                     <div className="add_vitals_container">
                         <input name="vitals_date" type="date" placeholder="date" />
                         <input name="vitals_time" placeholder="time" />
-                        <select name="vitals_bloodpressure" placeholder="bloodpressure" >
-                            <option>systolic</option>
-                            <option>diastolic</option>
-                        </select>
+                        <input name="vitals_bloodpressure_systolic" placeholder="sys" />
+                        <strong>/</strong>
+                        <input name="vitals_bloodpressure_diastolic" placeholder="dia" />
                         <input name="vitals_pulse" type="number" placeholder="pulse" />
                         <input name="vitals_temperature" placeholder="temperature" />
                         <input name="vitals_respiratory_rate" placeholder="respiratory" />
@@ -50,7 +50,8 @@ class Vitals extends Component {
 
         let date = document.querySelector("input[name=vitals_date]"),
             time = document.querySelector("input[name=vitals_time]"),
-            blood_pressure = document.querySelector("select[name=vitals_bloodpressure]"),
+            blood_pressure_systolic = document.querySelector("input[name=vitals_bloodpressure_systolic]"),
+            blood_pressure_diastolic = document.querySelector("input[name=vitals_bloodpressure_diastolic]"),
             pulse = document.querySelector("input[name=vitals_pulse]"),
             temperature = document.querySelector("input[name=vitals_temperature]"),
             respiratory_rate = document.querySelector("input[name=vitals_respiratory_rate]"),
@@ -58,9 +59,12 @@ class Vitals extends Component {
             oxygen = document.querySelector("input[name=vitals_oxygen]")
 
         let vitals = {
-            date: date.value,
-            time: time.value,
-            bloodpressure: blood_pressure.value,
+            date: date.value ? date.value : moment().format('MM Do YY'),
+            time: time.value ? time.value : moment().format('h:mm:ss a'),
+            bloodpressure: {
+                "systolic": blood_pressure_systolic.value,
+                "diastolic": blood_pressure_diastolic.value
+            },
             temperature: temperature.value,
             pulse: pulse.value,
             respiratory_rate: respiratory_rate.value,
@@ -77,11 +81,11 @@ class Vitals extends Component {
                 <tr key={x}>
                     <th>{vital.date}</th>
                     <th>{vital.time}</th>
-                    <th>{vital.bloodpressure}</th>
-                    <th>{vital.pulse}</th>
-                    <th>{vital.temperature}</th>
-                    <th>{vital.respiratory_rate}</th>
-                    <th>{vital.saturation}</th>
+                    <th>{vital.bloodpressure.systolic}/{vital.bloodpressure.diastolic} mmHg</th>
+                    <th>{vital.pulse} /min</th>
+                    <th>{vital.temperature} C</th>
+                    <th>{vital.respiratory_rate} /min</th>
+                    <th>{vital.saturation} %</th>
                     <th>{vital.oxygen}</th>
                 </tr>)}</tbody>
     }

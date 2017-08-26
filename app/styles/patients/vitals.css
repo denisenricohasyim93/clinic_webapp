@@ -1,30 +1,38 @@
-
-#vitals_head th{
-    text-align: left;
-    width: 10rem;
-    text-decoration: underline;
+#vitals_head th {
+  text-align: left;
+  width: 10rem;
+  text-decoration: underline;
 }
 
 .vitals_records th {
-    text-align: left;
-    font-style: normal;
-    font-weight: 500;
+  text-align: left;
+  font-style: normal;
+  font-weight: 500;
 }
 
 .add_vitals_container {
-    position: absolute;
-    bottom: 0;
+  position: absolute;
+  bottom: 0;
 }
 
 .add_vitals_container input:first-child {
-    margin: 0;
+  margin: 0;
 }
 
+.add_vitals_container input,
+.add_vitals_container button,
+.add_vitals_container select {
+  margin-left: 1.3rem;
+  text-align: center;
+  height: 2rem;
+  width: 7rem;
+}
 
+.add_vitals_container input[name="vitals_bloodpressure_systolic"],
+.add_vitals_container input[name="vitals_bloodpressure_diastolic"] {
+  width: 3.5rem;
+}
 
-.add_vitals_container input, .add_vitals_container button, .add_vitals_container select {
-    margin-left: 1.3rem;
-    text-align: center;
-    height: 2rem;
-    width: 7rem;
+.add_vitals_container input[name="vitals_bloodpressure_diastolic"] {
+  margin: 0;
 }
