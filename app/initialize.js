@@ -25,6 +25,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.patients);
     return (
       <div id="content">
         <div className="darken"></div>
@@ -65,32 +66,33 @@ class App extends Component {
     darken_div.classList.toggle("darken_show")
   }
 
-  add_patient() {
-    let name = document.querySelector("input[name=name]")
-      , date = document.querySelector("input[name=date]")
-      , gender = document.querySelector("select[name=gender]")
-      , address = document.querySelector("input[name=address]")
+  add_patient(patient) {
+    if (patient.name &&
+      patient.date &&
+      patient.gender &&
+      patient.address) {
 
-    if (name.value && date.value && gender.value && address.value) {
       let updated_patients = this.state.patients.slice(),
-        birth = date.value.split("-"),
+        birth = patient.date.split("-"),
         reversed_birth = birth.reverse().join("-")
 
-      updated_patients.push({
-        name: name.value,
+      updated_patients.unshift({
+        name: patient.name,
         birth: reversed_birth,
-        gender: gender.value,
-        patient_id: "derive from bd + gender 6 from bd, auto gen 6 last (odd for f, even for m)",
-        address: address.value,
+        gender: patient.gender,
+        patient_id: Math.floor(Math.random() * (999999 - 100000)) + 100000,
+        gravida: patient.gravida,
+        hypertension: patient.hypertension,
+        diabetes: patient.diabetes,
+        phone: patient.phone,
+        smoker: patient.smoker,
+        address: patient.address,
         notes: [],
         appointments: [],
         vitals: []
       })
 
       this.setState({ patients: updated_patients })
-
-      name.value = ""
-      address.value = ""
     }
   }
 
@@ -111,7 +113,7 @@ class App extends Component {
 
     for (let i = 0; i < patients.length; i++) {
       if (patients[i].name === patient.name) {
-        patients[i].vitals.push(vitals)
+        patients[i].vitals.unshift(vitals)
       }
     }
 
@@ -123,7 +125,7 @@ class App extends Component {
 
     for (let i = 0; i < patients.length; i++) {
       if (patients[i].name === patient.name || patients[i].name === patient) {
-        patients[i].appointments.push(appointment)
+        patients[i].appointments.unshift(appointment)
       }
     }
 

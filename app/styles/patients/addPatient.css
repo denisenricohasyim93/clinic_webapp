@@ -1,0 +1,65 @@
+#add_patient_container {
+  padding: 1rem;
+  width: 80%;
+  height: 30rem;
+  background: white;
+  position: absolute;
+  z-index: 5;
+}
+
+#add_patient_btn {
+  position: absolute;
+  right: 4rem;
+  font-size: 1.5rem;
+  top: 1rem;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+#add_patient_btn:hover {
+  color: red;
+}
+
+#close_patient_panel_btn {
+  float: right;
+  font-size: 2rem;
+  background: none;
+  outline: none;
+  border: none;
+}
+
+#close_patient_panel_btn:hover {
+  cursor: pointer;
+  color: red;
+}
+
+#add_patient_fields {
+  width: 100%;
+}
+
+#add_patient_container input,
+#add_patient_container select,
+#add_patient_container #label,
+#add_patient_container #submit_new_patient {
+  display: block;
+  width: 20rem;
+  height: 2rem;
+  line-height: 2rem;
+}
+
+#add_patient_container #label {
+  position: relative;
+}
+
+#add_patient_container #label input[type="checkbox"] {
+  float: right;
+  width: 2rem;
+}
+
+#add_patient_container input[name="patient_hypertension"],
+#add_patient_container input[name="patient_diabetes"] {
+  float: right;
+  width: 7.9rem;
+}

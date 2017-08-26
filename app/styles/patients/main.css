@@ -46,14 +46,6 @@
 #patients_container {
 }
 
-#add_patient_container {
-  width: 97%;
-  height: 30rem;
-  background: white;
-  position: absolute;
-  z-index: 5;
-}
-
 #patients_profile_route {
   padding: 0;
 }
@@ -82,34 +74,4 @@
   padding-top: 2rem;
   height: 90%;
   position: relative;
-}
-
-#add_patient_btn {
-  position: absolute;
-  right: 4rem;
-  font-size: 1.5rem;
-  top: 1rem;
-  cursor: pointer;
-  background: transparent;
-  border: none;
-  outline: none;
-}
-
-#add_patient_btn:hover {
-  color: red;
-}
-
-#close_patient_panel_btn {
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
-  font-size: 2rem;
-  background: none;
-  outline: none;
-  border: none;
-}
-
-#close_patient_panel_btn:hover {
-  cursor: pointer;
-  color: red;
 }

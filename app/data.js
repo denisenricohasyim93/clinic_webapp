@@ -4,7 +4,7 @@ let data = {
             "name": "Johnny",
             "birth": "26-07-1990",
             "gender": "M",
-            "patient_id": "derive from bd + gender 6 from bd, auto gen 6 last (odd for f, even for m)",
+            "patient_id": 929939,
             "address": "gothenburg/Sweden",
             "notes": [
                 {
@@ -120,7 +120,7 @@ let data = {
             "name": "Max",
             "birth": "03-02-1998",
             "gender": "M",
-            "patient_id": "derive from bd + gender 6 from bd, auto gen 6 last (odd for f, even for m)",
+            "patient_id": 924439,
             "address": "gothenburg/Sweden",
             "notes": [
                 {
@@ -185,7 +185,7 @@ let data = {
             "name": "Tyler",
             "birth": "23-09-1985",
             "gender": "M",
-            "patient_id": "derive from bd + gender 6 from bd, auto gen 6 last (odd for f, even for m)",
+            "patient_id": 329939,
             "address": "Erbil/Iraq",
             "notes": [
                 {
@@ -250,7 +250,7 @@ let data = {
             "name": "Julien",
             "birth": "23-09-1982",
             "gender": "M",
-            "patient_id": "derive from bd + gender 6 from bd, auto gen 6 last (odd for f, even for m)",
+            "patient_id": 729937,
             "address": "Erbil/Iraq",
             "notes": [{
                 "date": "05-08-2017",
