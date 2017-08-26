@@ -1,38 +1,55 @@
 .notes_route {
-
 }
 
 #notes_container {
-    position: relative;
-    vertical-align: top;
-    overflow-x: auto;
-    height: 100%;
+  position: relative;
+  vertical-align: top;
+  overflow-x: auto;
+  height: 100%;
+}
+
+#create_note_container {
+  height: 2rem;
+  width: 100%;
+}
+
+#create_note_container input {
+  height: 100%;
+  padding-left: 1rem;
+}
+
+#create_note_container button {
+  height: 100%;
+}
+
+input[name="create_note_content"] {
+  width: 79%;
 }
 
 .note {
-    width: 100%;
-    line-height: 2rem;
-    margin-bottom: 0.2rem;
-    background: floralwhite;
-    border: 1px solid black;
-    padding-left: 0.5rem;
+  width: 100%;
+  line-height: 2rem;
+  margin-bottom: 0.2rem;
+  background: floralwhite;
+  border: 1px solid black;
+  padding-left: 0.5rem;
 }
 
 .note:hover {
-    cursor: pointer;
-    background: rgb(218, 218, 218);
+  cursor: pointer;
+  background: rgb(218, 218, 218);
 }
 
 #note_date {
-    margin-right: 2rem;
+  margin-right: 2rem;
 }
 
 #note_content {
-    display: none;
-    border-top: dotted 1px black;
-    padding-right: 7rem;
+  display: none;
+  border-top: dotted 1px black;
+  padding-right: 7rem;
 }
 
 #note_content.show {
-    display: block;
+  display: block;
 }

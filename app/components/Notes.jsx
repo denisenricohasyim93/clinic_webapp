@@ -1,24 +1,34 @@
 import React, { Component } from 'react';
+import moment from 'moment'
 
 class Notes extends Component {
     render() {
         return (
             <div className="patient_profile_route notes_route">
+
+                <div id="create_note_container">
+                    <input type="text" name="create_note_title" placeholder="title" />
+                    <input type="text" name="create_note_content" placeholder="content" />
+                    <button onClick={() => this.construct_note()}>Create</button>
+                </div>
+
                 {this.show_notes(this.props)}
-            </div >
+            </div>
         );
     }
 
     construct_note() {
-        let date = document.querySelector("input[name=note_date]"),
-            title = document.querySelector("input[name=note_title]"),
-            content = document.querySelector("textarea[name=note_content]"),
+        let title = document.querySelector("input[name=create_note_title]"),
+            content = document.querySelector("input[name=create_note_content]"),
 
             note = {
-                date: date.value,
+                date: moment().format("MMM Do YYYY"),
                 title: title.value,
                 content: content.value
             }
+
+        title.value = "",
+            content.value = ""
         this.props.add_note(note, this.props.patient)
     }
 
