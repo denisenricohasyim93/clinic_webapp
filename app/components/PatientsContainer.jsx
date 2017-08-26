@@ -110,7 +110,7 @@ export default class PatientsContainer extends Component {
                 <div key={x} className="patient" onClick={() => this.show_patient_profile(patient)}>
                     <span>{patient.name}</span>
                     <span>{patient.birth}</span>
-                    <span>{this.calculate_age(patient.birth)}</span>
+                    <span>{patient.age}</span>
                     <span>{patient.gender}</span>
                     <span>{patient.address}</span>
                 </div>)}
@@ -121,12 +121,6 @@ export default class PatientsContainer extends Component {
         this.setState({
             selected_patient: [patient]
         })
-    }
-
-    calculate_age(birth) {
-        let age = 0, year = birth.match(/(\d+)$/)[0];
-        age = new Date().getFullYear() - year;
-        return age;
     }
 
     remove_selected_patient() {

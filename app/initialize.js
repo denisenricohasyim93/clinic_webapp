@@ -25,7 +25,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.patients);
     return (
       <div id="content">
         <div className="darken"></div>
@@ -74,13 +73,18 @@ class App extends Component {
 
       let updated_patients = this.state.patients.slice(),
         birth = patient.date.split("-"),
-        reversed_birth = birth.reverse().join("-")
+        reversed_birth = birth.reverse().join("-"),
+        date1 = new Date(),
+        date2 = new Date(patient.date),
+        time_diff = Math.abs(date2.getTime() - date1.getTime()),
+        diff_years = Math.ceil((time_diff / (1000 * 3600 * 24) / 365))
 
       updated_patients.unshift({
         name: patient.name,
         birth: reversed_birth,
         gender: patient.gender,
         id: Math.floor(Math.random() * (999999 - 100000)) + 100000,
+        age: diff_years,
         gravida: patient.gravida,
         hypertension: patient.hypertension,
         diabetes: patient.diabetes,
@@ -89,7 +93,8 @@ class App extends Component {
         address: patient.address,
         notes: [],
         appointments: [],
-        vitals: []
+        vitals: [],
+        "medicines": [],
       })
 
       this.setState({ patients: updated_patients })

@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 class Appointments extends Component {
     constructor(props) {
         super(props)
-        console.log(props);
         this.state = {
             show: false
         }

@@ -99,6 +99,9 @@ let data = {
                     "oxygen": "2 liters"
                 }
             ],
+            "medicines": [
+
+            ],
             "appointments": [
                 {
                     "time": "08.00am",
@@ -134,6 +137,9 @@ let data = {
             "gravida": "no",
             "hypertension": 3,
             "diabetes": 5,
+            "medicines": [
+
+            ],
             "notes": [
                 {
                     "date": "05-08-2017",
@@ -205,6 +211,9 @@ let data = {
             "gravida": "no",
             "hypertension": 3,
             "diabetes": 5,
+            "medicines": [
+
+            ],
             "notes": [
                 {
                     "date": "05-08-2017",
@@ -276,6 +285,9 @@ let data = {
             "gravida": "no",
             "hypertension": 3,
             "diabetes": 5,
+            "medicines": [
+
+            ],
             "notes": [{
                 "date": "05-08-2017",
                 "title": "note1",
