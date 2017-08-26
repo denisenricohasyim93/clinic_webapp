@@ -17,7 +17,7 @@ export default class PatientsContainer extends Component {
 
     render() {
         let { selected_patient, searched_patients } = this.state,
-            { patients, remove_selected_patient, add_appointment, add_item } = this.props
+            { patients, remove_selected_patient, add_appointment, add_patient, add_item } = this.props
 
         return (
             <div className="route_section" id="patients_route">
