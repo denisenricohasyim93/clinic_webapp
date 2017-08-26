@@ -5,7 +5,7 @@ import Notes from './Notes'
 import Info from './Info'
 import Lab from './Lab'
 
-export default class PatientProfile extends Component {
+export default class PatientsList extends Component {
     constructor(props) {
         super(props)
         this.state = {

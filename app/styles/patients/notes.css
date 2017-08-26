@@ -4,9 +4,7 @@
 
 #notes_container {
     position: relative;
-    display: inline-block;
     vertical-align: top;
-    width: 78%;
     overflow-x: auto;
     height: 100%;
 }
@@ -37,19 +35,4 @@
 
 #note_content.show {
     display: block;
-}
-
-.add_note_sidebar {
-    display: inline-block;
-    height: 85%;
-    width: 20%;
-}
-
-.add_note_sidebar button, .add_note_sidebar input {
-    width: 100%;
-    height: 3rem;
-}
-.add_note_sidebar textarea {
-    width: 100%;
-   height: 65%;;
 }

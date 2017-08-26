@@ -9,7 +9,7 @@ import {
 } from 'react-router-dom'
 
 import Home from './components/Home'
-import Patients from './components/Patients'
+import PatientsContainer from './components/PatientsContainer'
 import Appointments from './components/Appointments'
 import Settings from './components/Settings'
 
@@ -27,6 +27,7 @@ class App extends Component {
   render() {
     return (
       <div id="content">
+        <div className="darken"></div>
         <Router>
           <div id="route_container">
             <Link to="/" className="route_tab">Home</Link>
@@ -37,17 +38,18 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/patients" render={props =>
-                <Patients
+                <PatientsContainer
                   patients={this.state.patients}
                   add_note={this.add_note.bind(this)}
-                  add_user={this.add_user.bind(this)}
+                  add_patient={this.add_patient.bind(this)}
                   add_vitals={this.add_vitals.bind(this)}
-                  add_appointment={this.add_appointment.bind(this)} />
+                  add_appointment={this.add_appointment.bind(this)}
+                  darken={this.darken.bind(this)} />
               } />
               <Route path="/appointments" render={props =>
                 <Appointments
                   patients={this.state.patients}
-                  add_user={this.add_user.bind(this)}
+                  add_patient={this.add_patient.bind(this)}
                   add_appointment={this.add_appointment.bind(this)} />
               } /> />
               <Route path="/settings" component={Settings} />
@@ -57,7 +59,13 @@ class App extends Component {
       </div>
     );
   }
-  add_user() {
+
+  darken() {
+    let darken_div = document.querySelector(".darken")
+    darken_div.classList.toggle("darken_show")
+  }
+
+  add_patient() {
     let name = document.querySelector("input[name=name]")
       , date = document.querySelector("input[name=date]")
       , gender = document.querySelector("select[name=gender]")

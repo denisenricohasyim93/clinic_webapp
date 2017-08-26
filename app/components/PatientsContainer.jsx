@@ -1,60 +1,69 @@
 import React, { Component } from 'react';
 import PatientProfile from './PatientProfile'
+import PatientsList from './PatientsList'
+import AddPatientPanel from './AddPatientPanel'
 
-export default class Patients extends Component {
+export default class PatientsContainer extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
             searched_patients: [],
             selected_patient: [],
-            no_match: false
+            no_match: false,
+            show_add_patient_panel: false
         }
     }
 
     render() {
         let { selected_patient, searched_patients } = this.state,
-            { patients } = this.props
+            { patients, add_note, remove_selected_patient, add_vitals, add_appointment, add_patient } = this.props
 
         return (
             <div className="route_section" id="patients_route">
+
+
+                <button id="add_patient_btn" onClick={() => this.show_add_patient_panel()}>
+                    <i className="fa fa-plus" aria-hidden="true"></i>
+                </button>
+
+                {
+                    this.state.show_add_patient_panel
+                        ? <AddPatientPanel
+                            add_patient={add_patient}
+                            close_patient_panel={() => this.close_patient_panel()} />
+                        : ""
+                }
+
                 {
                     selected_patient.length > 0
 
                         ? <PatientProfile
                             patient={selected_patient}
-                            add_note={this.props.add_note}
+                            add_note={add_note}
                             remove_selected_patient={this.remove_selected_patient.bind(this)}
-                            add_vitals={this.props.add_vitals}
-                            add_appointment={this.props.add_appointment}>
-                        </PatientProfile>
+                            add_vitals={add_vitals}
+                            add_appointment={add_appointment} />
 
-                        : <div>
-                            <div id="patients_container">
-                                <input type="text" placeholder="search patient..." className="search_patient" onChange={(e) => this.search_patient(e)} />
-
-                                <h3>Name</h3>
-                                <h3>Birth</h3>
-                                <h3>Age</h3>
-                                <h3>Gender</h3>
-                                <h3>Address</h3>
-                                {searched_patients.length > 0 ? this.render_patients(searched_patients) : this.render_patients(patients)}
-                            </div>
-
-                            <div id="add_usr_section">
-                                <button id="add_usr_btn" onClick={this.props.add_user}>Add</button>
-                                <input type="text" placeholder="name" name="name" />
-                                <input type="date" placeholder="birthyear" defaultValue="1990-01-01" name="date" />
-                                <select name="gender">
-                                    <option>Male</option>
-                                    <option>Female</option>
-                                </select>
-                                <input type="text" placeholder="address" name="address" />
-                            </div>
-                        </div>
+                        : <PatientsList
+                            patients={patients}
+                            searched_patients={searched_patients}
+                            render_patients={this.render_patients.bind(this)}
+                            search_patient={this.search_patient.bind(this)}
+                        />
                 }
             </div>
         );
+    }
+
+    close_patient_panel() {
+        this.setState({ show_add_patient_panel: false })
+        this.props.darken()
+    }
+
+    show_add_patient_panel() {
+        this.setState({ show_add_patient_panel: true })
+        this.props.darken()
     }
 
     search_patient(e) {
