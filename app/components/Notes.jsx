@@ -4,7 +4,7 @@ import moment from 'moment'
 class Notes extends Component {
     render() {
         return (
-            <div className="patient_profile_route notes_route">
+            <div className="patient_profile_route">
 
                 <div id="create_note_container">
                     <input type="text" name="create_note_title" placeholder="title" />
@@ -18,18 +18,20 @@ class Notes extends Component {
     }
 
     construct_note() {
-        let title = document.querySelector("input[name=create_note_title]"),
-            content = document.querySelector("input[name=create_note_content]"),
+        let title = document.querySelector("input[name=create_note_title]"), content = document.querySelector("input[name=create_note_content]")
 
-            note = {
+        if (!title.value.match(/^\s*$/) && !content.value.match(/^\s*$/)) {
+
+            let note = {
                 date: moment().format("MMM Do YYYY"),
                 title: title.value,
                 content: content.value
             }
 
-        title.value = "",
-            content.value = ""
-        this.props.add_note(note, this.props.patient)
+            title.value = "", content.value = ""
+            this.props.add_note(note, this.props.patient)
+        }
+
     }
 
     show_notes() {

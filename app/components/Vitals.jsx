@@ -11,7 +11,7 @@ class Vitals extends Component {
     render() {
         return (
             <div className="patient_profile_route">
-                <div className="vitals_route">
+                <div id="vitals_container">
                     <table>
                         <tbody>
                             <tr id="vitals_head">

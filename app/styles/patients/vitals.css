@@ -1,3 +1,11 @@
+#vitals_container {
+  border: 1px solid black;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: floralwhite;
+}
+
 #vitals_head th {
   text-align: left;
   width: 10rem;
@@ -25,7 +33,7 @@
   margin-left: 1.3rem;
   text-align: center;
   height: 2rem;
-  width: 7rem;
+  width: 5rem;
 }
 
 .add_vitals_container input[name="vitals_bloodpressure_systolic"],
@@ -36,3 +44,4 @@
 .add_vitals_container input[name="vitals_bloodpressure_diastolic"] {
   margin: 0;
 }
+

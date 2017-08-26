@@ -15,6 +15,7 @@ class PatientsList extends Component {
                 <h3>Age</h3>
                 <h3>Gender</h3>
                 <h3>Address</h3>
+                <h3>Phone</h3>
                 {searched_patients.length > 0
                     ? render_patients(searched_patients)
                     : render_patients(patients)}

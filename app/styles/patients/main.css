@@ -1,6 +1,7 @@
 #patients_route h3 {
   display: inline-block;
   width: 10rem;
+  margin-left: 0.3rem;
 }
 
 .patients_list {
@@ -84,6 +85,13 @@
   padding-top: 2rem;
   height: 90%;
   position: relative;
+}
+
+#patients_info_container {
+  display: inline-block;
+  padding: 1rem;
+  background: floralwhite;
+  border: 1px solid black;
 }
 
 #patients_info_container p {

@@ -108,8 +108,28 @@ let data = {
                     "oxygen": "2 liters"
                 }
             ],
-            "medicines": [
-
+            "medicine": [
+                {
+                    "date": "Aug 26th 2017",
+                    "name": "aspirin",
+                    "strength": "500ml",
+                    "dose": "1x1x0x1",
+                    "days": 4
+                },
+                {
+                    "date": "Aug 26th 2017",
+                    "name": "paracetamol",
+                    "strength": "1000ml",
+                    "dose": "2x1x3x3",
+                    "days": 100
+                },
+                {
+                    "date": "Aug 26th 2017",
+                    "name": "insulin",
+                    "strength": "200ml",
+                    "dose": "2x1x3x3",
+                    "days": 4
+                }
             ],
             "appointments": [
                 {
@@ -146,8 +166,28 @@ let data = {
             "gravida": "no",
             "hypertension": 3,
             "diabetes": 5,
-            "medicines": [
-
+            "medicine": [
+                {
+                    "date": "Aug 26th 2017",
+                    "name": "aspirin",
+                    "strength": "500ml",
+                    "dose": "2x1x3x3",
+                    "days": 4
+                },
+                {
+                    "date": "Aug 26th 2017",
+                    "name": "paracetamol",
+                    "strength": "1000ml",
+                    "dose": "2x1x3x3",
+                    "days": 100
+                },
+                {
+                    "date": "Aug 26th 2017",
+                    "name": "insulin",
+                    "strength": "200ml",
+                    "dose": "2x1x3x3",
+                    "days": 4
+                }
             ],
             "notes": [
                 {
@@ -226,8 +266,28 @@ let data = {
             "gravida": "no",
             "hypertension": 3,
             "diabetes": 5,
-            "medicines": [
-
+            "medicine": [
+                {
+                    "date": "Aug 26th 2017",
+                    "name": "aspirin",
+                    "strength": "500ml",
+                    "dose": "1x1x0x1",
+                    "days": 4
+                },
+                {
+                    "date": "Aug 26th 2017",
+                    "name": "paracetamol",
+                    "strength": "1000ml",
+                    "dose": "2x1x3x3",
+                    "days": 100
+                },
+                {
+                    "date": "Aug 26th 2017",
+                    "name": "insulin",
+                    "strength": "200ml",
+                    "dose": "1x1x7x4",
+                    "days": 4
+                }
             ],
             "notes": [
                 {
@@ -306,8 +366,28 @@ let data = {
             "gravida": "no",
             "hypertension": 3,
             "diabetes": 5,
-            "medicines": [
-
+            "medicine": [
+                {
+                    "date": "Aug 26th 2017",
+                    "name": "aspirin",
+                    "strength": "500ml",
+                    "dose": "1x1x7x4",
+                    "days": 4
+                },
+                {
+                    "date": "Aug 26th 2017",
+                    "name": "paracetamol",
+                    "strength": "1000ml",
+                    "dose": "1x1x7x4",
+                    "days": 100
+                },
+                {
+                    "date": "Aug 26th 2017",
+                    "name": "insulin",
+                    "strength": "200ml",
+                    "dose": "1x1x7x4",
+                    "days": 4
+                }
             ],
             "notes": [{
                 "date": "05-08-2017",

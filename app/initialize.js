@@ -44,7 +44,8 @@ class App extends Component {
                   add_patient={this.add_patient.bind(this)}
                   add_vitals={this.add_vitals.bind(this)}
                   add_appointment={this.add_appointment.bind(this)}
-                  darken={this.darken.bind(this)} />
+                  darken={this.darken.bind(this)}
+                  add_medicine={this.add_medicine.bind(this)} />
               } />
               <Route path="/appointments" render={props =>
                 <Appointments
@@ -94,7 +95,7 @@ class App extends Component {
         notes: [],
         appointments: [],
         vitals: [],
-        "medicines": [],
+        "medicine": [],
       })
 
       this.setState({ patients: updated_patients })
@@ -119,6 +120,18 @@ class App extends Component {
     for (let i = 0; i < patients.length; i++) {
       if (patients[i].name === patient.name) {
         patients[i].vitals.unshift(vitals)
+      }
+    }
+
+    this.setState({ patients: patients })
+  }
+
+  add_medicine(medicine, patient) {
+    let patients = this.state.patients.slice()
+
+    for (let i = 0; i < patients.length; i++) {
+      if (patients[i].name === patient.name) {
+        patients[i].medicine.unshift(medicine)
       }
     }
 

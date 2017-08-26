@@ -1,0 +1,44 @@
+#medicine_container {
+  position: relative;
+  display: inline-block;
+  width: 70%;
+}
+
+#diagnosis_container {
+  position: relative;
+  display: inline-block;
+  width: 35%;
+  float: right;
+}
+
+#create_medicine_container {
+  height: 2rem;
+  line-height: 2rem;
+}
+
+#create_medicine_container input,
+#create_medicine_container select,
+#create_medicine_container button {
+  height: 100%;
+}
+
+#medicine_list_container {
+}
+
+#medicine {
+  position: relative;
+  width: 100%;
+  background: floralwhite;
+  border: 1px solid black;
+  margin-top: 0.5rem;
+  padding: 0 1rem;
+}
+
+#medicine h4 {
+  display: inline-block;
+  width: 20%;
+}
+
+#medicine h4:last-child {
+  text-align: right;
+}

@@ -4,6 +4,7 @@ import Appointments from './AppointmentsP'
 import Notes from './Notes'
 import Info from './Info'
 import Lab from './Lab'
+import Medicine from './Medicine'
 
 export default class PatientsList extends Component {
     constructor(props) {
@@ -23,11 +24,13 @@ export default class PatientsList extends Component {
                         </strong>
                     </div>
 
+                    <a className="patient_tab" onClick={(e) => this.set_active_tab("info", e.target)}>Info</a>
                     <a className="patient_tab" onClick={(e) => this.set_active_tab("notes", e.target)}>Notes</a>
                     <a className="patient_tab" onClick={(e) => this.set_active_tab("vitals", e.target)}>Vitals</a>
                     <a className="patient_tab" onClick={(e) => this.set_active_tab("lab", e.target)}>Lab</a>
+                    <a className="patient_tab" onClick={(e) => this.set_active_tab("medicine", e.target)}>Medicine</a>
                     <a className="patient_tab" onClick={(e) => this.set_active_tab("appointments", e.target)}>Appointments</a>
-                    <a className="patient_tab" onClick={(e) => this.set_active_tab("info", e.target)}>Info</a>
+
                     <a className="patient_tab" onClick={(e) => this.props.remove_selected_patient()}>Back</a>
                 </div>
                 {this.show_route(this.props)}
@@ -37,23 +40,33 @@ export default class PatientsList extends Component {
 
     show_route(props) {
         if (this.state.active_tab === "notes") {
-            return <Notes patient={props.patient[0]} add_note={props.add_note} />
+            return <Notes
+                patient={props.patient[0]}
+                add_note={props.add_note} />
         }
         if (this.state.active_tab === "vitals") {
             return <Vitals
                 patient={props.patient[0]}
-                add_vitals={this.props.add_vitals} />
+                add_vitals={props.add_vitals} />
         }
         if (this.state.active_tab === "lab") {
-            return <Lab patient={props.patient[0]} />
+            return <Lab
+                patient={props.patient[0]} />
         }
         if (this.state.active_tab === "info") {
-            return <Info patient={props.patient[0]} />
+            return <Info
+                patient={props.patient[0]} />
         }
         if (this.state.active_tab === "appointments") {
             return <Appointments
                 patient={props.patient[0]}
-                add_appointment={this.props.add_appointment} />
+                add_appointment={props.add_appointment} />
+        }
+
+        if (this.state.active_tab === "medicine") {
+            return <Medicine
+                patient={props.patient[0]}
+                add_medicine={props.add_medicine} />
         }
     }
 
