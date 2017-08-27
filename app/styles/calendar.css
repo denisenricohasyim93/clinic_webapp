@@ -1,0 +1,44 @@
+#book_panel_container {
+  padding: 1rem;
+  background: white;
+  position: absolute;
+  z-index: 5;
+  left: 30%;
+  border: 1px solid black;
+}
+
+#close_book_panel_btn {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  font-size: 2rem;
+  background: none;
+  outline: none;
+  border: none;
+}
+
+#close_book_panel_btn:hover {
+  cursor: pointer;
+  color: red;
+}
+
+#book_panel_fields {
+  margin-top: 2.2rem;
+  width: 15rem;
+}
+
+#book_panel_fields select,
+#book_panel_fields input,
+#book_panel_fields textarea,
+#book_panel_fields button {
+  width: 90%;
+  height: 2rem;
+  padding-left: 0.5rem;
+}
+
+#book_panel_fields textarea {
+  height: 10rem;
+  padding: 0.5rem;
+}
+
+

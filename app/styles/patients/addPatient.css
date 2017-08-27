@@ -1,10 +1,8 @@
 #add_patient_container {
   padding: 1rem;
-  height: 30rem;
   background: white;
   position: absolute;
   z-index: 5;
-  width: 40%;
   left: 30%;
 }
 

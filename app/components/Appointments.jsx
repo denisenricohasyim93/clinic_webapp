@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
+import BookPanel from './BookPanel'
 
 BigCalendar.setLocalizer(
     BigCalendar.momentLocalizer(moment)
@@ -9,34 +10,43 @@ BigCalendar.setLocalizer(
 class Appointments extends Component {
     constructor(props) {
         super(props)
+
         this.state = {
-            events: [
-                {
-                    'title': 'meeting with dr Hemn',
-                    'start': new Date(2017, 8, 2, 8, 0, 0),
-                    'end': new Date(2017, 8, 2, 10, 0, 0),
-                    'desc': 'meeting with someone'
-                },
-                {
-                    'title': 'meeting with dr Hardee',
-                    'start': new Date(2017, 8, 1, 9, 30, 0),
-                    'end': new Date(2017, 8, 1, 10, 30, 0)
-                }
-            ]
+            show_book_panel: true
         }
     }
 
     render() {
         return (
             <div className="route_section" id="appointments_route">
+                {this.state.show_book_panel ? <BookPanel
+                    close_book_panel={this.close_book_panel.bind(this)}
+                    patients={this.props.patients}>
+                </BookPanel> : ""}
+
                 <BigCalendar
-                    events={this.state.events}
+                    selectable
+                    events={this.props.events}
                     step={15}
                     timeslots={2}
                     min={this.get_min_time()}
-                    defaultView='week' />
+                    defaultView='week'
+                    onSelectEvent={event => alert(event.title)}
+                    onSelectSlot={(slot_info) => this.book_slot(slot_info)}
+                />
+
             </div>
         );
+    }
+
+    book_slot(slot_info) {
+        this.setState({ show_book_panel: true })
+        this.props.darken()
+    }
+
+    close_book_panel() {
+        this.props.darken()
+        this.setState({ show_book_panel: false })
     }
 
     get_min_time() {

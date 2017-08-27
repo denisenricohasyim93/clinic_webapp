@@ -20,8 +20,13 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      patients: data.patients
+      patients: data.patients,
+      events: []
     }
+  }
+
+  componentDidMount() {
+    this.set_appointments()
   }
 
   render() {
@@ -49,7 +54,9 @@ class App extends Component {
                 <Appointments
                   patients={this.state.patients}
                   add_patient={this.add_patient.bind(this)}
-                  add_appointment={this.add_appointment.bind(this)} />
+                  add_appointment={this.add_appointment.bind(this)}
+                  events={this.state.events}
+                  darken={this.darken.bind(this)} />
               } /> />
               <Route path="/settings" component={Settings} />
             </Switch>
@@ -118,12 +125,31 @@ class App extends Component {
     let patients = this.state.patients.slice()
 
     for (let i = 0; i < patients.length; i++) {
-      if (patients[i].name === patient.name || patients[i].name === patient) {
+      if (patients[i].name === patient) {
         patients[i].appointments.unshift(appointment)
       }
     }
 
     this.setState({ patients: patients })
+    setTimeout(() => this.set_appointments(appointment), 1000)
+  }
+
+  set_appointments(appointment) {
+    let appointments = []
+
+    if (appointment) {
+      appointments.push(appointment)
+    }
+
+    this.state.patients.map((patient) => {
+      patient.appointments.map((apt) => {
+        appointments.push(apt)
+      })
+    })
+
+    this.setState({
+      events: appointments
+    })
   }
 }
 

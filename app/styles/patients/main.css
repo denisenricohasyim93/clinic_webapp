@@ -5,6 +5,7 @@
 }
 
 .patients_list {
+  border: 1px solid black;
 }
 
 #selected_patient_container {
@@ -19,6 +20,7 @@
 
 .patient {
   color: black;
+  background: floralwhite;
   line-height: 2rem;
   border-bottom: 1px solid black;
   padding: 0.5rem;
@@ -27,7 +29,7 @@
 
 .patient:hover {
   cursor: pointer;
-  background: white;
+  background: rgb(253, 232, 191);
 }
 
 .patient span {

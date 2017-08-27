@@ -155,25 +155,18 @@ let data = {
             ],
             "appointments": [
                 {
-                    "time": "08.00am",
-                    "date": "03-07-2020",
-                    "visiting": "Dr. Kamal"
+                    'title': 'meeting with dr Hemn',
+                    'start': new Date(2017, 7, 27, 12, 0, 0),
+                    'end': new Date(2017, 7, 27, 13, 0, 0),
+                    'desc': 'meeting with someone'
                 },
                 {
-                    "time": "08.00am",
-                    "date": "03-07-2010",
-                    "visiting": "Dr. Hardee"
-                },
-                {
-                    "time": "08.00am",
-                    "date": "03-07-2020",
-                    "visiting": "Sean Carrol"
-                },
-                {
-                    "time": "08.00am",
-                    "date": "03-07-2005",
-                    "visiting": "Neil Degrasse"
+                    'title': 'meeting with dr Hemn',
+                    'start': new Date(2017, 7, 28, 14, 0, 0),
+                    'end': new Date(2017, 7, 28, 15, 0, 0),
+                    'desc': 'meeting with someone'
                 }
+
             ]
         },
         {
@@ -271,14 +264,16 @@ let data = {
             ],
             "appointments": [
                 {
-                    "time": "08.00am",
-                    "date": "03-07-2040",
-                    "visiting": "test1"
+                    'title': 'meeting with dr Hemn',
+                    'start': new Date(2017, 7, 29, 12, 0, 0),
+                    'end': new Date(2017, 7, 29, 13, 0, 0),
+                    'desc': 'meeting with someone'
                 },
                 {
-                    "time": "08.00am",
-                    "date": "03-07-2070",
-                    "visiting": "test32"
+                    'title': 'meeting with dr Hemn',
+                    'start': new Date(2017, 7, 30, 14, 0, 0),
+                    'end': new Date(2017, 7, 30, 15, 0, 0),
+                    'desc': 'meeting with someone'
                 }
             ]
         },
@@ -377,14 +372,16 @@ let data = {
             ],
             "appointments": [
                 {
-                    "time": "10.00am",
-                    "date": "03-07-2009",
-                    "visiting": "Sean Carrol"
+                    'title': 'meeting with dr Hemn',
+                    'start': new Date(2017, 7, 31, 12, 0, 0),
+                    'end': new Date(2017, 7, 31, 13, 0, 0),
+                    'desc': 'meeting with someone'
                 },
                 {
-                    "time": "12.00am",
-                    "date": "03-07-2045",
-                    "visiting": "Neil Degrasse"
+                    'title': 'meeting with dr Hemn',
+                    'start': new Date(2017, 7, 31, 14, 0, 0),
+                    'end': new Date(2017, 7, 31, 15, 0, 0),
+                    'desc': 'meeting with someone'
                 }
             ]
         },
@@ -481,14 +478,16 @@ let data = {
             ],
             "appointments": [
                 {
-                    "time": "11.00am",
-                    "date": "03-07-2025",
-                    "visiting": "Jhon Jones"
+                    'title': 'meeting with dr Hemn',
+                    'start': new Date(2017, 8, 2, 12, 0, 0),
+                    'end': new Date(2017, 8, 2, 13, 0, 0),
+                    'desc': 'meeting with someone'
                 },
                 {
-                    "time": "07.00am",
-                    "date": "03-07-2010",
-                    "visiting": "Dr. Soran"
+                    'title': 'meeting with dr Hemn',
+                    'start': new Date(2017, 8, 2, 14, 0, 0),
+                    'end': new Date(2017, 8, 2, 15, 0, 0),
+                    'desc': 'meeting with someone'
                 }
             ]
         },
@@ -647,24 +646,16 @@ let data = {
             ],
             "appointments": [
                 {
-                    "time": "08.00am",
-                    "date": "03-07-2020",
-                    "visiting": "Dr. Kamal"
+                    'title': 'meeting with dr kamal',
+                    'start': new Date(2017, 8, 3, 12, 0, 0),
+                    'end': new Date(2017, 8, 3, 13, 0, 0),
+                    'desc': 'meeting with someone'
                 },
                 {
-                    "time": "08.00am",
-                    "date": "03-07-2010",
-                    "visiting": "Dr. Hardee"
-                },
-                {
-                    "time": "08.00am",
-                    "date": "03-07-2020",
-                    "visiting": "Sean Carrol"
-                },
-                {
-                    "time": "08.00am",
-                    "date": "03-07-2005",
-                    "visiting": "Neil Degrasse"
+                    'title': 'meeting with dr jin',
+                    'start': new Date(2017, 8, 4, 14, 0, 0),
+                    'end': new Date(2017, 8, 4, 15, 0, 0),
+                    'desc': 'meeting with someone'
                 }
             ]
         },
@@ -823,24 +814,16 @@ let data = {
             ],
             "appointments": [
                 {
-                    "time": "08.00am",
-                    "date": "03-07-2020",
-                    "visiting": "Dr. Kamal"
+                    'title': 'meeting with dr boss',
+                    'start': new Date(2017, 8, 5, 12, 0, 0),
+                    'end': new Date(2017, 8, 5, 13, 0, 0),
+                    'desc': 'meeting with someone'
                 },
                 {
-                    "time": "08.00am",
-                    "date": "03-07-2010",
-                    "visiting": "Dr. Hardee"
-                },
-                {
-                    "time": "08.00am",
-                    "date": "03-07-2020",
-                    "visiting": "Sean Carrol"
-                },
-                {
-                    "time": "08.00am",
-                    "date": "03-07-2005",
-                    "visiting": "Neil Degrasse"
+                    'title': 'meeting with dr lolz',
+                    'start': new Date(2017, 8, 5, 14, 0, 0),
+                    'end': new Date(2017, 8, 5, 15, 0, 0),
+                    'desc': 'meeting with someone'
                 }
             ]
         },
@@ -999,24 +982,16 @@ let data = {
             ],
             "appointments": [
                 {
-                    "time": "08.00am",
-                    "date": "03-07-2020",
-                    "visiting": "Dr. Kamal"
+                    'title': 'meeting with dr John',
+                    'start': new Date(2017, 8, 2, 15, 0, 0),
+                    'end': new Date(2017, 8, 2, 16, 0, 0),
+                    'desc': 'meeting with someone'
                 },
                 {
-                    "time": "08.00am",
-                    "date": "03-07-2010",
-                    "visiting": "Dr. Hardee"
-                },
-                {
-                    "time": "08.00am",
-                    "date": "03-07-2020",
-                    "visiting": "Sean Carrol"
-                },
-                {
-                    "time": "08.00am",
-                    "date": "03-07-2005",
-                    "visiting": "Neil Degrasse"
+                    'title': 'meeting with dr Sean',
+                    'start': new Date(2017, 8, 2, 9, 0, 0),
+                    'end': new Date(2017, 8, 2, 10, 0, 0),
+                    'desc': 'meeting with someone'
                 }
             ]
         },
@@ -1175,24 +1150,16 @@ let data = {
             ],
             "appointments": [
                 {
-                    "time": "08.00am",
-                    "date": "03-07-2020",
-                    "visiting": "Dr. Kamal"
+                    'title': 'meeting with dr Hemn',
+                    'start': new Date(2017, 8, 2, 8, 0, 0),
+                    'end': new Date(2017, 8, 2, 10, 0, 0),
+                    'desc': 'meeting with someone'
                 },
                 {
-                    "time": "08.00am",
-                    "date": "03-07-2010",
-                    "visiting": "Dr. Hardee"
-                },
-                {
-                    "time": "08.00am",
-                    "date": "03-07-2020",
-                    "visiting": "Sean Carrol"
-                },
-                {
-                    "time": "08.00am",
-                    "date": "03-07-2005",
-                    "visiting": "Neil Degrasse"
+                    'title': 'meeting with dr Hardee',
+                    'start': new Date(2017, 8, 2, 12, 0, 0),
+                    'end': new Date(2017, 8, 2, 13, 0, 0),
+                    'desc': 'meeting with someone'
                 }
             ]
         }
