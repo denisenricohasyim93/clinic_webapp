@@ -45,7 +45,7 @@ class Appointments extends Component {
         time.setHours(7)
         time.setMinutes(0)
         time.setSeconds(0)
-        console.log(time);
+
         return time
     }
 }

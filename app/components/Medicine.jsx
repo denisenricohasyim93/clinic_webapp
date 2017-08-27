@@ -76,7 +76,7 @@ class Medicine extends Component {
             strength = document.querySelector("input[name=medicine_strength]"),
             days = document.querySelector("input[name=medicine_days]")
 
-        if (name.length > 0 && dose.length > 0 && strength.length > 0 && days.length > 0 && name !== "medicine") {
+        if (name.value.length > 0 && dose.value.length > 0 && strength.value.length > 0 && days.value.length > 0 && name.value !== "medicine") {
 
             let medicine = {
                 "date": moment().format("MMM Do YYYY"),
@@ -86,7 +86,7 @@ class Medicine extends Component {
                 "days": days.value
             }
 
-            name.value = "", dose.value = "", strength.value = "", days.value = ""
+            name.value = "medicine", dose.value = "", strength.value = "", days.value = ""
             this.props.add_medicine(medicine, this.props.patient, "medicine")
         }
     }
