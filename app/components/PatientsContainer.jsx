@@ -22,7 +22,6 @@ export default class PatientsContainer extends Component {
         return (
             <div className="route_section" id="patients_route">
 
-
                 <button id="add_patient_btn" onClick={() => this.show_add_patient_panel()}>
                     <i className="fa fa-plus" aria-hidden="true"></i>
                 </button>
@@ -37,7 +36,6 @@ export default class PatientsContainer extends Component {
 
                 {
                     selected_patient.length > 0
-
                         ? <PatientProfile
                             patient={selected_patient}
                             remove_selected_patient={this.remove_selected_patient.bind(this)}

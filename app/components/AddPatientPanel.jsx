@@ -41,7 +41,6 @@ class AddPatientPanel extends Component {
 
                     <button id="submit_new_patient" onClick={() => this.add_patient()}>add</button>
                 </div>
-
             </div>
         );
     }
