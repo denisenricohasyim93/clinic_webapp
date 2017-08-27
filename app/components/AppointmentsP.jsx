@@ -22,9 +22,7 @@ class Appointments extends Component {
                         {this.props.patient.appointments.map((apt, x) =>
                             this.check_date(apt) === "past" ?
                                 <div key={x} className="apt_div">
-                                    <p>Date: {apt.date}</p>
-                                    <p>Time: {apt.time}</p>
-                                    <p>Visiting: {apt.visiting}</p>
+                                    <p>Date: {}</p>
                                 </div> : ""
                         )}
                     </div>

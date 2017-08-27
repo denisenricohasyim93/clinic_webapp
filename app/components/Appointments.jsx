@@ -18,7 +18,6 @@ class Appointments extends Component {
     }
 
     render() {
-        console.log(this.props);
         return (
             <div className="route_section" id="appointments_route">
                 {this.state.show_book_panel ?

@@ -43,10 +43,9 @@ class BookPanel extends Component {
 
             this.props.add_appointment(appointment, patient.value, "appointment")
             this.props.close_book_panel()
-            title.value = "", description.value = "", patient.value = ""
+            description.value = "", patient.value = ""
 
         }
-        console.log('setting up');
         setTimeout(() => {
             let all = document.querySelectorAll(".rbc-event-label");
             Array.prototype.map.call(all, (arg) => {
