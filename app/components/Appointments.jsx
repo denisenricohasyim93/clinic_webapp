@@ -1,99 +1,51 @@
 import React, { Component } from 'react';
+import BigCalendar from 'react-big-calendar';
+import moment from 'moment';
+
+BigCalendar.setLocalizer(
+    BigCalendar.momentLocalizer(moment)
+);
 
 class Appointments extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            show: false
+            events: [
+                {
+                    'title': 'meeting',
+                    'start': new Date(2017, 8, 2, 8, 0, 0),
+                    'end': new Date(2017, 8, 2, 10, 0, 0),
+                    'desc': 'meeting with someone'
+                },
+                {
+                    'title': 'Long Event',
+                    'start': new Date(2017, 8, 10),
+                    'end': new Date(2017, 8, 15)
+                }
+            ]
         }
     }
+
     render() {
         return (
             <div className="route_section" id="appointments_route">
-                <div className="patient_appointments_container">
-                    <div className="patient_upcoming_apt">
-                        <h3>Upcoming</h3>
-                        {
-                            this.props.patients.map((patient) =>
-                                patient.appointments.map((apt, x) =>
-                                    this.check_date(apt) === "upcoming" ?
-                                        <div key={x} className="apt_div">
-                                            <strong>Name: {patient.name}</strong>
-                                            <p>Date: {apt.date}</p>
-                                            <p>Time: {apt.time}</p>
-                                            <p>Visiting: {apt.visiting}</p>
-                                        </div> : "")
-                            )
-                        }
-                    </div>
-
-                    <div className="patient_past_apt">
-                        <h3>Past</h3>
-                        {
-                            this.props.patients.map((patient) =>
-                                patient.appointments.map((apt, x) =>
-                                    this.check_date(apt) === "past" ?
-                                        <div key={x} className="apt_div">
-                                            <strong>Name: {patient.name}</strong>
-                                            <p>Date: {apt.date}</p>
-                                            <p>Time: {apt.time}</p>
-                                            <p>Visiting: {apt.visiting}</p>
-                                        </div> : "")
-                            )
-                        }
-                    </div>
-
-                    <div className="add_appointment_sidebar">
-                        <button disabled={!this.state.show} onClick={() => this.add_appointment()}>Create Appointment</button>
-
-                        <select name="appointment_patient" onChange={(e) => this.check_option(e.target)}>
-                            <option>Select Patient</option>
-                            {this.props.patients.map((patient, x) =>
-                                <option key={x}>{patient.name}</option>
-                            )}
-                        </select>
-
-                        {
-                            this.state.show ?
-                                <div>
-                                    <input name="appointment_date" placeholder="date" />
-                                    <input name="appointment_time" placeholder="time" />
-                                    <input name="appointment_visiting" placeholder="visiting" />
-                                </div> : ""
-                        }
-
-                    </div>
-                </div>
+                <BigCalendar
+                    events={this.state.events}
+                    step={15}
+                    timeslots={2}
+                    min={this.get_min_time()}
+                    defaultView='week' />
             </div>
         );
     }
 
-    check_option(e) {
-        if (e.value !== "Select Patient") {
-            return this.setState({ show: true })
-        }
-        return this.setState({ show: false })
-    }
+    get_min_time() {
+        let time = new Date()
 
-    add_appointment() {
-        let date = document.querySelector("input[name=appointment_date]"),
-            time = document.querySelector("input[name=appointment_time]"),
-            visiting = document.querySelector("input[name=appointment_visiting]"),
-            patient = document.querySelector("select[name=appointment_patient]"),
-
-            appointment = {
-                date: date.value,
-                time: time.value,
-                visiting: visiting.value
-            }
-        this.props.add_appointment(appointment, patient.value)
-    }
-
-    check_date(appointment) {
-        let time;
-
-        new Date(appointment.date) > new Date() ? time = "upcoming" : time = "past";
-
+        time.setHours(7)
+        time.setMinutes(0)
+        time.setSeconds(0)
+        console.log(time);
         return time
     }
 }

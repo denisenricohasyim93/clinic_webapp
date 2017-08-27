@@ -491,6 +491,710 @@ let data = {
                     "visiting": "Dr. Soran"
                 }
             ]
+        },
+        {
+            "name": "Lolzie",
+            "birth": "26-07-1990",
+            "age": 27,
+            "gender": "M",
+            "id": 3339939,
+            "address": "gothenburg/Sweden",
+            "phone": "7778880003",
+            "smoker": "no",
+            "gravida": "no",
+            "hypertension": 3,
+            "diabetes": 5,
+            "notes": [
+                {
+                    "date": "05-08-2017",
+                    "title": "note1",
+                    "content": "this dude loves programming"
+                },
+                {
+                    "date": "05-08-2016",
+                    "title": "note2",
+                    "content": "more notes here yay"
+                },
+                {
+                    "date": "05-08-2015",
+                    "title": "note3",
+                    "content": "We have to make this app awesome"
+                },
+                {
+                    "date": "05-12-2017",
+                    "title": "note1",
+                    "content": "this dude loves programming"
+                },
+                {
+                    "date": "05-08-2013",
+                    "title": "note2",
+                    "content": "more notes here yay"
+                },
+                {
+                    "date": "05-08-2016",
+                    "title": "note3",
+                    "content": "We have to make this app awesome"
+                },
+                {
+                    "date": "05-08-2011",
+                    "title": "note2",
+                    "content": "more notes here yay"
+                },
+                {
+                    "date": "05-08-2010",
+                    "title": "note3",
+                    "content": "We have to make this app awesome"
+                },
+                {
+                    "date": "01-08-2017",
+                    "title": "note1",
+                    "content": "this dude loves programming"
+                },
+                {
+                    "date": "05-11-2004",
+                    "title": "note2",
+                    "content": "more notes here yay"
+                }
+            ],
+            "vitals": [
+                {
+                    "date": "03-07-2016",
+                    "time": "10:00am",
+                    "vitals_id": "object_id",
+                    "bloodpressure": {
+                        "systolic": 70,
+                        "diastolic": 100
+                    },
+                    "pulse": "500",
+                    "temperature": "25C",
+                    "respiratory_rate": "50",
+                    "saturation": "100%",
+                    "oxygen": "2 liters"
+                },
+                {
+                    "date": "03-07-2019",
+                    "time": "10:00am",
+                    "vitals_id": "object_id",
+                    "bloodpressure": {
+                        "systolic": 70,
+                        "diastolic": 100
+                    },
+                    "pulse": "200",
+                    "temperature": "25C",
+                    "respiratory_rate": "10",
+                    "saturation": "20%",
+                    "oxygen": "6 liters"
+                },
+                {
+                    "date": "03-07-2016",
+                    "time": "10:00am",
+                    "vitals_id": "object_id",
+                    "bloodpressure": {
+                        "systolic": 70,
+                        "diastolic": 100
+                    },
+                    "pulse": "500",
+                    "temperature": "25C",
+                    "respiratory_rate": "50",
+                    "saturation": "100%",
+                    "oxygen": "2 liters"
+                }
+            ],
+            "medicine": [
+                {
+                    "date": "Aug 26th 2017",
+                    "name": "aspirin",
+                    "strength": "500ml",
+                    "dose": "1x1x0x1",
+                    "days": 4
+                },
+                {
+                    "date": "Aug 26th 2017",
+                    "name": "paracetamol",
+                    "strength": "1000ml",
+                    "dose": "2x1x3x3",
+                    "days": 100
+                },
+                {
+                    "date": "Aug 26th 2017",
+                    "name": "insulin",
+                    "strength": "200ml",
+                    "dose": "2x1x3x3",
+                    "days": 4
+                }
+            ],
+            "diagnosis": [
+                {
+                    "date": "Aug 26th 2017",
+                    "content": "diagnosed with some disease"
+                },
+                {
+                    "date": "Aug 26th 2017",
+                    "content": "diagnosed with some disease"
+                },
+                {
+                    "date": "Aug 26th 2017",
+                    "content": "diagnosed with some disease"
+                },
+                {
+                    "date": "Aug 26th 2017",
+                    "content": "diagnosed with some disease"
+                },
+                {
+                    "date": "Aug 26th 2017",
+                    "content": "diagnosed with some disease"
+                }
+            ],
+            "appointments": [
+                {
+                    "time": "08.00am",
+                    "date": "03-07-2020",
+                    "visiting": "Dr. Kamal"
+                },
+                {
+                    "time": "08.00am",
+                    "date": "03-07-2010",
+                    "visiting": "Dr. Hardee"
+                },
+                {
+                    "time": "08.00am",
+                    "date": "03-07-2020",
+                    "visiting": "Sean Carrol"
+                },
+                {
+                    "time": "08.00am",
+                    "date": "03-07-2005",
+                    "visiting": "Neil Degrasse"
+                }
+            ]
+        },
+        {
+            "name": "Bane",
+            "birth": "26-07-1990",
+            "age": 27,
+            "gender": "M",
+            "id": 229339,
+            "address": "gothenburg/Sweden",
+            "phone": "7778880003",
+            "smoker": "no",
+            "gravida": "no",
+            "hypertension": 3,
+            "diabetes": 5,
+            "notes": [
+                {
+                    "date": "05-08-2017",
+                    "title": "note1",
+                    "content": "this dude loves programming"
+                },
+                {
+                    "date": "05-08-2016",
+                    "title": "note2",
+                    "content": "more notes here yay"
+                },
+                {
+                    "date": "05-08-2015",
+                    "title": "note3",
+                    "content": "We have to make this app awesome"
+                },
+                {
+                    "date": "05-12-2017",
+                    "title": "note1",
+                    "content": "this dude loves programming"
+                },
+                {
+                    "date": "05-08-2013",
+                    "title": "note2",
+                    "content": "more notes here yay"
+                },
+                {
+                    "date": "05-08-2016",
+                    "title": "note3",
+                    "content": "We have to make this app awesome"
+                },
+                {
+                    "date": "05-08-2011",
+                    "title": "note2",
+                    "content": "more notes here yay"
+                },
+                {
+                    "date": "05-08-2010",
+                    "title": "note3",
+                    "content": "We have to make this app awesome"
+                },
+                {
+                    "date": "01-08-2017",
+                    "title": "note1",
+                    "content": "this dude loves programming"
+                },
+                {
+                    "date": "05-11-2004",
+                    "title": "note2",
+                    "content": "more notes here yay"
+                }
+            ],
+            "vitals": [
+                {
+                    "date": "03-07-2016",
+                    "time": "10:00am",
+                    "vitals_id": "object_id",
+                    "bloodpressure": {
+                        "systolic": 70,
+                        "diastolic": 100
+                    },
+                    "pulse": "500",
+                    "temperature": "25C",
+                    "respiratory_rate": "50",
+                    "saturation": "100%",
+                    "oxygen": "2 liters"
+                },
+                {
+                    "date": "03-07-2019",
+                    "time": "10:00am",
+                    "vitals_id": "object_id",
+                    "bloodpressure": {
+                        "systolic": 70,
+                        "diastolic": 100
+                    },
+                    "pulse": "200",
+                    "temperature": "25C",
+                    "respiratory_rate": "10",
+                    "saturation": "20%",
+                    "oxygen": "6 liters"
+                },
+                {
+                    "date": "03-07-2016",
+                    "time": "10:00am",
+                    "vitals_id": "object_id",
+                    "bloodpressure": {
+                        "systolic": 70,
+                        "diastolic": 100
+                    },
+                    "pulse": "500",
+                    "temperature": "25C",
+                    "respiratory_rate": "50",
+                    "saturation": "100%",
+                    "oxygen": "2 liters"
+                }
+            ],
+            "medicine": [
+                {
+                    "date": "Aug 26th 2017",
+                    "name": "aspirin",
+                    "strength": "500ml",
+                    "dose": "1x1x0x1",
+                    "days": 4
+                },
+                {
+                    "date": "Aug 26th 2017",
+                    "name": "paracetamol",
+                    "strength": "1000ml",
+                    "dose": "2x1x3x3",
+                    "days": 100
+                },
+                {
+                    "date": "Aug 26th 2017",
+                    "name": "insulin",
+                    "strength": "200ml",
+                    "dose": "2x1x3x3",
+                    "days": 4
+                }
+            ],
+            "diagnosis": [
+                {
+                    "date": "Aug 26th 2017",
+                    "content": "diagnosed with some disease"
+                },
+                {
+                    "date": "Aug 26th 2017",
+                    "content": "diagnosed with some disease"
+                },
+                {
+                    "date": "Aug 26th 2017",
+                    "content": "diagnosed with some disease"
+                },
+                {
+                    "date": "Aug 26th 2017",
+                    "content": "diagnosed with some disease"
+                },
+                {
+                    "date": "Aug 26th 2017",
+                    "content": "diagnosed with some disease"
+                }
+            ],
+            "appointments": [
+                {
+                    "time": "08.00am",
+                    "date": "03-07-2020",
+                    "visiting": "Dr. Kamal"
+                },
+                {
+                    "time": "08.00am",
+                    "date": "03-07-2010",
+                    "visiting": "Dr. Hardee"
+                },
+                {
+                    "time": "08.00am",
+                    "date": "03-07-2020",
+                    "visiting": "Sean Carrol"
+                },
+                {
+                    "time": "08.00am",
+                    "date": "03-07-2005",
+                    "visiting": "Neil Degrasse"
+                }
+            ]
+        },
+        {
+            "name": "Batman",
+            "birth": "26-07-1990",
+            "age": 27,
+            "gender": "M",
+            "id": 777939,
+            "address": "gothenburg/Sweden",
+            "phone": "7778880003",
+            "smoker": "no",
+            "gravida": "no",
+            "hypertension": 3,
+            "diabetes": 5,
+            "notes": [
+                {
+                    "date": "05-08-2017",
+                    "title": "note1",
+                    "content": "this dude loves programming"
+                },
+                {
+                    "date": "05-08-2016",
+                    "title": "note2",
+                    "content": "more notes here yay"
+                },
+                {
+                    "date": "05-08-2015",
+                    "title": "note3",
+                    "content": "We have to make this app awesome"
+                },
+                {
+                    "date": "05-12-2017",
+                    "title": "note1",
+                    "content": "this dude loves programming"
+                },
+                {
+                    "date": "05-08-2013",
+                    "title": "note2",
+                    "content": "more notes here yay"
+                },
+                {
+                    "date": "05-08-2016",
+                    "title": "note3",
+                    "content": "We have to make this app awesome"
+                },
+                {
+                    "date": "05-08-2011",
+                    "title": "note2",
+                    "content": "more notes here yay"
+                },
+                {
+                    "date": "05-08-2010",
+                    "title": "note3",
+                    "content": "We have to make this app awesome"
+                },
+                {
+                    "date": "01-08-2017",
+                    "title": "note1",
+                    "content": "this dude loves programming"
+                },
+                {
+                    "date": "05-11-2004",
+                    "title": "note2",
+                    "content": "more notes here yay"
+                }
+            ],
+            "vitals": [
+                {
+                    "date": "03-07-2016",
+                    "time": "10:00am",
+                    "vitals_id": "object_id",
+                    "bloodpressure": {
+                        "systolic": 70,
+                        "diastolic": 100
+                    },
+                    "pulse": "500",
+                    "temperature": "25C",
+                    "respiratory_rate": "50",
+                    "saturation": "100%",
+                    "oxygen": "2 liters"
+                },
+                {
+                    "date": "03-07-2019",
+                    "time": "10:00am",
+                    "vitals_id": "object_id",
+                    "bloodpressure": {
+                        "systolic": 70,
+                        "diastolic": 100
+                    },
+                    "pulse": "200",
+                    "temperature": "25C",
+                    "respiratory_rate": "10",
+                    "saturation": "20%",
+                    "oxygen": "6 liters"
+                },
+                {
+                    "date": "03-07-2016",
+                    "time": "10:00am",
+                    "vitals_id": "object_id",
+                    "bloodpressure": {
+                        "systolic": 70,
+                        "diastolic": 100
+                    },
+                    "pulse": "500",
+                    "temperature": "25C",
+                    "respiratory_rate": "50",
+                    "saturation": "100%",
+                    "oxygen": "2 liters"
+                }
+            ],
+            "medicine": [
+                {
+                    "date": "Aug 26th 2017",
+                    "name": "aspirin",
+                    "strength": "500ml",
+                    "dose": "1x1x0x1",
+                    "days": 4
+                },
+                {
+                    "date": "Aug 26th 2017",
+                    "name": "paracetamol",
+                    "strength": "1000ml",
+                    "dose": "2x1x3x3",
+                    "days": 100
+                },
+                {
+                    "date": "Aug 26th 2017",
+                    "name": "insulin",
+                    "strength": "200ml",
+                    "dose": "2x1x3x3",
+                    "days": 4
+                }
+            ],
+            "diagnosis": [
+                {
+                    "date": "Aug 26th 2017",
+                    "content": "diagnosed with some disease"
+                },
+                {
+                    "date": "Aug 26th 2017",
+                    "content": "diagnosed with some disease"
+                },
+                {
+                    "date": "Aug 26th 2017",
+                    "content": "diagnosed with some disease"
+                },
+                {
+                    "date": "Aug 26th 2017",
+                    "content": "diagnosed with some disease"
+                },
+                {
+                    "date": "Aug 26th 2017",
+                    "content": "diagnosed with some disease"
+                }
+            ],
+            "appointments": [
+                {
+                    "time": "08.00am",
+                    "date": "03-07-2020",
+                    "visiting": "Dr. Kamal"
+                },
+                {
+                    "time": "08.00am",
+                    "date": "03-07-2010",
+                    "visiting": "Dr. Hardee"
+                },
+                {
+                    "time": "08.00am",
+                    "date": "03-07-2020",
+                    "visiting": "Sean Carrol"
+                },
+                {
+                    "time": "08.00am",
+                    "date": "03-07-2005",
+                    "visiting": "Neil Degrasse"
+                }
+            ]
+        },
+        {
+            "name": "Luke",
+            "birth": "26-07-1990",
+            "age": 27,
+            "gender": "M",
+            "id": 669939,
+            "address": "gothenburg/Sweden",
+            "phone": "7778880003",
+            "smoker": "no",
+            "gravida": "no",
+            "hypertension": 3,
+            "diabetes": 5,
+            "notes": [
+                {
+                    "date": "05-08-2017",
+                    "title": "note1",
+                    "content": "this dude loves programming"
+                },
+                {
+                    "date": "05-08-2016",
+                    "title": "note2",
+                    "content": "more notes here yay"
+                },
+                {
+                    "date": "05-08-2015",
+                    "title": "note3",
+                    "content": "We have to make this app awesome"
+                },
+                {
+                    "date": "05-12-2017",
+                    "title": "note1",
+                    "content": "this dude loves programming"
+                },
+                {
+                    "date": "05-08-2013",
+                    "title": "note2",
+                    "content": "more notes here yay"
+                },
+                {
+                    "date": "05-08-2016",
+                    "title": "note3",
+                    "content": "We have to make this app awesome"
+                },
+                {
+                    "date": "05-08-2011",
+                    "title": "note2",
+                    "content": "more notes here yay"
+                },
+                {
+                    "date": "05-08-2010",
+                    "title": "note3",
+                    "content": "We have to make this app awesome"
+                },
+                {
+                    "date": "01-08-2017",
+                    "title": "note1",
+                    "content": "this dude loves programming"
+                },
+                {
+                    "date": "05-11-2004",
+                    "title": "note2",
+                    "content": "more notes here yay"
+                }
+            ],
+            "vitals": [
+                {
+                    "date": "03-07-2016",
+                    "time": "10:00am",
+                    "vitals_id": "object_id",
+                    "bloodpressure": {
+                        "systolic": 70,
+                        "diastolic": 100
+                    },
+                    "pulse": "500",
+                    "temperature": "25C",
+                    "respiratory_rate": "50",
+                    "saturation": "100%",
+                    "oxygen": "2 liters"
+                },
+                {
+                    "date": "03-07-2019",
+                    "time": "10:00am",
+                    "vitals_id": "object_id",
+                    "bloodpressure": {
+                        "systolic": 70,
+                        "diastolic": 100
+                    },
+                    "pulse": "200",
+                    "temperature": "25C",
+                    "respiratory_rate": "10",
+                    "saturation": "20%",
+                    "oxygen": "6 liters"
+                },
+                {
+                    "date": "03-07-2016",
+                    "time": "10:00am",
+                    "vitals_id": "object_id",
+                    "bloodpressure": {
+                        "systolic": 70,
+                        "diastolic": 100
+                    },
+                    "pulse": "500",
+                    "temperature": "25C",
+                    "respiratory_rate": "50",
+                    "saturation": "100%",
+                    "oxygen": "2 liters"
+                }
+            ],
+            "medicine": [
+                {
+                    "date": "Aug 26th 2017",
+                    "name": "aspirin",
+                    "strength": "500ml",
+                    "dose": "1x1x0x1",
+                    "days": 4
+                },
+                {
+                    "date": "Aug 26th 2017",
+                    "name": "paracetamol",
+                    "strength": "1000ml",
+                    "dose": "2x1x3x3",
+                    "days": 100
+                },
+                {
+                    "date": "Aug 26th 2017",
+                    "name": "insulin",
+                    "strength": "200ml",
+                    "dose": "2x1x3x3",
+                    "days": 4
+                }
+            ],
+            "diagnosis": [
+                {
+                    "date": "Aug 26th 2017",
+                    "content": "diagnosed with some disease"
+                },
+                {
+                    "date": "Aug 26th 2017",
+                    "content": "diagnosed with some disease"
+                },
+                {
+                    "date": "Aug 26th 2017",
+                    "content": "diagnosed with some disease"
+                },
+                {
+                    "date": "Aug 26th 2017",
+                    "content": "diagnosed with some disease"
+                },
+                {
+                    "date": "Aug 26th 2017",
+                    "content": "diagnosed with some disease"
+                }
+            ],
+            "appointments": [
+                {
+                    "time": "08.00am",
+                    "date": "03-07-2020",
+                    "visiting": "Dr. Kamal"
+                },
+                {
+                    "time": "08.00am",
+                    "date": "03-07-2010",
+                    "visiting": "Dr. Hardee"
+                },
+                {
+                    "time": "08.00am",
+                    "date": "03-07-2020",
+                    "visiting": "Sean Carrol"
+                },
+                {
+                    "time": "08.00am",
+                    "date": "03-07-2005",
+                    "visiting": "Neil Degrasse"
+                }
+            ]
         }
     ]
 }
