@@ -12,15 +12,15 @@ class Appointments extends Component {
         this.state = {
             events: [
                 {
-                    'title': 'meeting',
+                    'title': 'meeting with dr Hemn',
                     'start': new Date(2017, 8, 2, 8, 0, 0),
                     'end': new Date(2017, 8, 2, 10, 0, 0),
                     'desc': 'meeting with someone'
                 },
                 {
-                    'title': 'Long Event',
-                    'start': new Date(2017, 8, 10),
-                    'end': new Date(2017, 8, 15)
+                    'title': 'meeting with dr Hardee',
+                    'start': new Date(2017, 8, 1, 9, 30, 0),
+                    'end': new Date(2017, 8, 1, 10, 30, 0)
                 }
             ]
         }
