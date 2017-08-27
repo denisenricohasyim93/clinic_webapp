@@ -39,6 +39,11 @@ class Appointments extends Component {
                     defaultView='week'
                     onSelectEvent={event => alert(event.title)}
                     onSelectSlot={(slot_info) => this.book_slot(slot_info)}
+                    formats={{
+                        eventTimeRangeFormat: function () {
+                            return ""
+                        }
+                    }}
                 />
 
             </div>

@@ -16,8 +16,6 @@ class BookPanel extends Component {
                             {patient.name}</option>)}
                     </select>
 
-                    <input placeholder="title" name="book_appointment_title" />
-
                     <textarea placeholder="description..." name="book_appointment_description"></textarea>
 
                     <button onClick={() => this.construct_appointment()}>Create</button>
@@ -28,17 +26,16 @@ class BookPanel extends Component {
     }
 
     construct_appointment() {
-        let title = document.querySelector("input[name=book_appointment_title]"),
-            description = document.querySelector("textarea[name=book_appointment_description]"),
+        let description = document.querySelector("textarea[name=book_appointment_description]"),
             patient = document.querySelector("select[name=book_patient_select]"),
             start = this.props.selected_slot.start.toLocaleString().match(/(\d).(\d\d).(\d+)..(\d).(\d\d)/),
             end = this.props.selected_slot.end.toLocaleString().match(/(\d).(\d\d).(\d+)..(\d).(\d\d)/)
 
-        if (!title.value.match(/^\s*$/) && !description.value.match(/^\s*$/) && !patient.value.match(/^\s*$/)) {
+        if (!description.value.match(/^\s*$/) && !patient.value.match(/^\s*$/)) {
 
             let appointment = {
-                // date: moment().format("MMM Do YYYY"),
-                title: title.value,
+                date: moment().format("MMM Do YYYY"),
+                title: patient.value,
                 desc: description.value,
                 start: new Date(start[3], start[1] - 1, start[2], start[4], start[5], 0),
                 end: new Date(end[3], end[1] - 1, end[2], end[4], end[5], 0)
@@ -49,6 +46,13 @@ class BookPanel extends Component {
             title.value = "", description.value = "", patient.value = ""
 
         }
+        console.log('setting up');
+        setTimeout(() => {
+            let all = document.querySelectorAll(".rbc-event-label");
+            Array.prototype.map.call(all, (arg) => {
+                arg.innerHTML = "sadsad"
+            })
+        }, 2000)
     }
 }
 

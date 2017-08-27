@@ -155,16 +155,16 @@ let data = {
             ],
             "appointments": [
                 {
-                    'title': 'meeting with dr Hemn',
+                    'title': '  dr Hemn',
                     'start': new Date(2017, 7, 27, 12, 0, 0),
                     'end': new Date(2017, 7, 27, 13, 0, 0),
-                    'desc': 'meeting with someone'
+                    'desc': '  someone'
                 },
                 {
-                    'title': 'meeting with dr Hemn',
+                    'title': '  dr Hemn',
                     'start': new Date(2017, 7, 28, 14, 0, 0),
                     'end': new Date(2017, 7, 28, 15, 0, 0),
-                    'desc': 'meeting with someone'
+                    'desc': '  someone'
                 }
 
             ]
@@ -264,16 +264,16 @@ let data = {
             ],
             "appointments": [
                 {
-                    'title': 'meeting with dr Hemn',
+                    'title': '  dr Hemn',
                     'start': new Date(2017, 7, 29, 12, 0, 0),
                     'end': new Date(2017, 7, 29, 13, 0, 0),
-                    'desc': 'meeting with someone'
+                    'desc': '  someone'
                 },
                 {
-                    'title': 'meeting with dr Hemn',
+                    'title': '  dr Hemn',
                     'start': new Date(2017, 7, 30, 14, 0, 0),
                     'end': new Date(2017, 7, 30, 15, 0, 0),
-                    'desc': 'meeting with someone'
+                    'desc': '  someone'
                 }
             ]
         },
@@ -372,16 +372,16 @@ let data = {
             ],
             "appointments": [
                 {
-                    'title': 'meeting with dr Hemn',
+                    'title': '  dr Hemn',
                     'start': new Date(2017, 7, 31, 12, 0, 0),
                     'end': new Date(2017, 7, 31, 13, 0, 0),
-                    'desc': 'meeting with someone'
+                    'desc': '  someone'
                 },
                 {
-                    'title': 'meeting with dr Hemn',
+                    'title': '  dr Hemn',
                     'start': new Date(2017, 7, 31, 14, 0, 0),
                     'end': new Date(2017, 7, 31, 15, 0, 0),
-                    'desc': 'meeting with someone'
+                    'desc': '  someone'
                 }
             ]
         },
@@ -478,16 +478,16 @@ let data = {
             ],
             "appointments": [
                 {
-                    'title': 'meeting with dr Hemn',
+                    'title': '  dr Hemn',
                     'start': new Date(2017, 8, 2, 12, 0, 0),
                     'end': new Date(2017, 8, 2, 13, 0, 0),
-                    'desc': 'meeting with someone'
+                    'desc': '  someone'
                 },
                 {
-                    'title': 'meeting with dr Hemn',
+                    'title': '  dr Hemn',
                     'start': new Date(2017, 8, 2, 14, 0, 0),
                     'end': new Date(2017, 8, 2, 15, 0, 0),
-                    'desc': 'meeting with someone'
+                    'desc': '  someone'
                 }
             ]
         },
@@ -646,16 +646,16 @@ let data = {
             ],
             "appointments": [
                 {
-                    'title': 'meeting with dr kamal',
+                    'title': '  dr kamal',
                     'start': new Date(2017, 8, 3, 12, 0, 0),
                     'end': new Date(2017, 8, 3, 13, 0, 0),
-                    'desc': 'meeting with someone'
+                    'desc': '  someone'
                 },
                 {
-                    'title': 'meeting with dr jin',
+                    'title': '  dr jin',
                     'start': new Date(2017, 8, 4, 14, 0, 0),
                     'end': new Date(2017, 8, 4, 15, 0, 0),
-                    'desc': 'meeting with someone'
+                    'desc': '  someone'
                 }
             ]
         },
@@ -814,16 +814,16 @@ let data = {
             ],
             "appointments": [
                 {
-                    'title': 'meeting with dr boss',
+                    'title': '  dr boss',
                     'start': new Date(2017, 8, 5, 12, 0, 0),
                     'end': new Date(2017, 8, 5, 13, 0, 0),
-                    'desc': 'meeting with someone'
+                    'desc': '  someone'
                 },
                 {
-                    'title': 'meeting with dr lolz',
+                    'title': '  dr lolz',
                     'start': new Date(2017, 8, 5, 14, 0, 0),
                     'end': new Date(2017, 8, 5, 15, 0, 0),
-                    'desc': 'meeting with someone'
+                    'desc': '  someone'
                 }
             ]
         },
@@ -982,16 +982,16 @@ let data = {
             ],
             "appointments": [
                 {
-                    'title': 'meeting with dr John',
+                    'title': '  dr John',
                     'start': new Date(2017, 8, 2, 15, 0, 0),
                     'end': new Date(2017, 8, 2, 16, 0, 0),
-                    'desc': 'meeting with someone'
+                    'desc': '  someone'
                 },
                 {
-                    'title': 'meeting with dr Sean',
+                    'title': '  dr Sean',
                     'start': new Date(2017, 8, 2, 9, 0, 0),
                     'end': new Date(2017, 8, 2, 10, 0, 0),
-                    'desc': 'meeting with someone'
+                    'desc': '  someone'
                 }
             ]
         },
@@ -1150,16 +1150,16 @@ let data = {
             ],
             "appointments": [
                 {
-                    'title': 'meeting with dr Hemn',
+                    'title': '  dr Hemn',
                     'start': new Date(2017, 8, 2, 8, 0, 0),
                     'end': new Date(2017, 8, 2, 10, 0, 0),
-                    'desc': 'meeting with someone'
+                    'desc': '  someone'
                 },
                 {
-                    'title': 'meeting with dr Hardee',
+                    'title': '  dr Hardee',
                     'start': new Date(2017, 8, 2, 12, 0, 0),
                     'end': new Date(2017, 8, 2, 13, 0, 0),
-                    'desc': 'meeting with someone'
+                    'desc': '  someone'
                 }
             ]
         }
