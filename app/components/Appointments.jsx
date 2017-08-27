@@ -12,17 +12,23 @@ class Appointments extends Component {
         super(props)
 
         this.state = {
-            show_book_panel: true
+            show_book_panel: false,
+            selected_slot: ""
         }
     }
 
     render() {
+        console.log(this.props);
         return (
             <div className="route_section" id="appointments_route">
-                {this.state.show_book_panel ? <BookPanel
-                    close_book_panel={this.close_book_panel.bind(this)}
-                    patients={this.props.patients}>
-                </BookPanel> : ""}
+                {this.state.show_book_panel ?
+                    <BookPanel
+                        selected_slot={this.state.selected_slot}
+                        close_book_panel={this.close_book_panel.bind(this)}
+                        patients={this.props.patients}
+                        add_appointment={this.props.add_appointment}>
+                    </BookPanel>
+                    : ""}
 
                 <BigCalendar
                     selectable
@@ -41,6 +47,9 @@ class Appointments extends Component {
 
     book_slot(slot_info) {
         this.setState({ show_book_panel: true })
+        this.setState({
+            selected_slot: slot_info
+        })
         this.props.darken()
     }
 

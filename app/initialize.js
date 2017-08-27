@@ -53,7 +53,6 @@ class App extends Component {
               <Route path="/appointments" render={props =>
                 <Appointments
                   patients={this.state.patients}
-                  add_patient={this.add_patient.bind(this)}
                   add_appointment={this.add_appointment.bind(this)}
                   events={this.state.events}
                   darken={this.darken.bind(this)} />
@@ -131,15 +130,11 @@ class App extends Component {
     }
 
     this.setState({ patients: patients })
-    setTimeout(() => this.set_appointments(appointment), 1000)
+    this.set_appointments()
   }
 
-  set_appointments(appointment) {
+  set_appointments() {
     let appointments = []
-
-    if (appointment) {
-      appointments.push(appointment)
-    }
 
     this.state.patients.map((patient) => {
       patient.appointments.map((apt) => {
