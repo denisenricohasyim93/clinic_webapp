@@ -10,6 +10,7 @@ export default class PatientsContainer extends Component {
         this.state = {
             searched_patients: [],
             selected_patient: this.props.selected_patient[0] !== undefined ? this.props.selected_patient : [],
+            selected_patient: this.props.selected_patient ? this.props.selected_patient : [],
             no_match: false,
             show_add_patient_panel: false
         }
