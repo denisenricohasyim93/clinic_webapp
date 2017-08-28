@@ -76,8 +76,8 @@ let data = {
                     "pulse": "500",
                     "temperature": "25C",
                     "respiratory_rate": "50",
-                    "saturation": "100%",
-                    "oxygen": "2 liters"
+                    "saturation": "100 ",
+                    "oxygen": "2   "
                 },
                 {
                     "date": "03-07-2019",
@@ -90,8 +90,8 @@ let data = {
                     "pulse": "200",
                     "temperature": "25C",
                     "respiratory_rate": "10",
-                    "saturation": "20%",
-                    "oxygen": "6 liters"
+                    "saturation": "20 ",
+                    "oxygen": "6   "
                 },
                 {
                     "date": "03-07-2016",
@@ -104,8 +104,8 @@ let data = {
                     "pulse": "500",
                     "temperature": "25C",
                     "respiratory_rate": "50",
-                    "saturation": "100%",
-                    "oxygen": "2 liters"
+                    "saturation": "100 ",
+                    "oxygen": "2   "
                 }
             ],
             "medicine": [
@@ -250,8 +250,8 @@ let data = {
                     "pulse": "500",
                     "temperature": "25C",
                     "respiratory_rate": "50",
-                    "saturation": "100%",
-                    "oxygen": "2 liters"
+                    "saturation": "100 ",
+                    "oxygen": "2   "
                 },
                 {
                     "date": "03-07-2019",
@@ -264,8 +264,8 @@ let data = {
                     "pulse": "200",
                     "temperature": "25C",
                     "respiratory_rate": "10",
-                    "saturation": "20%",
-                    "oxygen": "6 liters"
+                    "saturation": "20 ",
+                    "oxygen": "6   "
                 }
             ],
             "appointments": [
@@ -359,8 +359,8 @@ let data = {
                     "pulse": "500",
                     "temperature": "25C",
                     "respiratory_rate": "50",
-                    "saturation": "100%",
-                    "oxygen": "2 liters"
+                    "saturation": "100 ",
+                    "oxygen": "2   "
                 },
                 {
                     "date": "03-07-2019",
@@ -373,8 +373,8 @@ let data = {
                     "pulse": "200",
                     "temperature": "25C",
                     "respiratory_rate": "10",
-                    "saturation": "20%",
-                    "oxygen": "6 liters"
+                    "saturation": "20 ",
+                    "oxygen": "6   "
                 }
             ],
             "appointments": [
@@ -466,8 +466,8 @@ let data = {
                     "pulse": "500",
                     "temperature": "25C",
                     "respiratory_rate": "50",
-                    "saturation": "100%",
-                    "oxygen": "2 liters"
+                    "saturation": "100 ",
+                    "oxygen": "2   "
                 },
                 {
                     "date": "03-07-2019",
@@ -480,8 +480,8 @@ let data = {
                     "pulse": "200",
                     "temperature": "25C",
                     "respiratory_rate": "10",
-                    "saturation": "20%",
-                    "oxygen": "6 liters"
+                    "saturation": "20 ",
+                    "oxygen": "6   "
                 }
             ],
             "appointments": [
@@ -575,8 +575,8 @@ let data = {
                     "pulse": "500",
                     "temperature": "25C",
                     "respiratory_rate": "50",
-                    "saturation": "100%",
-                    "oxygen": "2 liters"
+                    "saturation": "100 ",
+                    "oxygen": "2   "
                 },
                 {
                     "date": "03-07-2019",
@@ -589,8 +589,8 @@ let data = {
                     "pulse": "200",
                     "temperature": "25C",
                     "respiratory_rate": "10",
-                    "saturation": "20%",
-                    "oxygen": "6 liters"
+                    "saturation": "20 ",
+                    "oxygen": "6   "
                 },
                 {
                     "date": "03-07-2016",
@@ -603,8 +603,8 @@ let data = {
                     "pulse": "500",
                     "temperature": "25C",
                     "respiratory_rate": "50",
-                    "saturation": "100%",
-                    "oxygen": "2 liters"
+                    "saturation": "100 ",
+                    "oxygen": "2   "
                 }
             ],
             "medicine": [
@@ -748,8 +748,8 @@ let data = {
                     "pulse": "500",
                     "temperature": "25C",
                     "respiratory_rate": "50",
-                    "saturation": "100%",
-                    "oxygen": "2 liters"
+                    "saturation": "100 ",
+                    "oxygen": "2   "
                 },
                 {
                     "date": "03-07-2019",
@@ -762,8 +762,8 @@ let data = {
                     "pulse": "200",
                     "temperature": "25C",
                     "respiratory_rate": "10",
-                    "saturation": "20%",
-                    "oxygen": "6 liters"
+                    "saturation": "20 ",
+                    "oxygen": "6   "
                 },
                 {
                     "date": "03-07-2016",
@@ -776,8 +776,8 @@ let data = {
                     "pulse": "500",
                     "temperature": "25C",
                     "respiratory_rate": "50",
-                    "saturation": "100%",
-                    "oxygen": "2 liters"
+                    "saturation": "100 ",
+                    "oxygen": "2   "
                 }
             ],
             "medicine": [
@@ -921,8 +921,8 @@ let data = {
                     "pulse": "500",
                     "temperature": "25C",
                     "respiratory_rate": "50",
-                    "saturation": "100%",
-                    "oxygen": "2 liters"
+                    "saturation": "100 ",
+                    "oxygen": "2   "
                 },
                 {
                     "date": "03-07-2019",
@@ -935,8 +935,8 @@ let data = {
                     "pulse": "200",
                     "temperature": "25C",
                     "respiratory_rate": "10",
-                    "saturation": "20%",
-                    "oxygen": "6 liters"
+                    "saturation": "20 ",
+                    "oxygen": "6   "
                 },
                 {
                     "date": "03-07-2016",
@@ -949,8 +949,8 @@ let data = {
                     "pulse": "500",
                     "temperature": "25C",
                     "respiratory_rate": "50",
-                    "saturation": "100%",
-                    "oxygen": "2 liters"
+                    "saturation": "100 ",
+                    "oxygen": "2   "
                 }
             ],
             "medicine": [
@@ -1094,8 +1094,8 @@ let data = {
                     "pulse": "500",
                     "temperature": "25C",
                     "respiratory_rate": "50",
-                    "saturation": "100%",
-                    "oxygen": "2 liters"
+                    "saturation": "100 ",
+                    "oxygen": "2   "
                 },
                 {
                     "date": "03-07-2019",
@@ -1108,8 +1108,8 @@ let data = {
                     "pulse": "200",
                     "temperature": "25C",
                     "respiratory_rate": "10",
-                    "saturation": "20%",
-                    "oxygen": "6 liters"
+                    "saturation": "20 ",
+                    "oxygen": "6   "
                 },
                 {
                     "date": "03-07-2016",
@@ -1122,8 +1122,8 @@ let data = {
                     "pulse": "500",
                     "temperature": "25C",
                     "respiratory_rate": "50",
-                    "saturation": "100%",
-                    "oxygen": "2 liters"
+                    "saturation": "100 ",
+                    "oxygen": "2   "
                 }
             ],
             "medicine": [

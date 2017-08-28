@@ -17,12 +17,12 @@ class Vitals extends Component {
                             <tr id="vitals_head">
                                 <th>Date</th>
                                 <th>Time</th>
-                                <th>Bloodpressure</th>
-                                <th>Pulse</th>
-                                <th>Temperature</th>
-                                <th>Respiratory Rate</th>
-                                <th>Saturation</th>
-                                <th>Oxygen</th>
+                                <th>Bloodpressure mmHg</th>
+                                <th>Pulse /min</th>
+                                <th>Temperature C</th>
+                                <th>Respiratory Rate /min</th>
+                                <th>Saturation %</th>
+                                <th>Oxygen L</th>
                             </tr>
                         </tbody>
                         {this.render_vitals()}
@@ -59,7 +59,7 @@ class Vitals extends Component {
             oxygen = document.querySelector("input[name=vitals_oxygen]")
 
         let vitals = {
-            date: date.value ? date.value : moment().format('MM Do YY'),
+            date: date.value ? date.value : moment().format("DD-MM-YYYY"),
             time: time.value ? time.value : moment().format('h:mm:ss a'),
             bloodpressure: {
                 "systolic": blood_pressure_systolic.value,
@@ -73,6 +73,16 @@ class Vitals extends Component {
         }
 
         this.props.add_vitals(vitals, this.props.patient, "vitals")
+
+        date.value = "",
+            time.value = "",
+            blood_pressure_systolic.value = "",
+            blood_pressure_diastolic.value = "",
+            pulse.value = "",
+            temperature.value = "",
+            respiratory_rate.value = "",
+            saturation.value = "",
+            oxygen.value = ""
     }
 
     render_vitals() {
@@ -81,11 +91,11 @@ class Vitals extends Component {
                 <tr key={x}>
                     <th>{vital.date}</th>
                     <th>{vital.time}</th>
-                    <th>{vital.bloodpressure.systolic}/{vital.bloodpressure.diastolic} mmHg</th>
-                    <th>{vital.pulse} /min</th>
-                    <th>{vital.temperature} C</th>
-                    <th>{vital.respiratory_rate} /min</th>
-                    <th>{vital.saturation} %</th>
+                    <th>{vital.bloodpressure.systolic}/{vital.bloodpressure.diastolic}</th>
+                    <th>{vital.pulse} </th>
+                    <th>{vital.temperature}</th>
+                    <th>{vital.respiratory_rate}</th>
+                    <th>{vital.saturation}</th>
                     <th>{vital.oxygen}</th>
                 </tr>)}</tbody>
     }
