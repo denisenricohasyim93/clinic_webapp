@@ -9,14 +9,13 @@ export default class PatientsContainer extends Component {
 
         this.state = {
             searched_patients: [],
-            selected_patient: [],
+            selected_patient: this.props.selected_patient ? this.props.selected_patient : [],
             no_match: false,
             show_add_patient_panel: false
         }
     }
 
     render() {
-
         let { selected_patient, searched_patients } = this.state,
             { patients, remove_selected_patient, add_appointment, add_patient, add_item, darken,
                 diagnosis_list, add_diagnosis_item } = this.props
@@ -39,8 +38,8 @@ export default class PatientsContainer extends Component {
                 {
                     selected_patient.length > 0
                         ? <PatientProfile
+                            remove_selected_patient_main={this.props.remove_selected_patient}
                             add_dropdown_item={this.props.add_dropdown_item}
-                            add_diagnosis_item={add_diagnosis_item}
                             diagnosis_list={diagnosis_list}
                             patient={selected_patient}
                             remove_selected_patient={this.remove_selected_patient.bind(this)}

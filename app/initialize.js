@@ -5,7 +5,8 @@ import {
   BrowserRouter as Router,
   Route,
   Link,
-  Switch
+  Switch,
+  withRouter
 } from 'react-router-dom'
 
 import Home from './components/Home'
@@ -21,6 +22,7 @@ class App extends Component {
     super(props)
     this.state = {
       patients: data.patients,
+      selected_patient: "",
       events: [],
       diagnosis_list: [
         "hypertension",
@@ -50,13 +52,15 @@ class App extends Component {
               <Route exact path="/" component={Home} />
               <Route path="/patients" render={props =>
                 <PatientsContainer
+                  remove_selected_patient={this.remove_selected_patient.bind(this)}
                   add_dropdown_item={this.add_dropdown_item.bind(this)}
                   diagnosis_list={this.state.diagnosis_list}
                   patients={this.state.patients}
                   add_patient={this.add_patient.bind(this)}
                   add_appointment={this.add_appointment.bind(this)}
                   darken={this.darken.bind(this)}
-                  add_item={this.add_item.bind(this)} />
+                  add_item={this.add_item.bind(this)}
+                  selected_patient={this.state.selected_patient} />
               } />
               <Route path="/appointments" render={props =>
                 <Appointments
@@ -71,6 +75,12 @@ class App extends Component {
         </Router>
       </div>
     );
+  }
+
+  remove_selected_patient() {
+    this.setState({
+      selected_patient: ""
+    })
   }
 
   darken() {
@@ -128,19 +138,20 @@ class App extends Component {
   }
 
   add_appointment(appointment, patient) {
-    let patients = this.state.patients.slice()
+    let patients = this.state.patients.slice(), selected_patient;
 
     for (let i = 0; i < patients.length; i++) {
       if (patients[i].name === patient) {
+        selected_patient = patients[i]
         patients[i].appointments.unshift(appointment)
       }
     }
 
     this.setState({ patients: patients })
-    this.set_appointments()
+    this.set_appointments(selected_patient)
   }
 
-  set_appointments() {
+  set_appointments(selected_patient) {
     let appointments = []
 
     this.state.patients.map((patient) => {
@@ -150,7 +161,8 @@ class App extends Component {
     })
 
     this.setState({
-      events: appointments
+      events: appointments,
+      selected_patient: [selected_patient]
     })
   }
 

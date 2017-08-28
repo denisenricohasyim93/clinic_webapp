@@ -24,7 +24,7 @@ export default class PatientsList extends Component {
                         </strong>
                     </div>
 
-                    <a className="patient_tab" onClick={(e) => this.props.remove_selected_patient()}>
+                    <a className="patient_tab" onClick={(e) => this.remove_selected_patient()}>
                         <i className="fa fa-chevron-left" aria-hidden="true"></i></a>
                     <a className="patient_tab" onClick={(e) => this.set_active_tab("info", e.target)}>Info</a>
                     <a className="patient_tab" onClick={(e) => this.set_active_tab("notes", e.target)}>Notes</a>
@@ -36,6 +36,11 @@ export default class PatientsList extends Component {
                 {this.show_route(this.props)}
             </div>
         );
+    }
+
+    remove_selected_patient() {
+        this.props.remove_selected_patient()
+        this.props.remove_selected_patient_main()
     }
 
     show_route(props) {
@@ -68,7 +73,6 @@ export default class PatientsList extends Component {
         if (this.state.active_tab === "medicine") {
             return <Medicine
                 add_dropdown_item={this.props.add_dropdown_item}
-                add_diagnosis_item={props.add_diagnosis_item}
                 diagnosis_list={props.diagnosis_list}
                 patient={props.patient[0]}
                 add_medicine={props.add_item} />
