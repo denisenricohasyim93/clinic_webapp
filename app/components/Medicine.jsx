@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import moment from 'moment';
+import DropDown from './DropDown';
 
 class Medicine extends Component {
     constructor(props) {
@@ -9,6 +10,7 @@ class Medicine extends Component {
         }
     }
     render() {
+
         return (
             <div className="patient_profile_route">
                 <div id="medicine_container">
@@ -29,50 +31,24 @@ class Medicine extends Component {
                 </div>
 
                 <div id="diagnosis_container">
-                    <button id="btn_add_diagnosis" onClick={(e) => this.create_diagnosis(e)}>Create Diagnosis</button>
+                    <button id="btn_add_diagnosis"
+                        onClick={(e) => this.create_diagnosis(e)}>
+                        Create Diagnosis
+                    </button>
 
-                    <div id="create_diagnosis_container" onClick={(e) => this.toggle_select_diagnosis(e)}>
-                        <div id="selected_option">
-                            {this.state.selected_diagnosis_option}
-                            <i className="fa fa-chevron-down" aria-hidden="true"></i>
-                        </div>
-
-                        <div id="create_diagnosis_container_div_container">
-                            {this.props.diagnosis_list.map((d, x) =>
-                                <div id="diagnosis_option" onClick={(e) =>
-                                    this.setState({ selected_diagnosis_option: e.target.textContent })} key={x}>
-                                    {d}
-                                </div>)}
-
-                            <div>
-                                <strong contentEditable data-text="New Diagnosis" onKeyPress={(e) =>
-                                    this.create_new_diagnosis_option(e)}></strong>
-                            </div>
-                        </div>
+                    <div id="dropdown_diagnosis_container">
+                        <DropDown
+                            add_dropdown_item={this.props.add_dropdown_item}
+                            items={this.props.diagnosis_list}
+                            category="diagnosis"
+                        />
                     </div>
 
                     <textarea id="create_diagnosis_treatment" placeholder="treatment"></textarea>
                     {this.render_diagnosis()}
                 </div>
-            </div >
+            </div>
         );
-    }
-
-    create_new_diagnosis_option(e) {
-        if (e.key === "Enter") {
-            e.preventDefault()
-            this.props.add_diagnosis_item(e.target.textContent)
-            e.target.textContent = ""
-        }
-    }
-
-    toggle_select_diagnosis(e) {
-        if (e.target.childNodes[0].nodeName === "STRONG") {
-            return;
-        }
-
-        let div = document.querySelector("#create_diagnosis_container_div_container")
-        div.classList.toggle("show")
     }
 
     render_diagnosis() {

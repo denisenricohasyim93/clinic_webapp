@@ -92,46 +92,10 @@
   width: 100%;
   height: 5rem;
   padding: 0.5rem;
-  margin-top: 2.1rem;
 }
 
-#create_diagnosis_container {
-  position: absolute;
+#dropdown_diagnosis_container {
+  display: block;
   height: 2rem;
-  width: 100%;
-  background: white;
-  border-bottom: 1px solid black;
+  position: relative;
 }
-
-#create_diagnosis_container i {
-  position: absolute;
-  right: 0.5rem;
-  top: 0.3rem;
-}
-
-#create_diagnosis_container div {
-  height: 100%;
-  width: 100%;
-  background: white;
-  border-bottom: 1px solid black;
-  line-height: 2rem;
-}
-
-#selected_option {
-  text-align: center;
-}
-
-#create_diagnosis_container_div_container {
-  visibility: hidden;
-  text-align: center;
-}
-
-#create_diagnosis_container_div_container.show {
-  visibility: visible !important;
-}
-
-#create_diagnosis_container div:hover {
-  cursor: pointer;
-  background: floralwhite;
-}
-

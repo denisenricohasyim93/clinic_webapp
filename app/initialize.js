@@ -50,7 +50,7 @@ class App extends Component {
               <Route exact path="/" component={Home} />
               <Route path="/patients" render={props =>
                 <PatientsContainer
-                  add_diagnosis_item={this.add_diagnosis_item.bind(this)}
+                  add_dropdown_item={this.add_dropdown_item.bind(this)}
                   diagnosis_list={this.state.diagnosis_list}
                   patients={this.state.patients}
                   add_patient={this.add_patient.bind(this)}
@@ -115,15 +115,6 @@ class App extends Component {
     }
   }
 
-  add_diagnosis_item(diagnosis) {
-    let new_diagnosis_list = this.state.diagnosis_list.slice()
-    new_diagnosis_list.push(diagnosis)
-
-    this.setState({
-      diagnosis_list: new_diagnosis_list
-    })
-  }
-
   add_item(item, patient, property) {
     let patients = this.state.patients.slice()
 
@@ -161,6 +152,15 @@ class App extends Component {
     this.setState({
       events: appointments
     })
+  }
+
+  add_dropdown_item(item, category) {
+    let new_items = this.state[category].slice()
+    new_items.push(item)
+
+    if (category === "diagnosis_list") {
+      this.setState({ diagnosis_list: new_items })
+    }
   }
 }
 
