@@ -19,7 +19,7 @@ export default class PatientsContainer extends Component {
 
         let { selected_patient, searched_patients } = this.state,
             { patients, remove_selected_patient, add_appointment, add_patient, add_item, darken,
-                diagnosis_list } = this.props
+                diagnosis_list, add_diagnosis_item } = this.props
 
         return (
             <div className="route_section" id="patients_route">
@@ -39,6 +39,7 @@ export default class PatientsContainer extends Component {
                 {
                     selected_patient.length > 0
                         ? <PatientProfile
+                            add_diagnosis_item={add_diagnosis_item}
                             diagnosis_list={diagnosis_list}
                             patient={selected_patient}
                             remove_selected_patient={this.remove_selected_patient.bind(this)}

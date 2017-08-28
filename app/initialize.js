@@ -50,6 +50,7 @@ class App extends Component {
               <Route exact path="/" component={Home} />
               <Route path="/patients" render={props =>
                 <PatientsContainer
+                  add_diagnosis_item={this.add_diagnosis_item.bind(this)}
                   diagnosis_list={this.state.diagnosis_list}
                   patients={this.state.patients}
                   add_patient={this.add_patient.bind(this)}
@@ -112,6 +113,15 @@ class App extends Component {
 
       this.setState({ patients: updated_patients })
     }
+  }
+
+  add_diagnosis_item(diagnosis) {
+    let new_diagnosis_list = this.state.diagnosis_list.slice()
+    new_diagnosis_list.push(diagnosis)
+
+    this.setState({
+      diagnosis_list: new_diagnosis_list
+    })
   }
 
   add_item(item, patient, property) {

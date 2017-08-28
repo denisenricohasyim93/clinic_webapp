@@ -5,6 +5,10 @@
   height: 100%;
 }
 
+[contentEditable=true]:empty:not(:focus):before {
+  content: attr(data-text);
+}
+
 #diagnosis_container {
   position: relative;
   display: inline-block;

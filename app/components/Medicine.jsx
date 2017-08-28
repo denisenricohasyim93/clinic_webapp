@@ -29,9 +29,9 @@ class Medicine extends Component {
                 </div>
 
                 <div id="diagnosis_container">
-                    <button id="btn_add_diagnosis" onClick={() => this.create_diagnosis()}>Create Diagnosis</button>
+                    <button id="btn_add_diagnosis" onClick={(e) => this.create_diagnosis(e)}>Create Diagnosis</button>
 
-                    <div id="create_diagnosis_container" onClick={() => this.toggle_select_diagnosis()}>
+                    <div id="create_diagnosis_container" onClick={(e) => this.toggle_select_diagnosis(e)}>
                         <div id="selected_option">
                             {this.state.selected_diagnosis_option}
                             <i className="fa fa-chevron-down" aria-hidden="true"></i>
@@ -45,7 +45,8 @@ class Medicine extends Component {
                                 </div>)}
 
                             <div>
-                                <strong onClick={() => this.create_new_diagnosis_option()}>New Diagnosis</strong>
+                                <strong contentEditable data-text="New Diagnosis" onKeyPress={(e) =>
+                                    this.create_new_diagnosis_option(e)}></strong>
                             </div>
                         </div>
                     </div>
@@ -57,11 +58,19 @@ class Medicine extends Component {
         );
     }
 
-    create_new_diagnosis_option() {
-
+    create_new_diagnosis_option(e) {
+        if (e.key === "Enter") {
+            e.preventDefault()
+            this.props.add_diagnosis_item(e.target.textContent)
+            e.target.textContent = ""
+        }
     }
 
-    toggle_select_diagnosis() {
+    toggle_select_diagnosis(e) {
+        if (e.target.childNodes[0].nodeName === "STRONG") {
+            return;
+        }
+
         let div = document.querySelector("#create_diagnosis_container_div_container")
         div.classList.toggle("show")
     }
