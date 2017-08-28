@@ -21,7 +21,13 @@ class App extends Component {
     super(props)
     this.state = {
       patients: data.patients,
-      events: []
+      events: [],
+      diagnosis_list: [
+        "hypertension",
+        "hyptension",
+        "cancer",
+        "brainworm"
+      ]
     }
   }
 
@@ -44,6 +50,7 @@ class App extends Component {
               <Route exact path="/" component={Home} />
               <Route path="/patients" render={props =>
                 <PatientsContainer
+                  diagnosis_list={this.state.diagnosis_list}
                   patients={this.state.patients}
                   add_patient={this.add_patient.bind(this)}
                   add_appointment={this.add_appointment.bind(this)}

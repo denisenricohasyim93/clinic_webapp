@@ -134,23 +134,28 @@ let data = {
             "diagnosis": [
                 {
                     "date": "Aug 26th 2017",
-                    "content": "diagnosed with some disease"
+                    "diagnosis": "hypertension",
+                    "treatment": "some treatment for hypertension"
                 },
                 {
                     "date": "Aug 26th 2017",
-                    "content": "diagnosed with some disease"
+                    "diagnosis": "hypertension",
+                    "treatment": "some treatment for hypertension"
                 },
                 {
                     "date": "Aug 26th 2017",
-                    "content": "diagnosed with some disease"
+                    "diagnosis": "hypertension",
+                    "treatment": "some treatment for hypertension"
                 },
                 {
                     "date": "Aug 26th 2017",
-                    "content": "diagnosed with some disease"
+                    "diagnosis": "hypertension",
+                    "treatment": "some treatment for hypertension"
                 },
                 {
                     "date": "Aug 26th 2017",
-                    "content": "diagnosed with some disease"
+                    "diagnosis": "hypertension",
+                    "treatment": "some treatment for hypertension"
                 }
             ],
             "appointments": [
@@ -184,7 +189,8 @@ let data = {
             "diagnosis": [
                 {
                     "date": "Aug 26th 2017",
-                    "content": "diagnosed with some disease"
+                    "diagnosis": "hypertension",
+                    "treatment": "some treatment for hypertension"
                 }
             ],
             "medicine": [
@@ -292,7 +298,8 @@ let data = {
             "diagnosis": [
                 {
                     "date": "Aug 26th 2017",
-                    "content": "diagnosed with some disease"
+                    "diagnosis": "hypertension",
+                    "treatment": "some treatment for hypertension"
                 }
             ],
             "medicine": [
@@ -400,7 +407,8 @@ let data = {
             "diagnosis": [
                 {
                     "date": "Aug 26th 2017",
-                    "content": "diagnosed with some disease"
+                    "diagnosis": "hypertension",
+                    "treatment": "some treatment for hypertension"
                 }
             ],
             "medicine": [
@@ -625,23 +633,28 @@ let data = {
             "diagnosis": [
                 {
                     "date": "Aug 26th 2017",
-                    "content": "diagnosed with some disease"
+                    "diagnosis": "hypertension",
+                    "treatment": "some treatment for hypertension"
                 },
                 {
                     "date": "Aug 26th 2017",
-                    "content": "diagnosed with some disease"
+                    "diagnosis": "hypertension",
+                    "treatment": "some treatment for hypertension"
                 },
                 {
                     "date": "Aug 26th 2017",
-                    "content": "diagnosed with some disease"
+                    "diagnosis": "hypertension",
+                    "treatment": "some treatment for hypertension"
                 },
                 {
                     "date": "Aug 26th 2017",
-                    "content": "diagnosed with some disease"
+                    "diagnosis": "hypertension",
+                    "treatment": "some treatment for hypertension"
                 },
                 {
                     "date": "Aug 26th 2017",
-                    "content": "diagnosed with some disease"
+                    "diagnosis": "hypertension",
+                    "treatment": "some treatment for hypertension"
                 }
             ],
             "appointments": [
@@ -793,23 +806,28 @@ let data = {
             "diagnosis": [
                 {
                     "date": "Aug 26th 2017",
-                    "content": "diagnosed with some disease"
+                    "diagnosis": "hypertension",
+                    "treatment": "some treatment for hypertension"
                 },
                 {
                     "date": "Aug 26th 2017",
-                    "content": "diagnosed with some disease"
+                    "diagnosis": "hypertension",
+                    "treatment": "some treatment for hypertension"
                 },
                 {
                     "date": "Aug 26th 2017",
-                    "content": "diagnosed with some disease"
+                    "diagnosis": "hypertension",
+                    "treatment": "some treatment for hypertension"
                 },
                 {
                     "date": "Aug 26th 2017",
-                    "content": "diagnosed with some disease"
+                    "diagnosis": "hypertension",
+                    "treatment": "some treatment for hypertension"
                 },
                 {
                     "date": "Aug 26th 2017",
-                    "content": "diagnosed with some disease"
+                    "diagnosis": "hypertension",
+                    "treatment": "some treatment for hypertension"
                 }
             ],
             "appointments": [
@@ -961,23 +979,28 @@ let data = {
             "diagnosis": [
                 {
                     "date": "Aug 26th 2017",
-                    "content": "diagnosed with some disease"
+                    "diagnosis": "hypertension",
+                    "treatment": "some treatment for hypertension"
                 },
                 {
                     "date": "Aug 26th 2017",
-                    "content": "diagnosed with some disease"
+                    "diagnosis": "hypertension",
+                    "treatment": "some treatment for hypertension"
                 },
                 {
                     "date": "Aug 26th 2017",
-                    "content": "diagnosed with some disease"
+                    "diagnosis": "hypertension",
+                    "treatment": "some treatment for hypertension"
                 },
                 {
                     "date": "Aug 26th 2017",
-                    "content": "diagnosed with some disease"
+                    "diagnosis": "hypertension",
+                    "treatment": "some treatment for hypertension"
                 },
                 {
                     "date": "Aug 26th 2017",
-                    "content": "diagnosed with some disease"
+                    "diagnosis": "hypertension",
+                    "treatment": "some treatment for hypertension"
                 }
             ],
             "appointments": [
@@ -1129,23 +1152,28 @@ let data = {
             "diagnosis": [
                 {
                     "date": "Aug 26th 2017",
-                    "content": "diagnosed with some disease"
+                    "diagnosis": "hypertension",
+                    "treatment": "some treatment for hypertension"
                 },
                 {
                     "date": "Aug 26th 2017",
-                    "content": "diagnosed with some disease"
+                    "diagnosis": "hypertension",
+                    "treatment": "some treatment for hypertension"
                 },
                 {
                     "date": "Aug 26th 2017",
-                    "content": "diagnosed with some disease"
+                    "diagnosis": "hypertension",
+                    "treatment": "some treatment for hypertension"
                 },
                 {
                     "date": "Aug 26th 2017",
-                    "content": "diagnosed with some disease"
+                    "diagnosis": "hypertension",
+                    "treatment": "some treatment for hypertension"
                 },
                 {
                     "date": "Aug 26th 2017",
-                    "content": "diagnosed with some disease"
+                    "diagnosis": "hypertension",
+                    "treatment": "some treatment for hypertension"
                 }
             ],
             "appointments": [
