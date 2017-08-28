@@ -24,6 +24,7 @@
   padding-left: 1rem;
   display: block;
 }
+
 #create_note_btn_container {
 width: 100%;
 display: block;
@@ -88,6 +89,7 @@ select[name="create_note_title"] {
   display: none;
   border-top: dotted 1px black;
   padding-right: 7rem;
+  color: red;
 }
 
 #note_content.show {

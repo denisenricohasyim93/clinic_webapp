@@ -23,13 +23,12 @@ class AddNote extends Component {
     }
 
     construct_note() {
-        console.log(this.props);
         let title = document.querySelector("select[name=create_note_title]"), content = document.querySelector("input[name=create_note_content]")
 
         if (!title.value.match(/^\s*$/) && !content.value.match(/^\s*$/)) {
 
             let note = {
-                date: moment().format("MMM Do YYYY"),
+                date: moment().format("DD-MM-YYYY"),
                 title: title.value,
                 content: content.value
             }
