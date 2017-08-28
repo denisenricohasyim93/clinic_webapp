@@ -9,7 +9,7 @@
 #add_patient_btn {
   position: absolute;
   right: 4rem;
-  font-size: 1.5rem;
+  font-size: 3rem;
   top: 1rem;
   cursor: pointer;
   background: transparent;
@@ -18,7 +18,7 @@
 }
 
 #add_patient_btn:hover {
-  color: red;
+  color: green;
 }
 
 #close_patient_panel_btn {

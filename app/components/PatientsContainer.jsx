@@ -17,14 +17,16 @@ export default class PatientsContainer extends Component {
     render() {
         //console.log("props", this.props, 4, "state", this.state);
         let { searched_patients } = this.state,
-            { selected_patient, patients, remove_selected_patient, add_appointment, add_patient, add_item, darken,
+            { selected_patient, patients,
+                remove_selected_patient, add_appointment,
+                add_patient, add_item, darken,
                 diagnosis_list, add_dropdown_item } = this.props
 
         return (
             <div className="route_section" id="patients_route">
 
                 <button id="add_patient_btn" onClick={() => this.show_add_patient_panel()}>
-                    <i className="fa fa-plus" aria-hidden="true"></i>
+                    <i className="fa fa-user-plus" aria-hidden="true"></i>
                 </button>
 
                 {
