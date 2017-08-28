@@ -9,14 +9,14 @@ export default class PatientsContainer extends Component {
 
         this.state = {
             searched_patients: [],
-            selected_patient: this.props.selected_patient[0] !== undefined ? this.props.selected_patient : [],
-            selected_patient: this.props.selected_patient ? this.props.selected_patient : [],
+            selected_patient: this.props.selected_patient[0] !== undefined ? [] : "",
             no_match: false,
             show_add_patient_panel: false
         }
     }
 
     render() {
+        console.log(this.props);
         let { selected_patient, searched_patients } = this.state,
             { patients, remove_selected_patient, add_appointment, add_patient, add_item, darken,
                 diagnosis_list, add_diagnosis_item } = this.props
