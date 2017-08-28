@@ -17,7 +17,7 @@ export default class PatientsContainer extends Component {
 
     render() {
         let { selected_patient, searched_patients } = this.state,
-            { patients, remove_selected_patient, add_appointment, add_patient, add_item } = this.props
+            { patients, remove_selected_patient, add_appointment, add_patient, add_item, darken } = this.props
 
         return (
             <div className="route_section" id="patients_route">
@@ -41,7 +41,8 @@ export default class PatientsContainer extends Component {
                             remove_selected_patient={this.remove_selected_patient.bind(this)}
                             add_appointment={add_appointment}
                             selected_patient={selected_patient}
-                            add_item={add_item} />
+                            add_item={add_item}
+                            darken={darken} />
 
                         : <PatientsList
                             patients={patients}

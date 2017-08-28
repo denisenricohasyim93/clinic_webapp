@@ -108,7 +108,6 @@ class App extends Component {
   }
 
   add_item(item, patient, property) {
-
     let patients = this.state.patients.slice()
 
     for (let i = 0; i < patients.length; i++) {

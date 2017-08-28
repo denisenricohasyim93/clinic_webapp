@@ -39,10 +39,12 @@ export default class PatientsList extends Component {
     }
 
     show_route(props) {
+        console.log(props);
         if (this.state.active_tab === "notes") {
             return <Notes
                 patient={props.patient[0]}
-                add_note={props.add_item} />
+                add_note={props.add_item}
+                darken={props.darken} />
         }
         if (this.state.active_tab === "vitals") {
             return <Vitals
