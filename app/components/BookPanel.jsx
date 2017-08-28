@@ -41,18 +41,12 @@ class BookPanel extends Component {
                 end: new Date(end[3], end[1] - 1, end[2], end[4], end[5], 0)
             }
 
+            this.props.history.push("/patients")
             this.props.add_appointment(appointment, patient.value, "appointment")
             this.props.close_book_panel()
             description.value = "", patient.value = ""
-            this.props.history.push("/patients")
-        }
 
-        setTimeout(() => {
-            let all = document.querySelectorAll(".rbc-event-label");
-            Array.prototype.map.call(all, (arg) => {
-                arg.innerHTML = "sadsad"
-            })
-        }, 2000)
+        }
     }
 }
 

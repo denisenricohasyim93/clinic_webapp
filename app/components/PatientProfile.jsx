@@ -20,7 +20,7 @@ export default class PatientsList extends Component {
 
                     <div id="selected_patient_container">
                         <strong>
-                            {this.props.selected_patient[0].name}
+                            {this.props.patient[0].name}
                         </strong>
                     </div>
 
@@ -40,7 +40,6 @@ export default class PatientsList extends Component {
 
     remove_selected_patient() {
         this.props.remove_selected_patient()
-        this.props.remove_selected_patient_main()
     }
 
     show_route(props) {

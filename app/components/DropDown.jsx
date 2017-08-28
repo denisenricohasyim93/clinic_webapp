@@ -46,6 +46,7 @@ class DropDown extends Component {
 
     toggle_select_dropdown_option(e) {
         if (e.target.childNodes[0].nodeName === "STRONG") { return; }
+
         let div = document.querySelector("#dropdown_options_container")
         div.classList.toggle("show")
     }

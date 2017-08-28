@@ -9,17 +9,16 @@ export default class PatientsContainer extends Component {
 
         this.state = {
             searched_patients: [],
-            selected_patient: this.props.selected_patient[0] !== undefined ? [] : "",
             no_match: false,
             show_add_patient_panel: false
         }
     }
 
     render() {
-        console.log(this.props);
-        let { selected_patient, searched_patients } = this.state,
-            { patients, remove_selected_patient, add_appointment, add_patient, add_item, darken,
-                diagnosis_list, add_diagnosis_item } = this.props
+        //console.log("props", this.props, 4, "state", this.state);
+        let { searched_patients } = this.state,
+            { selected_patient, patients, remove_selected_patient, add_appointment, add_patient, add_item, darken,
+                diagnosis_list, add_dropdown_item } = this.props
 
         return (
             <div className="route_section" id="patients_route">
@@ -39,13 +38,11 @@ export default class PatientsContainer extends Component {
                 {
                     selected_patient.length > 0
                         ? <PatientProfile
-                            remove_selected_patient_main={this.props.remove_selected_patient}
-                            add_dropdown_item={this.props.add_dropdown_item}
+                            add_dropdown_item={add_dropdown_item}
                             diagnosis_list={diagnosis_list}
                             patient={selected_patient}
-                            remove_selected_patient={this.remove_selected_patient.bind(this)}
+                            remove_selected_patient={remove_selected_patient}
                             add_appointment={add_appointment}
-                            selected_patient={selected_patient}
                             add_item={add_item}
                             darken={darken} />
 
@@ -110,7 +107,7 @@ export default class PatientsContainer extends Component {
 
         return <div className="patients_list">
             {patients.map((patient, x) =>
-                <div key={x} className="patient" onClick={() => this.show_patient_profile(patient)}>
+                <div key={x} className="patient" onClick={() => this.props.show_patient_profile(patient)}>
                     <span>{patient.name}</span>
                     <span>{patient.birth}</span>
                     <span>{patient.age}</span>
@@ -119,15 +116,5 @@ export default class PatientsContainer extends Component {
                     <span>{patient.phone}</span>
                 </div>)}
         </div>
-    }
-
-    show_patient_profile(patient) {
-        this.setState({
-            selected_patient: [patient]
-        })
-    }
-
-    remove_selected_patient() {
-        this.setState({ selected_patient: [] })
     }
 }

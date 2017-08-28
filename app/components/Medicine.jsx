@@ -5,9 +5,6 @@ import DropDown from './DropDown';
 class Medicine extends Component {
     constructor(props) {
         super(props)
-        this.state = {
-            selected_diagnosis_option: ""
-        }
     }
     render() {
 
@@ -79,20 +76,18 @@ class Medicine extends Component {
 
     create_diagnosis() {
         let treatment = document.querySelector("#create_diagnosis_treatment"),
-            selected_diagnosis_option = this.state.selected_diagnosis_option
+            selected_diagnosis_option = document.querySelector("#dropdown_selected_option")
 
         if (treatment) {
             let diagnosis_bj = {
                 "date": moment().format("MMM Do YYYY"),
-                "diagnosis": selected_diagnosis_option,
+                "diagnosis": selected_diagnosis_option.textContent,
                 "treatment": treatment.value
             }
 
+            treatment.value = "", selected_diagnosis_option.textContent = "";
             this.props.add_medicine(diagnosis_bj, this.props.patient, "diagnosis")
-            this.setState({
-                selected_diagnosis_option: ""
-            })
-            treatment.value = "";
+
         }
     }
 

@@ -22,7 +22,7 @@ class App extends Component {
     super(props)
     this.state = {
       patients: data.patients,
-      selected_patient: "",
+      selected_patient: [],
       events: [],
       diagnosis_list: [
         "hypertension",
@@ -38,6 +38,7 @@ class App extends Component {
   }
 
   render() {
+    console.log("props", this.props, 4, "state", this.state);
     return (
       <div id="content">
         <div className="darken"></div>
@@ -52,6 +53,7 @@ class App extends Component {
               <Route exact path="/" component={Home} />
               <Route path="/patients" render={props =>
                 <PatientsContainer
+                  show_patient_profile={this.show_patient_profile.bind(this)}
                   remove_selected_patient={this.remove_selected_patient.bind(this)}
                   add_dropdown_item={this.add_dropdown_item.bind(this)}
                   diagnosis_list={this.state.diagnosis_list}
@@ -78,9 +80,7 @@ class App extends Component {
   }
 
   remove_selected_patient() {
-    this.setState({
-      selected_patient: ""
-    })
+    this.setState({ selected_patient: [] })
   }
 
   darken() {
@@ -146,12 +146,6 @@ class App extends Component {
         patients[i].appointments.unshift(appointment)
       }
     }
-
-    this.setState({ patients: patients })
-    this.set_appointments(selected_patient)
-  }
-
-  set_appointments(selected_patient) {
     let appointments = []
 
     this.state.patients.map((patient) => {
@@ -160,10 +154,25 @@ class App extends Component {
       })
     })
 
+
     this.setState({
+      patients: patients,
       events: appointments,
       selected_patient: [selected_patient]
     })
+
+  }
+
+  set_appointments() {
+    let appointments = []
+
+    this.state.patients.map((patient) => {
+      patient.appointments.map((apt) => {
+        appointments.push(apt)
+      })
+    })
+
+    this.setState({ events: appointments })
   }
 
   add_dropdown_item(item, category) {
@@ -173,6 +182,16 @@ class App extends Component {
     if (category === "diagnosis_list") {
       this.setState({ diagnosis_list: new_items })
     }
+  }
+
+  show_patient_profile(patient) {
+    this.setState({
+      selected_patient: [patient]
+    })
+  }
+
+  remove_selected_patient() {
+    this.setState({ selected_patient: [] })
   }
 }
 
