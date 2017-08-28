@@ -20,12 +20,17 @@ export default class PatientsList extends Component {
 
                     <div id="selected_patient_container">
                         <strong>
+                            id:{this.props.patient[0].id}
+                            &emsp;&emsp;
                             {this.props.patient[0].name}
+                            &emsp;&emsp;
+                            {this.props.patient[0].age}
                         </strong>
                     </div>
 
                     <a className="patient_tab" onClick={(e) => this.remove_selected_patient()}>
-                        <i className="fa fa-chevron-left" aria-hidden="true"></i></a>
+                        <i className="fa fa-chevron-left" aria-hidden="true"></i>
+                    </a>
                     <a className="patient_tab" onClick={(e) => this.set_active_tab("info", e.target)}>Info</a>
                     <a className="patient_tab" onClick={(e) => this.set_active_tab("notes", e.target)}>Notes</a>
                     <a className="patient_tab" onClick={(e) => this.set_active_tab("vitals", e.target)}>Vitals</a>
@@ -38,31 +43,32 @@ export default class PatientsList extends Component {
         );
     }
 
-    remove_selected_patient() {
-        this.props.remove_selected_patient()
-    }
+    remove_selected_patient() { this.props.remove_selected_patient() }
 
     show_route(props) {
-
         if (this.state.active_tab === "notes") {
             return <Notes
                 patient={props.patient[0]}
                 add_note={props.add_item}
                 darken={props.darken} />
         }
+
         if (this.state.active_tab === "vitals") {
             return <Vitals
                 patient={props.patient[0]}
                 add_vitals={props.add_item} />
         }
+
         if (this.state.active_tab === "lab") {
             return <Lab
                 patient={props.patient[0]} />
         }
+
         if (this.state.active_tab === "info") {
             return <Info
                 patient={props.patient[0]} />
         }
+
         if (this.state.active_tab === "appointments") {
             return <Appointments
                 patient={props.patient[0]}
