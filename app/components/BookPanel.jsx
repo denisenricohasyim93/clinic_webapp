@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import moment from 'moment'
+import { withRouter } from "react-router-dom";
 
 class BookPanel extends Component {
     render() {
@@ -20,8 +21,7 @@ class BookPanel extends Component {
 
                     <button onClick={() => this.construct_appointment()}>Create</button>
                 </div>
-
-            </div >
+            </div>
         );
     }
 
@@ -44,8 +44,9 @@ class BookPanel extends Component {
             this.props.add_appointment(appointment, patient.value, "appointment")
             this.props.close_book_panel()
             description.value = "", patient.value = ""
-
+            this.props.history.push("/patients")
         }
+
         setTimeout(() => {
             let all = document.querySelectorAll(".rbc-event-label");
             Array.prototype.map.call(all, (arg) => {
@@ -55,4 +56,4 @@ class BookPanel extends Component {
     }
 }
 
-export default BookPanel;
+export default withRouter(BookPanel);
