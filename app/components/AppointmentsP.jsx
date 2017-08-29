@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import moment from 'moment'
 
 class Appointments extends Component {
     render() {
@@ -8,16 +9,14 @@ class Appointments extends Component {
                     <div className="patient_upcoming_apt">
                         <h3>Upcoming</h3>
                         {this.props.patient.appointments.map((apt, x) =>
-                            this.check_date(apt) === "upcoming" ?
-                                <div key={x} className="apt_div">
-                                    <p>Date: {apt.date}</p>
-                                    <p>Time: {apt.time}</p>
-                                    <p>Visiting: {apt.visiting}</p>
-                                </div> : ""
+                            <div key={x} className="apt_div">
+                                <p>Start: {this.render_date(apt.start)}</p>
+                                <p>End: {this.render_date(apt.end)}</p>
+                            </div>
                         )}
                     </div>
 
-                    <div className="patient_past_apt">
+                    {/*                     <div className="patient_past_apt">
                         <h3>Past</h3>
                         {this.props.patient.appointments.map((apt, x) =>
                             this.check_date(apt) === "past" ?
@@ -25,7 +24,7 @@ class Appointments extends Component {
                                     <p>Date: {}</p>
                                 </div> : ""
                         )}
-                    </div>
+                    </div> */}
 
                     <div className="add_appointment_sidebar">
                         <button onClick={() => this.add_appointment()}>Create Appointment</button>
@@ -38,6 +37,12 @@ class Appointments extends Component {
         );
     }
 
+    render_date(date) {
+        let returned_date = moment(date).format("DD-MM-YYYY h:mm:ss a")
+        //todo show past dates here too
+        return <span>{returned_date}</span>
+    }
+
     add_appointment() {
         let date = document.querySelector("input[name=appointment_date]"),
             time = document.querySelector("input[name=appointment_time]"),
@@ -48,15 +53,8 @@ class Appointments extends Component {
                 time: time.value,
                 visiting: visiting.value
             }
+
         this.props.add_appointment(appointment, this.props.patient)
-    }
-
-    check_date(appointment) {
-        let time;
-
-        new Date(appointment.date) > new Date() ? time = "upcoming" : time = "past";
-
-        return time
     }
 }
 
