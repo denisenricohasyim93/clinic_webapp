@@ -24,6 +24,17 @@
   content: attr(data-text);
 }
 
+#active_medicine_container,
+#inactive_medicine_container {
+  max-height: 10rem;
+  overflow: auto;
+  padding: 0.2rem;
+}
+
+#inactive_medicine_container {
+  margin-top: 2rem;
+}
+
 #diagnosis_container {
   position: relative;
   display: inline-block;

@@ -40,7 +40,16 @@ class Medicine extends Component {
                         <input placeholder="days" type="number" name="medicine_days" />
                         <button onClick={() => this.create_medicine()}>Create</button>
                     </div>
-                    {this.render_medicine()}
+
+                    <div id="active_medicine_container">
+                        <u>Active Medicine</u>
+                        {this.render_active_medicine()}
+                    </div>
+
+                    <div id="inactive_medicine_container">
+                        <u>inactive Medicine</u>
+                        {this.render_inactive_medicine()}
+                    </div>
                 </div>
 
                 <div id="diagnosis_container">
@@ -79,17 +88,34 @@ class Medicine extends Component {
         </div>
     }
 
-    render_medicine() {
+    render_active_medicine() {
         return <div id="medicine_list_container">
             {this.props.patient.medicine.map((medicine, x) =>
-                <div key={x} id="medicine">
-                    <h4>{medicine.start}</h4>
-                    <h4>{medicine.end}</h4>
-                    <h4>{medicine.name.match(/(\w+)/)[0]}</h4>
-                    <h4>{medicine.strength}</h4>
-                    <h4>{medicine.dose}</h4>
-                    <h4>{medicine.days}</h4>
-                </div>
+                new Date(medicine.start) >= new Date() ?
+                    <div key={x} id="medicine">
+                        <h4>{medicine.start}</h4>
+                        <h4>{medicine.end}</h4>
+                        <h4>{medicine.name.match(/(\w+)/)[0]}</h4>
+                        <h4>{medicine.strength}</h4>
+                        <h4>{medicine.dose}</h4>
+                        <h4>{medicine.days}</h4>
+                    </div> : ""
+            )}
+        </div>
+    }
+
+    render_inactive_medicine() {
+        return <div id="medicine_list_container">
+            {this.props.patient.medicine.map((medicine, x) =>
+                new Date(medicine.start) < new Date() ?
+                    <div key={x} id="medicine">
+                        <h4>{medicine.start}</h4>
+                        <h4>{medicine.end}</h4>
+                        <h4>{medicine.name.match(/(\w+)/)[0]}</h4>
+                        <h4>{medicine.strength}</h4>
+                        <h4>{medicine.dose}</h4>
+                        <h4>{medicine.days}</h4>
+                    </div> : ""
             )}
         </div>
     }

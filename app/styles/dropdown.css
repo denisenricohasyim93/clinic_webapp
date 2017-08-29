@@ -26,6 +26,8 @@
   width: 100%;
   background: white;
   border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
   line-height: 2rem;
 }
 
