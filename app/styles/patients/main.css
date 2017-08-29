@@ -106,3 +106,14 @@
   font-weight: 600;
   text-decoration: none;
 }
+
+#close_patient_tab {
+  float: right;
+  border: none;
+  font-size: 2rem;
+}
+
+#close_patient_tab:hover {
+  background: none;
+  color: red;
+}

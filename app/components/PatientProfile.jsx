@@ -28,15 +28,15 @@ export default class PatientsList extends Component {
                         </strong>
                     </div>
 
-                    <a className="patient_tab" onClick={(e) => this.remove_selected_patient()}>
-                        <i className="fa fa-chevron-left" aria-hidden="true"></i>
-                    </a>
                     <a className="patient_tab" onClick={(e) => this.set_active_tab("info", e.target)}>Info</a>
                     <a className="patient_tab" onClick={(e) => this.set_active_tab("notes", e.target)}>Notes</a>
                     <a className="patient_tab" onClick={(e) => this.set_active_tab("vitals", e.target)}>Vitals</a>
                     <a className="patient_tab" onClick={(e) => this.set_active_tab("lab", e.target)}>Lab</a>
                     <a className="patient_tab" onClick={(e) => this.set_active_tab("medicine", e.target)}>Medicine</a>
                     <a className="patient_tab" onClick={(e) => this.set_active_tab("appointments", e.target)}>Appointments</a>
+                    <a className="patient_tab" id="close_patient_tab" onClick={(e) => this.remove_selected_patient()}>
+                        <i className="fa fa-window-close-o" aria-hidden="true"></i>
+                    </a>
                 </div>
                 {this.show_route(this.props)}
             </div>
