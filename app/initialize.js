@@ -29,6 +29,11 @@ class App extends Component {
         "hyptension",
         "cancer",
         "brainworm"
+      ],
+      medicine_list: [
+        "insulin",
+        "paracetamol",
+        "mdma"
       ]
     }
   }
@@ -38,7 +43,6 @@ class App extends Component {
   }
 
   render() {
-    console.log("props", this.props, 4, "state", this.state);
     return (
       <div id="content">
         <div className="darken"></div>
@@ -57,6 +61,7 @@ class App extends Component {
                   remove_selected_patient={this.remove_selected_patient.bind(this)}
                   add_dropdown_item={this.add_dropdown_item.bind(this)}
                   diagnosis_list={this.state.diagnosis_list}
+                  medicine_list={this.state.medicine_list}
                   patients={this.state.patients}
                   add_patient={this.add_patient.bind(this)}
                   add_appointment={this.add_appointment.bind(this)}
@@ -181,6 +186,9 @@ class App extends Component {
 
     if (category === "diagnosis_list") {
       this.setState({ diagnosis_list: new_items })
+    }
+    if (category === "medicine_list") {
+      this.setState({ medicine_list: new_items })
     }
   }
 

@@ -78,6 +78,7 @@ export default class PatientsList extends Component {
         if (this.state.active_tab === "medicine") {
             return <Medicine
                 add_dropdown_item={this.props.add_dropdown_item}
+                medicine_list={this.props.medicine_list}
                 diagnosis_list={props.diagnosis_list}
                 patient={props.patient[0]}
                 add_medicine={props.add_item} />

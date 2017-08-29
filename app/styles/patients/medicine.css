@@ -5,6 +5,21 @@
   height: 100%;
 }
 
+#parent_medicine_dropdown_container {
+  vertical-align: top;
+  display: inline-block;
+  position: relative;
+  width: 25%;
+  height: 2rem;
+}
+
+#medicine_dropdown_container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+}
+
 [contentEditable=true]:empty:not(:focus):before {
   content: attr(data-text);
 }

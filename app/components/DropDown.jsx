@@ -18,7 +18,7 @@ class DropDown extends Component {
                     <i className="fa fa-chevron-down" aria-hidden="true"></i>
                 </div>
 
-                <div id="dropdown_options_container">
+                <div id={`dropdown_options_container`}>
                     {this.props.items.map((item, x) =>
                         <div id="dropdown_option" onClick={(e) =>
                             this.setState({ dropdown_selected_option: e.target.textContent })} key={x}>
@@ -39,7 +39,7 @@ class DropDown extends Component {
     create_new_dropdown_option(e) {
         if (e.key === "Enter") {
             e.preventDefault()
-            this.props.add_dropdown_item(e.target.textContent, "diagnosis_list")
+            this.props.add_dropdown_item(e.target.textContent, this.props.category_list)
             e.target.textContent = ""
         }
     }
@@ -47,8 +47,9 @@ class DropDown extends Component {
     toggle_select_dropdown_option(e) {
         if (e.target.childNodes[0].nodeName === "STRONG") { return; }
 
-        let div = document.querySelector("#dropdown_options_container")
-        div.classList.toggle("show")
+        if (e.target.nextSibling.id === "dropdown_options_container") {
+            e.target.nextSibling.classList.toggle("show")
+        }
     }
 }
 

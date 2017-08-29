@@ -12,12 +12,15 @@ class Medicine extends Component {
             <div className="patient_profile_route">
                 <div id="medicine_container">
                     <div id="create_medicine_container">
-                        <select name="medicine_name">
-                            <option>medicine</option>
-                            <option>Aspirin</option>
-                            <option>Paracetamol</option>
-                            <option>Insulin</option>
-                        </select>
+                        <div id="parent_medicine_dropdown_container">
+                            <div id="medicine_dropdown_container">
+                                <DropDown
+                                    category_list="medicine_list"
+                                    add_dropdown_item={this.props.add_dropdown_item}
+                                    items={this.props.medicine_list}
+                                    category="medicine" />
+                            </div>
+                        </div>
 
                         <input placeholder="strength" type="text" name="medicine_strength" />
                         <input placeholder="daily dose" type="text" name="medicine_dose" />
@@ -35,6 +38,7 @@ class Medicine extends Component {
 
                     <div id="dropdown_diagnosis_container">
                         <DropDown
+                            category_list="diagnosis_list"
                             add_dropdown_item={this.props.add_dropdown_item}
                             items={this.props.diagnosis_list}
                             category="diagnosis"
@@ -92,12 +96,12 @@ class Medicine extends Component {
     }
 
     create_medicine() {
-        let name = document.querySelector("select[name=medicine_name]"),
+        let name = document.querySelector("#dropdown_selected_option"),
             dose = document.querySelector("input[name=medicine_dose]"),
             strength = document.querySelector("input[name=medicine_strength]"),
             days = document.querySelector("input[name=medicine_days]")
 
-        if (name.value.length > 0 && dose.value.length > 0
+        if (name.textContent && dose.value.length > 0
             && strength.value.length > 0 && days.value.length > 0 && name.value !== "medicine") {
 
             let medicine = {
