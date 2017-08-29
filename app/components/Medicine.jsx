@@ -5,9 +5,20 @@ import DropDown from './DropDown';
 class Medicine extends Component {
     constructor(props) {
         super(props)
+        this.state = {
+            selected_diagnosis_option: "",
+            selected_medicine_option: ""
+        }
     }
-    render() {
 
+    componentDidMount() {
+        this.setState({
+            selected_diagnosis_option: "",
+            selected_medicine_option: ""
+        })
+    }
+
+    render() {
         return (
             <div className="patient_profile_route">
                 <div id="medicine_container">
@@ -15,6 +26,8 @@ class Medicine extends Component {
                         <div id="parent_medicine_dropdown_container">
                             <div id="medicine_dropdown_container">
                                 <DropDown
+                                    selected_option={this.state.selected_medicine_option}
+                                    set_selected_option={this.set_selected_medicine_option.bind(this)}
                                     category_list="medicine_list"
                                     add_dropdown_item={this.props.add_dropdown_item}
                                     items={this.props.medicine_list}
@@ -38,6 +51,8 @@ class Medicine extends Component {
 
                     <div id="dropdown_diagnosis_container">
                         <DropDown
+                            selected_option={this.state.selected_diagnosis_option}
+                            set_selected_option={this.set_selected_diagnosis_option.bind(this)}
                             category_list="diagnosis_list"
                             add_dropdown_item={this.props.add_dropdown_item}
                             items={this.props.diagnosis_list}
@@ -79,44 +94,58 @@ class Medicine extends Component {
     }
 
     create_diagnosis() {
-        let treatment = document.querySelector("#create_diagnosis_treatment"),
-            selected_diagnosis_option = document.querySelector("#dropdown_selected_option")
+        let treatment = document.querySelector("#create_diagnosis_treatment")
 
         if (treatment) {
             let diagnosis_bj = {
                 "date": moment().format("MMM Do YYYY"),
-                "diagnosis": selected_diagnosis_option.textContent,
+                "diagnosis": this.state.selected_diagnosis_option,
                 "treatment": treatment.value
             }
 
-            treatment.value = ""//, selected_diagnosis_option.textContent = "";
+            treatment.value = ""
+            this.setState({
+                selected_diagnosis_option: ""
+            })
             this.props.add_medicine(diagnosis_bj, this.props.patient, "diagnosis")
 
         }
     }
 
     create_medicine() {
-        let name = document.querySelector("#dropdown_selected_option"),
+        let selected_medicine_option = this.state.selected_medicine_option,
             dose = document.querySelector("input[name=medicine_dose]"),
             strength = document.querySelector("input[name=medicine_strength]"),
             days = document.querySelector("input[name=medicine_days]")
 
-        if (name.textContent && dose.value.length > 0
-            && strength.value.length > 0 && days.value.length > 0 && name.value !== "medicine") {
+        if (selected_medicine_option && dose.value.length > 0
+            && strength.value.length > 0 &&
+            days.value.length > 0 && selected_medicine_option !== "medicine") {
 
             let medicine = {
                 "date": moment().format("MMM Do YYYY"),
-                "name": name.value,
+                "name": selected_medicine_option,
                 "dose": dose.value,
                 "strength": strength.value,
                 "days": days.value
             }
 
-            name.value = "medicine", dose.value = "",
+            dose.value = "",
                 strength.value = "", days.value = ""
 
+            this.setState({
+                selected_medicine_option: ""
+            })
             this.props.add_medicine(medicine, this.props.patient, "medicine")
         }
+    }
+
+    set_selected_diagnosis_option(option) {
+        this.setState({ selected_diagnosis_option: option })
+    }
+
+    set_selected_medicine_option(option) {
+        this.setState({ selected_medicine_option: option })
     }
 }
 

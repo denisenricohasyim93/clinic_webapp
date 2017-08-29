@@ -3,9 +3,6 @@ import React, { Component } from 'react';
 class DropDown extends Component {
     constructor(props) {
         super(props)
-        this.state = {
-            dropdown_selected_option: ""
-        }
     }
 
     render() {
@@ -14,14 +11,14 @@ class DropDown extends Component {
                 onClick={(e) => this.toggle_select_dropdown_option(e)}>
 
                 <div id="dropdown_selected_option">
-                    {this.state.dropdown_selected_option}
+                    {this.props.selected_option}
                     <i className="fa fa-chevron-down" aria-hidden="true"></i>
                 </div>
 
                 <div id={`dropdown_options_container`}>
                     {this.props.items.map((item, x) =>
                         <div id="dropdown_option" onClick={(e) =>
-                            this.setState({ dropdown_selected_option: e.target.textContent })} key={x}>
+                            this.props.set_selected_option(e.target.textContent)}>
                             {item}
                         </div>)}
 
@@ -45,10 +42,20 @@ class DropDown extends Component {
     }
 
     toggle_select_dropdown_option(e) {
-        if (e.target.childNodes[0].nodeName === "STRONG") { return; }
+        if (e.target.nodeName === "I") {
+            let parent = e.target.parentNode
+            return parent.nextSibling.classList.toggle("show")
+        }
 
         if (e.target.nextSibling.id === "dropdown_options_container") {
-            e.target.nextSibling.classList.toggle("show")
+            return e.target.nextSibling.classList.toggle("show")
+        }
+
+        if (e.target.childNodes[0].nodeName === "STRONG") { return; }
+
+        if (e.target.id === "dropdown_option" && e.target.textContent !== "") {
+            this.props.set_selected_option(e.target.textContent)
+            return e.target.parentNode.classList.toggle("show")
         }
     }
 }

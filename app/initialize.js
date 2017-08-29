@@ -26,14 +26,15 @@ class App extends Component {
       events: [],
       diagnosis_list: [
         "hypertension",
-        "hyptension",
+        "hypotension",
         "cancer",
         "brainworm"
       ],
       medicine_list: [
         "insulin",
         "paracetamol",
-        "mdma"
+        "mdma",
+        "pencillin"
       ]
     }
   }
