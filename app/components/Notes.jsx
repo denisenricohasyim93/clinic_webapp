@@ -21,8 +21,9 @@ class Notes extends Component {
                     /> : ""}
                 <div id="create_note_btn_container">
                     <button id="create_note_btn"
-                        onClick={() => this.show_create_notes_panel()}> <i className="fa fa-plus"></i>
+                        onClick={() => this.show_create_notes_panel()}><i className="fa fa-plus"></i>
                     </button>
+                    <button onClick={() => this.expand_recent_notes()}>Expand All</button>
                 </div>
 
 
@@ -44,7 +45,7 @@ class Notes extends Component {
     show_notes() {
         return <div id="notes_container">
             {this.props.patient.notes.map((note, x) =>
-                <div key={x} className="note" onClick={(e) => this.expand_note(e)}>
+                <div key={x} className="note" onClick={(e) => this.expand_note(e.target)}>
                     <span id="note_date">{note.date}</span>
                     <span>{note.title}</span>
                     <div id="note_content">{note.content}</div>
@@ -54,11 +55,16 @@ class Notes extends Component {
     }
 
     expand_note(e) {
-        if (e.target.className !== "note") {
-            let parent = e.target.parentNode
+        if (e.className !== "note") {
+            let parent = e.parentNode
             return parent.lastChild.classList.toggle("show")
         }
-        e.target.childNodes[2].classList.toggle("show")
+        e.childNodes[2].classList.toggle("show")
+    }
+
+    expand_recent_notes(e) {
+        let notes = document.querySelectorAll(".note")
+        Array.prototype.map.call(notes, ((note) => this.expand_note(note)))
     }
 }
 
