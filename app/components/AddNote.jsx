@@ -28,7 +28,7 @@ class AddNote extends Component {
         if (!title.value.match(/^\s*$/) && !content.value.match(/^\s*$/)) {
 
             let note = {
-                date: moment().format("DD-MM-YYYY"),
+                date: moment().format("MM-DD-YYYY"),
                 title: title.value,
                 content: content.value
             }

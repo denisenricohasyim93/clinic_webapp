@@ -40,6 +40,13 @@ class App extends Component {
         "Benzylpenicillin - Benzylpenicillin - Inj. - 5 M.IU",
         "Furix - Furosemid - Tablet - 40 mg",
         "Locoid - Hydrocortison-17-butyrat - Cream - 0.1%"
+      ],
+      medicine_dose_list: [
+        "1+1+0+0",
+        "2+1+0+0",
+        "2+2+1+0",
+        "2+2+2+0",
+        "1+2+3+1"
       ]
     }
   }
@@ -68,6 +75,7 @@ class App extends Component {
                   add_dropdown_item={this.add_dropdown_item.bind(this)}
                   diagnosis_list={this.state.diagnosis_list}
                   medicine_list={this.state.medicine_list}
+                  medicine_dose_list={this.state.medicine_dose_list}
                   patients={this.state.patients}
                   add_patient={this.add_patient.bind(this)}
                   add_appointment={this.add_appointment.bind(this)}
@@ -195,6 +203,10 @@ class App extends Component {
     }
     if (category === "medicine_list") {
       this.setState({ medicine_list: new_items })
+    }
+
+    if (category === "medicine_dose_list") {
+      this.setState({ medicine_dose_list: new_items })
     }
   }
 

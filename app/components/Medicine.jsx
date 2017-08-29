@@ -7,18 +7,21 @@ class Medicine extends Component {
         super(props)
         this.state = {
             selected_diagnosis_option: "",
-            selected_medicine_option: ""
+            selected_medicine_option: "",
+            selected_medicine_dose_option: ""
         }
     }
 
     componentDidMount() {
         this.setState({
             selected_diagnosis_option: "",
-            selected_medicine_option: ""
+            selected_medicine_option: "",
+            selected_medicine_dose_option: ""
         })
     }
 
     render() {
+        console.log(this.props);
         return (
             <div className="patient_profile_route">
                 <div id="medicine_container">
@@ -35,8 +38,18 @@ class Medicine extends Component {
                             </div>
                         </div>
 
-                        <input placeholder="strength" type="text" name="medicine_strength" />
-                        <input placeholder="daily dose" type="text" name="medicine_dose" />
+                        <div id="parent_medicine_dose_dropdown_container">
+                            <div id="medicine_dose_dropdown_container">
+                                <DropDown
+                                    selected_option={this.state.selected_medicine_dose_option}
+                                    set_selected_option={this.set_selected_medicine_dose_option.bind(this)}
+                                    category_list="medicine_dose_list"
+                                    add_dropdown_item={this.props.add_dropdown_item}
+                                    items={this.props.medicine_dose_list}
+                                    category="medicine" />
+                            </div>
+                        </div>
+
                         <input placeholder="days" type="number" name="medicine_days" />
                         <button onClick={() => this.create_medicine()}>Create</button>
                     </div>
@@ -91,7 +104,7 @@ class Medicine extends Component {
     render_active_medicine() {
         return <div id="medicine_list_container">
             {this.props.patient.medicine.map((medicine, x) =>
-                new Date(medicine.start) >= new Date() ?
+                moment(medicine.end) > moment() ?
                     <div key={x} id="medicine">
                         <h4>{medicine.start}</h4>
                         <h4>{medicine.end}</h4>
@@ -107,7 +120,7 @@ class Medicine extends Component {
     render_inactive_medicine() {
         return <div id="medicine_list_container">
             {this.props.patient.medicine.map((medicine, x) =>
-                new Date(medicine.start) < new Date() ?
+                moment(medicine.end) < moment() ?
                     <div key={x} id="medicine">
                         <h4>{medicine.start}</h4>
                         <h4>{medicine.end}</h4>
@@ -139,25 +152,32 @@ class Medicine extends Component {
 
     create_medicine() {
         let selected_medicine_option = this.state.selected_medicine_option,
-            dose = document.querySelector("input[name=medicine_dose]"),
-            strength = document.querySelector("input[name=medicine_strength]"),
+            selected_medicine_dose_option = this.state.selected_medicine_dose_option,
             days = document.querySelector("input[name=medicine_days]")
 
-        if (selected_medicine_option && dose.value.length > 0
-            && strength.value.length > 0 &&
-            days.value.length > 0 && selected_medicine_option !== "medicine") {
+        if (selected_medicine_option
+            && selected_medicine_dose_option
+            && days.value.length > 0
+            && selected_medicine_option !== "medicine") {
 
             let medicine = {
-                "start": moment().format("DD-MM-YYYY"),
+                "start": moment().format("MM-DD-YYYY"),
+                "end": moment().add(Number(days.value), 'days').format("MM-DD-YYYY"),
                 "name": selected_medicine_option,
-                "dose": dose.value,
-                "strength": strength.value,
+                "dose": selected_medicine_dose_option,
+                "strength": selected_medicine_option.match(/\-\s(\w+[\.\d+\w+\s]*)$/)[1],
                 "days": days.value
             }
 
-            dose.value = "", strength.value = "", days.value = ""
+            console.log(medicine);
 
-            this.setState({ selected_medicine_option: "" })
+            days.value = ""
+
+            this.setState({
+                selected_medicine_option: "",
+                selected_medicine_dose_option: ""
+            })
+
             this.props.add_medicine(medicine, this.props.patient, "medicine")
         }
     }
@@ -168,6 +188,10 @@ class Medicine extends Component {
 
     set_selected_medicine_option(option) {
         this.setState({ selected_medicine_option: option })
+    }
+
+    set_selected_medicine_dose_option(option) {
+        this.setState({ selected_medicine_dose_option: option })
     }
 }
 

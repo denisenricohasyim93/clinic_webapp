@@ -38,7 +38,7 @@ class Appointments extends Component {
     }
 
     render_date(date) {
-        let returned_date = moment(date).format("DD-MM-YYYY h:mm:ss a")
+        let returned_date = moment(date).format("MM-DD-YYYY h:mm:ss a")
         //todo show past dates here too
         return <span>{returned_date}</span>
     }
