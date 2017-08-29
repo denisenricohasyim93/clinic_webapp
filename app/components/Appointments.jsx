@@ -3,9 +3,7 @@ import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
 import BookPanel from './BookPanel'
 
-BigCalendar.setLocalizer(
-    BigCalendar.momentLocalizer(moment)
-);
+BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment));
 
 class Appointments extends Component {
     constructor(props) {
@@ -50,8 +48,8 @@ class Appointments extends Component {
     }
 
     book_slot(slot_info) {
-        this.setState({ show_book_panel: true })
         this.setState({
+            show_book_panel: true,
             selected_slot: slot_info
         })
         this.props.darken()

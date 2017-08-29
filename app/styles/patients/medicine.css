@@ -7,9 +7,9 @@
 
 #parent_medicine_dropdown_container {
   vertical-align: top;
-  display: inline-block;
+  display: block;
   position: relative;
-  width: 25%;
+  width: 70%;
   height: 2rem;
 }
 
@@ -65,7 +65,7 @@
 
 #medicine h4 {
   display: inline-block;
-  width: 20%;
+  width: 15%;
 }
 
 #medicine h4:last-child {

@@ -31,10 +31,15 @@ class App extends Component {
         "brainworm"
       ],
       medicine_list: [
-        "insulin",
-        "paracetamol",
-        "mdma",
-        "pencillin"
+        "Panodil - Paracetamol - Tablet - 500 mg",
+        "Pancillin - Phenoxymethylpenicillin - Tablet - 0.5 M.IU",
+        "Pancillin - Phenoxymethylpenicillin - Tablet - 1 M.IU",
+        "Pancillin - Phenoxymethylpenicillin - Tablet - 1.5 M.IU",
+        "Benzylpenicillin - Benzylpenicillin - Inj. - 1 M.IU",
+        "Benzylpenicillin - Benzylpenicillin - Inj. - 2 M.IU",
+        "Benzylpenicillin - Benzylpenicillin - Inj. - 5 M.IU",
+        "Furix - Furosemid - Tablet - 40 mg",
+        "Locoid - Hydrocortison-17-butyrat - Cream - 0.1%"
       ]
     }
   }

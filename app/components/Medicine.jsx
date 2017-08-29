@@ -83,8 +83,9 @@ class Medicine extends Component {
         return <div id="medicine_list_container">
             {this.props.patient.medicine.map((medicine, x) =>
                 <div key={x} id="medicine">
-                    <h4>{medicine.date}</h4>
-                    <h4>{medicine.name}</h4>
+                    <h4>{medicine.start}</h4>
+                    <h4>{medicine.end}</h4>
+                    <h4>{medicine.name.match(/(\w+)/)[0]}</h4>
                     <h4>{medicine.strength}</h4>
                     <h4>{medicine.dose}</h4>
                     <h4>{medicine.days}</h4>
@@ -96,7 +97,7 @@ class Medicine extends Component {
     create_diagnosis() {
         let treatment = document.querySelector("#create_diagnosis_treatment")
 
-        if (treatment) {
+        if (treatment && this.state.selected_diagnosis_option) {
             let diagnosis_bj = {
                 "date": moment().format("MMM Do YYYY"),
                 "diagnosis": this.state.selected_diagnosis_option,
@@ -104,9 +105,7 @@ class Medicine extends Component {
             }
 
             treatment.value = ""
-            this.setState({
-                selected_diagnosis_option: ""
-            })
+            this.setState({ selected_diagnosis_option: "" })
             this.props.add_medicine(diagnosis_bj, this.props.patient, "diagnosis")
 
         }
@@ -123,19 +122,16 @@ class Medicine extends Component {
             days.value.length > 0 && selected_medicine_option !== "medicine") {
 
             let medicine = {
-                "date": moment().format("MMM Do YYYY"),
+                "start": moment().format("DD-MM-YYYY"),
                 "name": selected_medicine_option,
                 "dose": dose.value,
                 "strength": strength.value,
                 "days": days.value
             }
 
-            dose.value = "",
-                strength.value = "", days.value = ""
+            dose.value = "", strength.value = "", days.value = ""
 
-            this.setState({
-                selected_medicine_option: ""
-            })
+            this.setState({ selected_medicine_option: "" })
             this.props.add_medicine(medicine, this.props.patient, "medicine")
         }
     }

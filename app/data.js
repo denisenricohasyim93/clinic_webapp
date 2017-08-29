@@ -110,21 +110,24 @@ let data = {
             ],
             "medicine": [
                 {
-                    "date": "Aug 26th 2017",
+                    "start": "08-25-2017",
+                    "end": "08-25-2018",
                     "name": "aspirin",
                     "strength": "500ml",
                     "dose": "1x1x0x1",
                     "days": 4
                 },
                 {
-                    "date": "Aug 26th 2017",
+                    "start": "08-25-2017",
+                    "end": "08-25-2018",
                     "name": "paracetamol",
                     "strength": "1000ml",
                     "dose": "2x1x3x3",
                     "days": 100
                 },
                 {
-                    "date": "Aug 26th 2017",
+                    "start": "08-25-2017",
+                    "end": "08-25-2018",
                     "name": "insulin",
                     "strength": "200ml",
                     "dose": "2x1x3x3",
@@ -195,21 +198,24 @@ let data = {
             ],
             "medicine": [
                 {
-                    "date": "Aug 26th 2017",
+                    "start": "08-25-2017",
+                    "end": "08-25-2018",
                     "name": "aspirin",
                     "strength": "500ml",
                     "dose": "2x1x3x3",
                     "days": 4
                 },
                 {
-                    "date": "Aug 26th 2017",
+                    "start": "08-25-2017",
+                    "end": "08-25-2018",
                     "name": "paracetamol",
                     "strength": "1000ml",
                     "dose": "2x1x3x3",
                     "days": 100
                 },
                 {
-                    "date": "Aug 26th 2017",
+                    "start": "08-25-2017",
+                    "end": "08-25-2018",
                     "name": "insulin",
                     "strength": "200ml",
                     "dose": "2x1x3x3",
@@ -304,21 +310,24 @@ let data = {
             ],
             "medicine": [
                 {
-                    "date": "Aug 26th 2017",
+                    "start": "08-25-2017",
+                    "end": "08-25-2018",
                     "name": "aspirin",
                     "strength": "500ml",
                     "dose": "1x1x0x1",
                     "days": 4
                 },
                 {
-                    "date": "Aug 26th 2017",
+                    "start": "08-25-2017",
+                    "end": "08-25-2018",
                     "name": "paracetamol",
                     "strength": "1000ml",
                     "dose": "2x1x3x3",
                     "days": 100
                 },
                 {
-                    "date": "Aug 26th 2017",
+                    "start": "08-25-2017",
+                    "end": "08-25-2018",
                     "name": "insulin",
                     "strength": "200ml",
                     "dose": "1x1x7x4",
@@ -413,21 +422,24 @@ let data = {
             ],
             "medicine": [
                 {
-                    "date": "Aug 26th 2017",
+                    "start": "08-25-2017",
+                    "end": "08-25-2018",
                     "name": "aspirin",
                     "strength": "500ml",
                     "dose": "1x1x7x4",
                     "days": 4
                 },
                 {
-                    "date": "Aug 26th 2017",
+                    "start": "08-25-2017",
+                    "end": "08-25-2018",
                     "name": "paracetamol",
                     "strength": "1000ml",
                     "dose": "1x1x7x4",
                     "days": 100
                 },
                 {
-                    "date": "Aug 26th 2017",
+                    "start": "08-25-2017",
+                    "end": "08-25-2018",
                     "name": "insulin",
                     "strength": "200ml",
                     "dose": "1x1x7x4",
@@ -609,21 +621,24 @@ let data = {
             ],
             "medicine": [
                 {
-                    "date": "Aug 26th 2017",
+                    "start": "08-25-2017",
+                    "end": "08-25-2018",
                     "name": "aspirin",
                     "strength": "500ml",
                     "dose": "1x1x0x1",
                     "days": 4
                 },
                 {
-                    "date": "Aug 26th 2017",
+                    "start": "08-25-2017",
+                    "end": "08-25-2018",
                     "name": "paracetamol",
                     "strength": "1000ml",
                     "dose": "2x1x3x3",
                     "days": 100
                 },
                 {
-                    "date": "Aug 26th 2017",
+                    "start": "08-25-2017",
+                    "end": "08-25-2018",
                     "name": "insulin",
                     "strength": "200ml",
                     "dose": "2x1x3x3",
@@ -782,21 +797,24 @@ let data = {
             ],
             "medicine": [
                 {
-                    "date": "Aug 26th 2017",
+                    "start": "08-25-2017",
+                    "end": "08-25-2018",
                     "name": "aspirin",
                     "strength": "500ml",
                     "dose": "1x1x0x1",
                     "days": 4
                 },
                 {
-                    "date": "Aug 26th 2017",
+                    "start": "08-25-2017",
+                    "end": "08-25-2018",
                     "name": "paracetamol",
                     "strength": "1000ml",
                     "dose": "2x1x3x3",
                     "days": 100
                 },
                 {
-                    "date": "Aug 26th 2017",
+                    "start": "08-25-2017",
+                    "end": "08-25-2018",
                     "name": "insulin",
                     "strength": "200ml",
                     "dose": "2x1x3x3",
@@ -955,21 +973,24 @@ let data = {
             ],
             "medicine": [
                 {
-                    "date": "Aug 26th 2017",
+                    "start": "08-25-2017",
+                    "end": "08-25-2018",
                     "name": "aspirin",
                     "strength": "500ml",
                     "dose": "1x1x0x1",
                     "days": 4
                 },
                 {
-                    "date": "Aug 26th 2017",
+                    "start": "08-25-2017",
+                    "end": "08-25-2018",
                     "name": "paracetamol",
                     "strength": "1000ml",
                     "dose": "2x1x3x3",
                     "days": 100
                 },
                 {
-                    "date": "Aug 26th 2017",
+                    "start": "08-25-2017",
+                    "end": "08-25-2018",
                     "name": "insulin",
                     "strength": "200ml",
                     "dose": "2x1x3x3",
@@ -1128,21 +1149,24 @@ let data = {
             ],
             "medicine": [
                 {
-                    "date": "Aug 26th 2017",
+                    "start": "08-25-2017",
+                    "end": "08-25-2018",
                     "name": "aspirin",
                     "strength": "500ml",
                     "dose": "1x1x0x1",
                     "days": 4
                 },
                 {
-                    "date": "Aug 26th 2017",
+                    "start": "08-25-2017",
+                    "end": "08-25-2018",
                     "name": "paracetamol",
                     "strength": "1000ml",
                     "dose": "2x1x3x3",
                     "days": 100
                 },
                 {
-                    "date": "Aug 26th 2017",
+                    "start": "08-25-2017",
+                    "end": "08-25-2018",
                     "name": "insulin",
                     "strength": "200ml",
                     "dose": "2x1x3x3",

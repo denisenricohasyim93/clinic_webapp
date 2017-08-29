@@ -31,7 +31,7 @@ class BookPanel extends Component {
             start = this.props.selected_slot.start.toLocaleString().match(/(\d).(\d\d).(\d+)..(\d).(\d\d)/),
             end = this.props.selected_slot.end.toLocaleString().match(/(\d).(\d\d).(\d+)..(\d).(\d\d)/)
 
-        if (!description.value.match(/^\s*$/) && !patient.value.match(/^\s*$/)) {
+        if (!patient.value.match(/^\s*$/)) {
 
             let appointment = {
                 date: moment().format("MMM Do YYYY"),

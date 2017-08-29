@@ -17,7 +17,7 @@ class DropDown extends Component {
 
                 <div id={`dropdown_options_container`}>
                     {this.props.items.map((item, x) =>
-                        <div id="dropdown_option" onClick={(e) =>
+                        <div key={x} id="dropdown_option" onClick={(e) =>
                             this.props.set_selected_option(e.target.textContent)}>
                             {item}
                         </div>)}
