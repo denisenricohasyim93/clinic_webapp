@@ -61,10 +61,10 @@ class App extends Component {
                 <div className="darken"></div>
                 <Router>
                     <div id="route_container">
-                        <Link to="/" className="route_tab">Home</Link>
-                        <Link to="/patients" className="route_tab">Patients</Link>
-                        <Link to="/appointments" className="route_tab">Appointments</Link>
-                        <Link to="/settings" className="route_tab">Settings</Link>
+                        <Link to="/" className="route_tab"><i className="fa fa-home" aria-hidden="true"></i></Link>
+                        <Link to="/patients" className="route_tab"><i className="fa fa-user-md" aria-hidden="true"></i></Link>
+                        <Link to="/appointments" className="route_tab"><i className="fa fa-calendar" aria-hidden="true"></i></Link>
+                        <Link to="/settings" className="route_tab"><i className="fa fa-cog" aria-hidden="true"></i></Link>
 
                         <Switch>
                             <Route exact path="/" component={Home} />
