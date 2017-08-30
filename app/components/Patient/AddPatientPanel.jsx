@@ -26,16 +26,6 @@ class AddPatientPanel extends Component {
                         <input type="checkbox" name="patient_gravida" id="patient_gravida" />
                     </div>
 
-                    <div id="label">
-                        <label>Hypertenstion: (years)</label>
-                        <input type="number" name="patient_hypertension" id="patient_hypertension" />
-                    </div>
-
-                    <div id="label">
-                        <label>Diabetes: (years)</label>
-                        <input type="number" name="patient_diabetes" />
-                    </div>
-
                     <input type="text" placeholder="address" name="patient_address" />
                     <input type="text" placeholder="phone" name="patient_phone" />
 

@@ -30,11 +30,11 @@ export default class PatientsList extends Component {
 
                     <div id="selected_patient_container">
                         <strong>
-                            id:{this.props.patient[0].id}
+                            ID:{this.props.patient[0].id}
                             &emsp;&emsp;
                             {this.props.patient[0].name}
                             &emsp;&emsp;
-                            {this.props.patient[0].age}
+                            {this.props.patient[0].age} y.o
                         </strong>
                     </div>
 

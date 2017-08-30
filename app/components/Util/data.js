@@ -10,8 +10,6 @@ let data = {
             "phone": "7778880003",
             "smoker": "no",
             "gravida": "no",
-            "hypertension": 3,
-            "diabetes": 5,
             "notes": [
                 {
                     "date": "05-08-2017",
@@ -186,8 +184,6 @@ let data = {
             "phone": "7778880003",
             "smoker": "no",
             "gravida": "no",
-            "hypertension": 3,
-            "diabetes": 5,
             "diagnosis": [
                 {
                     "date": "Aug 26th 2017",
@@ -298,8 +294,6 @@ let data = {
             "phone": "7778880003",
             "smoker": "no",
             "gravida": "no",
-            "hypertension": 3,
-            "diabetes": 5,
             "diagnosis": [
                 {
                     "date": "Aug 26th 2017",
@@ -410,8 +404,6 @@ let data = {
             "phone": "7778880003",
             "smoker": "no",
             "gravida": "no",
-            "hypertension": 3,
-            "diabetes": 5,
             "diagnosis": [
                 {
                     "date": "Aug 26th 2017",
@@ -520,8 +512,6 @@ let data = {
             "phone": "7778880003",
             "smoker": "no",
             "gravida": "no",
-            "hypertension": 3,
-            "diabetes": 5,
             "notes": [
                 {
                     "date": "05-08-2017",
@@ -696,8 +686,6 @@ let data = {
             "phone": "7778880003",
             "smoker": "no",
             "gravida": "no",
-            "hypertension": 3,
-            "diabetes": 5,
             "notes": [
                 {
                     "date": "05-08-2017",
@@ -872,8 +860,6 @@ let data = {
             "phone": "7778880003",
             "smoker": "no",
             "gravida": "no",
-            "hypertension": 3,
-            "diabetes": 5,
             "notes": [
                 {
                     "date": "05-08-2017",
@@ -1048,8 +1034,6 @@ let data = {
             "phone": "7778880003",
             "smoker": "no",
             "gravida": "no",
-            "hypertension": 3,
-            "diabetes": 5,
             "notes": [
                 {
                     "date": "05-08-2017",
