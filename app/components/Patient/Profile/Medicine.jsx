@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 import DropDown from '../../Util/DropDown';
+import Searchable from '../../Util/Searchable';
 import Diagnosis from './Diagnosis'
 
 class Medicine extends Component {
@@ -27,12 +28,9 @@ class Medicine extends Component {
                     <div id="create_medicine_container">
                         <div id="parent_medicine_dropdown_container">
                             <div id="medicine_dropdown_container">
-                                <DropDown
-                                    selected_option={this.state.selected_medicine_option}
+                                <Searchable
+                                    options_list={this.props.medicine_list}
                                     set_selected_option={this.set_selected_medicine_option.bind(this)}
-                                    category_list="medicine_list"
-                                    add_dropdown_item={this.props.add_dropdown_item}
-                                    items={this.props.medicine_list}
                                     category="medicine" />
                             </div>
                         </div>
@@ -129,6 +127,8 @@ class Medicine extends Component {
             }
 
             days.value = ""
+            let input = document.querySelector("#search_item_input")
+            input.value = ""
 
             this.setState({
                 selected_medicine_option: "",

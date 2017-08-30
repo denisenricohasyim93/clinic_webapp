@@ -9,7 +9,7 @@ class Appointments extends Component {
                     <div className="patient_upcoming_apt">
                         <h3>Upcoming</h3>
                         {this.props.patient.appointments.map((apt, x) =>
-                            this.render_date(apt, "upcoming")
+                            this.render_date(apt, "upcoming", x)
                         )}
                     </div>
 
@@ -36,7 +36,6 @@ class Appointments extends Component {
             end_date = moment(date.end).format("MM-DD-YYYY")
 
         if (condition === "upcoming" && end_date >= current_date) {
-            console.log(date, 6666);
             return <div key={key} className="apt_div">
                 <p><span id="span_date_title">Start:</span> {moment(date.start).format("MM-DD-YYYY")}</p>
                 <p><span id="span_date_title">End:</span> {moment(date.end).format("MM-DD-YYYY")}</p>
