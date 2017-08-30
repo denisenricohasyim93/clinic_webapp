@@ -4,11 +4,15 @@
   height: 100%;
   width: 100%;
   background: floralwhite;
+  padding: 1rem;
+}
+
+#vitals_container table {
+  width: 100%;
 }
 
 #vitals_head th {
   text-align: left;
-  width: 10rem;
   text-decoration: underline;
 }
 
@@ -20,20 +24,24 @@
 
 .add_vitals_container {
   position: absolute;
-  bottom: 0;
+  bottom: 1rem;
+  width: 100%;
+  text-align: center;
 }
 
 .add_vitals_container input:first-child {
   margin: 0;
+  width: 9rem;
 }
 
 .add_vitals_container input,
 .add_vitals_container button,
 .add_vitals_container select {
+  padding: 0 0.2rem;
   margin-left: 1.3rem;
   text-align: center;
   height: 2rem;
-  width: 5rem;
+  width: 6rem;
 }
 
 .add_vitals_container input[name="vitals_bloodpressure_systolic"],
