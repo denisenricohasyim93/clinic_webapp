@@ -9,22 +9,16 @@ class Appointments extends Component {
                     <div className="patient_upcoming_apt">
                         <h3>Upcoming</h3>
                         {this.props.patient.appointments.map((apt, x) =>
-                            <div key={x} className="apt_div">
-                                <p><span id="span_date_title">Start:</span> {this.render_date(apt.start)}</p>
-                                <p><span id="span_date_title">End:</span> {this.render_date(apt.end)}</p>
-                            </div>
+                            this.render_date(apt, "upcoming")
                         )}
                     </div>
 
-                    {/*                     <div className="patient_past_apt">
+                    <div className="patient_past_apt">
                         <h3>Past</h3>
                         {this.props.patient.appointments.map((apt, x) =>
-                            this.check_date(apt) === "past" ?
-                                <div key={x} className="apt_div">
-                                    <p>Date: {}</p>
-                                </div> : ""
+                            this.render_date(apt, "past", x)
                         )}
-                    </div> */}
+                    </div>
 
                     <div className="add_appointment_sidebar">
                         <button onClick={() => this.add_appointment()}>Create Appointment</button>
@@ -37,10 +31,25 @@ class Appointments extends Component {
         );
     }
 
-    render_date(date) {
-        let returned_date = moment(date).format("MM-DD-YYYY h:mm:ss a")
-        //todo show past dates here too
-        return <span>{returned_date}</span>
+    render_date(date, condition, key) {
+        let current_date = moment().format("MM-DD-YYYY"),
+            end_date = moment(date.end).format("MM-DD-YYYY")
+
+        if (condition === "upcoming" && end_date >= current_date) {
+            console.log(date, 6666);
+            return <div key={key} className="apt_div">
+                <p><span id="span_date_title">Start:</span> {moment(date.start).format("MM-DD-YYYY")}</p>
+                <p><span id="span_date_title">End:</span> {moment(date.end).format("MM-DD-YYYY")}</p>
+            </div>
+        }
+
+        if (condition === "past" && end_date < current_date) {
+            return <div key={key} className="apt_div">
+                <p><span id="span_date_title">Start:</span> {moment(date.start).format("MM-DD-YYYY")}</p>
+                <p><span id="span_date_title">End:</span> {moment(date.end).format("MM-DD-YYYY")}</p>
+            </div>
+
+        }
     }
 
     add_appointment() {

@@ -305,7 +305,7 @@ let data = {
                 {
                     'title': 'Max',
                     'start': new Date(2017, 7, 30, 14, 0, 0),
-                    'end': new Date(2017, 7, 30, 15, 0, 0),
+                    'end': new Date(2017, 7, 31, 15, 0, 0),
                     'desc': '  someone'
                 }
             ]
