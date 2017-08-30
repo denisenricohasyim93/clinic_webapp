@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import moment from 'moment';
-import DropDown from './DropDown';
+import DropDown from '../../Util/DropDown';
 
 class Medicine extends Component {
     constructor(props) {
@@ -21,7 +21,7 @@ class Medicine extends Component {
     }
 
     render() {
-        console.log(this.props);
+
         return (
             <div className="patient_profile_route">
                 <div id="medicine_container">
@@ -168,8 +168,6 @@ class Medicine extends Component {
                 "strength": selected_medicine_option.match(/\-\s(\w+[\.\d+\w+\s]*)$/)[1],
                 "days": days.value
             }
-
-            console.log(medicine);
 
             days.value = ""
 

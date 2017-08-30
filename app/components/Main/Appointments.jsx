@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
-import BookPanel from './BookPanel'
+import BookPanel from '../Util/BookPanel'
 
 BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment));
 

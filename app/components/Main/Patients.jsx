@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import PatientProfile from './PatientProfile'
-import PatientsList from './PatientsList'
-import AddPatientPanel from './AddPatientPanel'
+import React, { Component } from 'react'
+import PatientProfile from '../Patient/PatientProfile'
+import PatientsList from '../Patient/PatientsList'
+import AddPatientPanel from '../Patient/AddPatientPanel'
 
 export default class PatientsContainer extends Component {
     constructor(props) {
@@ -15,7 +15,7 @@ export default class PatientsContainer extends Component {
     }
 
     render() {
-        //console.log("props", this.props, 4, "state", this.state);
+
         let { searched_patients } = this.state,
             { selected_patient, patients,
                 remove_selected_patient, add_appointment,

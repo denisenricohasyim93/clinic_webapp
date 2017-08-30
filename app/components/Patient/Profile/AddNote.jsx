@@ -59,8 +59,6 @@ class AddNote extends Component {
                 content: markup
             }
 
-            console.log(note);
-
             title.value = ""
             this.setState({ editorState: EditorState.createEmpty() })
             this.props.add_note(note, this.props.patient, "notes")

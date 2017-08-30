@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import Vitals from './Vitals'
-import Appointments from './AppointmentsP'
-import Notes from './Notes'
-import Info from './Info'
-import Lab from './Lab'
-import Medicine from './Medicine'
+import Vitals from './Profile/Vitals'
+import Appointments from './Profile/Appointments'
+import Notes from './Profile/Notes'
+import Info from './Profile/Info'
+import Lab from './Profile/Lab'
+import Medicine from './Profile/Medicine'
 
 export default class PatientsList extends Component {
     constructor(props) {
