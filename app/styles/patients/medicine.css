@@ -91,12 +91,6 @@
   width: 15%;
 }
 
-#medicine h4:last-child {
-  text-align: right;
-  width: 5%;
-  float: right;
-}
-
 #diagnosis h4 {
   display: inline-block;
   width: 35%;
