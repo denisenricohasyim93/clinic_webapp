@@ -49,6 +49,7 @@ class App extends Component {
                             <Route exact path="/" component={Home} />
                             <Route path="/patients" render={props =>
                                 <PatientsContainer
+                                    stop_medicine={this.stop_medicine.bind(this)}
                                     show_patient_profile={this.show_patient_profile.bind(this)}
                                     remove_selected_patient={this.remove_selected_patient.bind(this)}
                                     add_dropdown_item={this.add_dropdown_item.bind(this)}
@@ -248,10 +249,26 @@ class App extends Component {
         }
     }
 
+    stop_medicine(patient, medicine) {
+        let patients = this.state.patients.slice()
+
+        for (let i = 0; i < patients.length; i++) {
+            if (patients[i].name === patient.name) {
+
+                for (let j = 0; j < patients[i].medicine.length; j++) {
+                    if (patients[i].medicine[j] === medicine) {
+                        patients[i].medicine[j]["stopped"] = "stopped"
+                        break;
+                    }
+                }
+            }
+        }
+
+        this.setState({ patients: patients })
+    }
+
     show_patient_profile(patient) {
-        this.setState({
-            selected_patient: [patient]
-        })
+        this.setState({ selected_patient: [patient] })
     }
 
     remove_selected_patient() {

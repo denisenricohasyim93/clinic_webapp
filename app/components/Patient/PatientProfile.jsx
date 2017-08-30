@@ -96,6 +96,7 @@ export default class PatientsList extends Component {
 
         if (this.state.active_tab === "medicine") {
             return <Medicine
+                stop_medicine={this.props.stop_medicine}
                 create_diagnosis={this.create_diagnosis.bind(this)}
                 selected_option={this.state.selected_diagnosis_option}
                 set_selected_option={this.set_selected_diagnosis_option.bind(this)}

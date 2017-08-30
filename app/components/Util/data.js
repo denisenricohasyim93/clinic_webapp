@@ -1146,6 +1146,14 @@ let data = {
                 {
                     "start": "11-25-2017",
                     "end": "08-25-2018",
+                    "name": "aspirin",
+                    "strength": "500ml",
+                    "dose": "1x1x0x1",
+                    "stopped": "stopped"
+                },
+                {
+                    "start": "11-25-2017",
+                    "end": "08-25-2018",
                     "name": "paracetamol",
                     "strength": "1000ml",
                     "dose": "2x1x3x3"

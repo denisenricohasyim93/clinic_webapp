@@ -83,17 +83,22 @@ class Medicine extends Component {
         );
     }
 
+    stop_medicine(medicine) {
+        this.props.stop_medicine(this.props.patient, medicine)
+    }
+
     render_active_medicine() {
         return <div id="medicine_list_container">
             {
                 this.props.patient.medicine.map((medicine, x) =>
-                    moment(medicine.end) > moment() ?
+                    moment(medicine.end) > moment() && !medicine.stopped ?
                         <div key={x} id="medicine">
                             <h4>{medicine.start}</h4>
                             <h4>{medicine.end}</h4>
                             <h4>{medicine.name.match(/(\w+)/)[0]}</h4>
                             <h4>{medicine.strength}</h4>
                             <h4>{medicine.dose}</h4>
+                            <div id="stop_medicine" onClick={() => this.stop_medicine(medicine)}>stop</div>
                         </div> : ""
                 )}
         </div>
@@ -103,13 +108,14 @@ class Medicine extends Component {
         return <div id="medicine_list_container">
             {
                 this.props.patient.medicine.map((medicine, x) =>
-                    moment(medicine.end) < moment() ?
+                    moment(medicine.end) < moment() || medicine.stopped ?
                         <div key={x} id="medicine">
                             <h4>{medicine.start}</h4>
                             <h4>{medicine.end}</h4>
                             <h4>{medicine.name.match(/(\w+)/)[0]}</h4>
                             <h4>{medicine.strength}</h4>
                             <h4>{medicine.dose}</h4>
+                            <h4>{medicine.stopped}</h4>
                         </div> : ""
                 )}
         </div>

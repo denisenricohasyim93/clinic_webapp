@@ -1,7 +1,15 @@
 import React, { Component } from 'react';
 
 class AddPatientPanel extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            gender: null
+        }
+    }
+
     render() {
+        console.log(this.state);
         return (
             <div id="add_patient_container">
                 <button id="close_patient_panel_btn" onClick={this.props.close_patient_panel}>
@@ -11,7 +19,11 @@ class AddPatientPanel extends Component {
                     <input type="text" placeholder="patient_name" name="patient_name" />
                     <input type="date" placeholder="patient_birth_date" defaultValue="1990-01-01" name="patient_birth_date" />
 
-                    <select name="patient_gender">
+                    <select onChange={(e) => this.setState({
+                        gender: e.target.value.toLowerCase()
+                    })}
+                        name="patient_gender">
+
                         <option>Male</option>
                         <option>Female</option>
                     </select>
@@ -21,10 +33,14 @@ class AddPatientPanel extends Component {
                         <input type="checkbox" name="patient_smoker" id="patient_smoker" />
                     </div>
 
-                    <div id="label">
-                        <label htmlFor="patient_gravida">Gravida</label>
-                        <input type="checkbox" name="patient_gravida" id="patient_gravida" />
-                    </div>
+                    {
+                        this.state.gender === "female"
+                            ? <div id="label">
+                                <label htmlFor="patient_gravida">Gravida</label>
+                                <input type="checkbox" name="patient_gravida" id="patient_gravida" />
+                            </div>
+                            : ""
+                    }
 
                     <input type="text" placeholder="address" name="patient_address" />
                     <input type="text" placeholder="phone" name="patient_phone" />

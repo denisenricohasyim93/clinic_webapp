@@ -83,7 +83,7 @@
   width: 100%;
   background: floralwhite;
   border: 1px solid black;
-  padding: 0 1rem;
+  padding: 0 0 0 1rem;
 }
 
 #medicine h4 {
@@ -135,4 +135,16 @@
 #span_date_title {
   width: 3rem;
   display: inline-block;
+}
+
+#stop_medicine {
+  float: right;
+  color: white;
+  background: #f3a0a0;
+  padding: 0 1rem;
+}
+
+#stop_medicine:hover {
+  cursor: pointer;
+  background: red;
 }
