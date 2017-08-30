@@ -1,8 +1,27 @@
 import React, { Component } from 'react';
 import moment from 'moment'
+import { Editor } from 'react-draft-wysiwyg';
+import draftToHtml from 'draftjs-to-html';
+import { EditorState, convertToRaw } from 'draft-js';
+
+
+const EditorComponent = () => <Editor />
 
 class AddNote extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            editorState: EditorState.createEmpty()
+        };
+    }
+
+    onEditorStateChange(editorState) {
+        this.setState({ editorState });
+    }
+
+
     render() {
+
         return (
             <div id="create_note_container">
                 <div id="close_create_note_panel">
@@ -16,24 +35,34 @@ class AddNote extends Component {
                     <option>discharged summary</option>
                     <option>treatment plan</option>
                 </select>
-                <input type="text" name="create_note_content" placeholder="content" />
+
+                <Editor
+                    editorState={this.state.editorState}
+                    onEditorStateChange={(val) => this.onEditorStateChange(val)} />
+
                 <button id="create_note_btn" onClick={() => this.construct_note()}>Create</button>
             </div>
         );
     }
 
     construct_note() {
-        let title = document.querySelector("select[name=create_note_title]"), content = document.querySelector("input[name=create_note_content]")
+        let title = document.querySelector("select[name=create_note_title]")
 
-        if (!title.value.match(/^\s*$/) && !content.value.match(/^\s*$/)) {
+        var contentState = convertToRaw(this.state.editorState.getCurrentContent()),
+            markup = draftToHtml(contentState);
+
+        if (!title.value.match(/^\s*$/)) {
 
             let note = {
                 date: moment().format("MM-DD-YYYY"),
                 title: title.value,
-                content: content.value
+                content: markup
             }
 
-            title.value = "", content.value = ""
+            console.log(note);
+
+            title.value = ""
+            this.setState({ editorState: EditorState.createEmpty() })
             this.props.add_note(note, this.props.patient, "notes")
             this.props.close_create_notes_panel()
         }

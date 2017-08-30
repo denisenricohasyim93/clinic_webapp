@@ -46,7 +46,7 @@ class Medicine extends Component {
                                     category_list="medicine_dose_list"
                                     add_dropdown_item={this.props.add_dropdown_item}
                                     items={this.props.medicine_dose_list}
-                                    category="medicine" />
+                                    category="dose" />
                             </div>
                         </div>
 
@@ -55,12 +55,12 @@ class Medicine extends Component {
                     </div>
 
                     <div id="active_medicine_container">
-                        <u>Active Medicine</u>
+                        <u>Current Medicine</u>
                         {this.render_active_medicine()}
                     </div>
 
                     <div id="inactive_medicine_container">
-                        <u>inactive Medicine</u>
+                        <u>Past Medicine</u>
                         {this.render_inactive_medicine()}
                     </div>
                 </div>

@@ -21,7 +21,6 @@
   height: 2rem;
 }
 
-
 #medicine_dropdown_container,
 #medicine_dose_dropdown_container {
   width: 100%;
@@ -31,7 +30,7 @@
 }
 
 #medicine_dose_dropdown_container {
-z-index: 1;
+  z-index: 1;
 }
 
 [contentEditable=true]:empty:not(:focus):before {
@@ -84,7 +83,6 @@ z-index: 1;
   width: 100%;
   background: floralwhite;
   border: 1px solid black;
-  margin-top: 0.5rem;
   padding: 0 1rem;
 }
 

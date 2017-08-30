@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import AddNote from './AddNote'
 import moment from 'moment'
+import ReactHtmlParser from 'react-html-parser';
 
 class Notes extends Component {
     constructor(props) {
         super(props)
         this.state = {
             show_create_notes_panel: false
-        }
+        };
     }
 
     render() {
@@ -23,7 +24,7 @@ class Notes extends Component {
                     <button id="create_note_btn"
                         onClick={() => this.show_create_notes_panel()}><i className="fa fa-plus"></i>
                     </button>
-                    <button onClick={() => this.expand_recent_notes()}>Expand All</button>
+                    <button id="expand_notes_btn" onClick={() => this.expand_recent_notes()}>Expand All</button>
                 </div>
 
 
@@ -48,9 +49,15 @@ class Notes extends Component {
                 <div key={x} className="note" onClick={(e) => this.expand_note(e.target)}>
                     <span id="note_date">{note.date}</span>
                     <span>{note.title}</span>
-                    <div id="note_content">{note.content}</div>
+                    <div id="note_content">{ReactHtmlParser(note.content)}</div>
                 </div>)
             }
+        </div>
+    }
+
+    parse_note(content) {
+        return <div>
+
         </div>
     }
 
