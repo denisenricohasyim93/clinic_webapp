@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import moment from 'moment'
+
 import Vitals from './Profile/Vitals'
 import Appointments from './Profile/Appointments'
 import Notes from './Profile/Notes'
@@ -10,9 +12,17 @@ export default class PatientsList extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            active_tab: "notes"
+            active_tab: "notes",
+            selected_diagnosis_option: ""
         }
     }
+
+    componentDidMount() {
+        this.setState({
+            selected_diagnosis_option: ""
+        })
+    }
+
     render() {
         return (
             <div id="patients_profile_route" className="route_section">
@@ -45,6 +55,10 @@ export default class PatientsList extends Component {
 
     remove_selected_patient() { this.props.remove_selected_patient() }
 
+    set_selected_diagnosis_option(option) {
+        this.setState({ selected_diagnosis_option: option })
+    }
+
     show_route(props) {
         if (this.state.active_tab === "notes") {
             return <Notes
@@ -66,7 +80,12 @@ export default class PatientsList extends Component {
 
         if (this.state.active_tab === "info") {
             return <Info
-                patient={props.patient[0]} />
+                patient={props.patient[0]}
+                create_diagnosis={this.create_diagnosis.bind(this)}
+                selected_option={this.state.selected_diagnosis_option}
+                set_selected_option={this.set_selected_diagnosis_option.bind(this)}
+                add_dropdown_item={this.props.add_dropdown_item}
+                diagnosis_list={props.diagnosis_list} />
         }
 
         if (this.state.active_tab === "appointments") {
@@ -77,6 +96,9 @@ export default class PatientsList extends Component {
 
         if (this.state.active_tab === "medicine") {
             return <Medicine
+                create_diagnosis={this.create_diagnosis.bind(this)}
+                selected_option={this.state.selected_diagnosis_option}
+                set_selected_option={this.set_selected_diagnosis_option.bind(this)}
                 medicine_dose_list={this.props.medicine_dose_list}
                 add_dropdown_item={this.props.add_dropdown_item}
                 medicine_list={this.props.medicine_list}
@@ -96,5 +118,22 @@ export default class PatientsList extends Component {
         el.className = "patient_tab active_patient_tab"
 
         this.setState({ active_tab: tab })
+    }
+
+    create_diagnosis() {
+        let treatment = document.querySelector("#create_diagnosis_treatment")
+
+        if (treatment && this.state.selected_diagnosis_option) {
+            let diagnosis_bj = {
+                "date": moment().format("MMM Do YYYY"),
+                "diagnosis": this.state.selected_diagnosis_option,
+                "treatment": treatment.value
+            }
+
+            treatment.value = ""
+            this.setState({ selected_diagnosis_option: "" })
+            this.props.add_item(diagnosis_bj, this.props.patient[0], "diagnosis")
+
+        }
     }
 }

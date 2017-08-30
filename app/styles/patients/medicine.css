@@ -137,3 +137,8 @@
   height: 2rem;
   position: relative;
 }
+
+#span_date_title {
+  width: 3rem;
+  display: inline-block;
+}

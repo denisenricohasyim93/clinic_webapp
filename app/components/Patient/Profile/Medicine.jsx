@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 import DropDown from '../../Util/DropDown';
+import Diagnosis from './Diagnosis'
 
 class Medicine extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            selected_diagnosis_option: "",
             selected_medicine_option: "",
             selected_medicine_dose_option: ""
         }
@@ -21,7 +21,6 @@ class Medicine extends Component {
     }
 
     render() {
-
         return (
             <div className="patient_profile_route">
                 <div id="medicine_container">
@@ -65,40 +64,17 @@ class Medicine extends Component {
                     </div>
                 </div>
 
-                <div id="diagnosis_container">
-                    <button id="btn_add_diagnosis"
-                        onClick={(e) => this.create_diagnosis(e)}>
-                        Create Diagnosis
-                    </button>
-
-                    <div id="dropdown_diagnosis_container">
-                        <DropDown
-                            selected_option={this.state.selected_diagnosis_option}
-                            set_selected_option={this.set_selected_diagnosis_option.bind(this)}
-                            category_list="diagnosis_list"
-                            add_dropdown_item={this.props.add_dropdown_item}
-                            items={this.props.diagnosis_list}
-                            category="diagnosis"
-                        />
-                    </div>
-
-                    <textarea id="create_diagnosis_treatment" placeholder="treatment"></textarea>
-                    {this.render_diagnosis()}
-                </div>
+                <Diagnosis
+                    create_diagnosis={this.props.create_diagnosis}
+                    patient={this.props.patient}
+                    selected_option={this.props.selected_option}
+                    set_selected_option={this.props.set_selected_option}
+                    category_list="diagnosis_list"
+                    add_dropdown_item={this.props.add_dropdown_item}
+                    items={this.props.diagnosis_list}
+                    category="diagnosis" />
             </div>
         );
-    }
-
-    render_diagnosis() {
-        return <div id="diagnosis_list_container">
-            {this.props.patient.diagnosis.map((diagnosis, x) =>
-                <div key={x} id="diagnosis">
-                    <h4>{diagnosis.date.match(/\d+$/)[0]}</h4>
-                    <h4>{diagnosis.diagnosis}</h4>
-                    <h4>{diagnosis.treatment}</h4>
-                </div>
-            )}
-        </div>
     }
 
     render_active_medicine() {
@@ -133,23 +109,6 @@ class Medicine extends Component {
         </div>
     }
 
-    create_diagnosis() {
-        let treatment = document.querySelector("#create_diagnosis_treatment")
-
-        if (treatment && this.state.selected_diagnosis_option) {
-            let diagnosis_bj = {
-                "date": moment().format("MMM Do YYYY"),
-                "diagnosis": this.state.selected_diagnosis_option,
-                "treatment": treatment.value
-            }
-
-            treatment.value = ""
-            this.setState({ selected_diagnosis_option: "" })
-            this.props.add_medicine(diagnosis_bj, this.props.patient, "diagnosis")
-
-        }
-    }
-
     create_medicine() {
         let selected_medicine_option = this.state.selected_medicine_option,
             selected_medicine_dose_option = this.state.selected_medicine_dose_option,
@@ -178,10 +137,6 @@ class Medicine extends Component {
 
             this.props.add_medicine(medicine, this.props.patient, "medicine")
         }
-    }
-
-    set_selected_diagnosis_option(option) {
-        this.setState({ selected_diagnosis_option: option })
     }
 
     set_selected_medicine_option(option) {

@@ -10,8 +10,8 @@ class Appointments extends Component {
                         <h3>Upcoming</h3>
                         {this.props.patient.appointments.map((apt, x) =>
                             <div key={x} className="apt_div">
-                                <p>Start: {this.render_date(apt.start)}</p>
-                                <p>End: {this.render_date(apt.end)}</p>
+                                <p><span id="span_date_title">Start:</span> {this.render_date(apt.start)}</p>
+                                <p><span id="span_date_title">End:</span> {this.render_date(apt.end)}</p>
                             </div>
                         )}
                     </div>
