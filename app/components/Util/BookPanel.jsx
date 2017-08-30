@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import moment from 'moment'
-import { withRouter } from "react-router-dom";
 
 class BookPanel extends Component {
     render() {
@@ -50,4 +49,4 @@ class BookPanel extends Component {
     }
 }
 
-export default withRouter(BookPanel);
+export default BookPanel;

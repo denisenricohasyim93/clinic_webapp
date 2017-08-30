@@ -2,8 +2,14 @@ import React, { Component } from 'react';
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
 import BookPanel from '../Util/BookPanel'
+import { withRouter } from "react-router-dom";
+import HTML5Backend from 'react-dnd-html5-backend'
+import { DragDropContext } from 'react-dnd'
+import withDragAndDrop from 'react-big-calendar/lib/addons/dragAndDrop';
+
 
 BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment));
+const DragAndDropCalendar = withDragAndDrop(BigCalendar);
 
 class Appointments extends Component {
     constructor(props) {
@@ -20,6 +26,7 @@ class Appointments extends Component {
             <div className="route_section" id="appointments_route">
                 {this.state.show_book_panel ?
                     <BookPanel
+                        history={this.props.history}
                         selected_slot={this.state.selected_slot}
                         close_book_panel={this.close_book_panel.bind(this)}
                         patients={this.props.patients}
@@ -27,14 +34,15 @@ class Appointments extends Component {
                     </BookPanel>
                     : ""}
 
-                <BigCalendar
+                <DragAndDropCalendar
+                    onEventDrop={this.moveEvent.bind(this)}
                     selectable
                     events={this.props.events}
                     step={15}
                     timeslots={2}
                     min={this.get_min_time()}
                     defaultView='week'
-                    onSelectEvent={event => alert(event.title)}
+                    onSelectEvent={event => this.navigate_to_patient(event)}
                     onSelectSlot={(slot_info) => this.book_slot(slot_info)}
                     formats={{
                         eventTimeRangeFormat: function () {
@@ -42,9 +50,17 @@ class Appointments extends Component {
                         }
                     }}
                 />
-
             </div>
         );
+    }
+    moveEvent({ event, start, end }) {
+        this.props.move_appointment(event, start, end)
+    }
+
+
+    navigate_to_patient(event) {
+        this.props.history.push("/patients")
+        this.props.navigate(event.title)
     }
 
     book_slot(slot_info) {
@@ -71,4 +87,4 @@ class Appointments extends Component {
     }
 }
 
-export default Appointments;
+export default withRouter(Appointments);

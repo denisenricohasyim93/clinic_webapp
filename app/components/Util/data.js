@@ -1,4 +1,30 @@
+
+
 let data = {
+    "diagnosis_list": [
+        "hypertension",
+        "hypotension",
+        "cancer",
+        "brainworm"
+    ],
+    "medicine_dose_list": [
+        "1+1+0+0",
+        "2+1+0+0",
+        "2+2+1+0",
+        "2+2+2+0",
+        "1+2+3+1"
+    ],
+    "medicine_list": [
+        "Panodil - Paracetamol - Tablet - 500 mg",
+        "Pancillin - Phenoxymethylpenicillin - Tablet - 0.5 M.IU",
+        "Pancillin - Phenoxymethylpenicillin - Tablet - 1 M.IU",
+        "Pancillin - Phenoxymethylpenicillin - Tablet - 1.5 M.IU",
+        "Benzylpenicillin - Benzylpenicillin - Inj. - 1 M.IU",
+        "Benzylpenicillin - Benzylpenicillin - Inj. - 2 M.IU",
+        "Benzylpenicillin - Benzylpenicillin - Inj. - 5 M.IU",
+        "Furix - Furosemid - Tablet - 40 mg",
+        "Locoid - Hydrocortison-17-butyrat - Cream - 0.1%"
+    ],
     "patients": [
         {
             "name": "Johnny",
@@ -160,16 +186,16 @@ let data = {
             ],
             "appointments": [
                 {
-                    'title': '  dr Hemn',
+                    'title': 'Johnny',
                     'start': new Date(2017, 7, 27, 12, 0, 0),
                     'end': new Date(2017, 7, 27, 13, 0, 0),
-                    'desc': '  someone'
+                    'desc': 'someone'
                 },
                 {
-                    'title': '  dr Hemn',
+                    'title': 'Johnny',
                     'start': new Date(2017, 7, 28, 14, 0, 0),
                     'end': new Date(2017, 7, 28, 15, 0, 0),
-                    'desc': '  someone'
+                    'desc': 'someone'
                 }
 
             ]
@@ -271,13 +297,13 @@ let data = {
             ],
             "appointments": [
                 {
-                    'title': '  dr Hemn',
+                    'title': 'Max',
                     'start': new Date(2017, 7, 29, 12, 0, 0),
                     'end': new Date(2017, 7, 29, 13, 0, 0),
                     'desc': '  someone'
                 },
                 {
-                    'title': '  dr Hemn',
+                    'title': 'Max',
                     'start': new Date(2017, 7, 30, 14, 0, 0),
                     'end': new Date(2017, 7, 30, 15, 0, 0),
                     'desc': '  someone'
@@ -381,13 +407,13 @@ let data = {
             ],
             "appointments": [
                 {
-                    'title': '  dr Hemn',
+                    'title': 'Tyler',
                     'start': new Date(2017, 7, 31, 12, 0, 0),
                     'end': new Date(2017, 7, 31, 13, 0, 0),
                     'desc': '  someone'
                 },
                 {
-                    'title': '  dr Hemn',
+                    'title': 'Tyler',
                     'start': new Date(2017, 7, 31, 14, 0, 0),
                     'end': new Date(2017, 7, 31, 15, 0, 0),
                     'desc': '  someone'
@@ -489,13 +515,13 @@ let data = {
             ],
             "appointments": [
                 {
-                    'title': '  dr Hemn',
+                    'title': 'Julien',
                     'start': new Date(2017, 8, 2, 12, 0, 0),
                     'end': new Date(2017, 8, 2, 13, 0, 0),
                     'desc': '  someone'
                 },
                 {
-                    'title': '  dr Hemn',
+                    'title': 'Julien',
                     'start': new Date(2017, 8, 2, 14, 0, 0),
                     'end': new Date(2017, 8, 2, 15, 0, 0),
                     'desc': '  someone'
@@ -663,13 +689,13 @@ let data = {
             ],
             "appointments": [
                 {
-                    'title': '  dr kamal',
+                    'title': 'Lolzie',
                     'start': new Date(2017, 8, 3, 12, 0, 0),
                     'end': new Date(2017, 8, 3, 13, 0, 0),
                     'desc': '  someone'
                 },
                 {
-                    'title': '  dr jin',
+                    'title': 'Lolzie',
                     'start': new Date(2017, 8, 4, 14, 0, 0),
                     'end': new Date(2017, 8, 4, 15, 0, 0),
                     'desc': '  someone'
@@ -837,13 +863,13 @@ let data = {
             ],
             "appointments": [
                 {
-                    'title': '  dr boss',
+                    'title': 'Bane',
                     'start': new Date(2017, 8, 5, 12, 0, 0),
                     'end': new Date(2017, 8, 5, 13, 0, 0),
                     'desc': '  someone'
                 },
                 {
-                    'title': '  dr lolz',
+                    'title': 'Bane',
                     'start': new Date(2017, 8, 5, 14, 0, 0),
                     'end': new Date(2017, 8, 5, 15, 0, 0),
                     'desc': '  someone'
@@ -1011,16 +1037,16 @@ let data = {
             ],
             "appointments": [
                 {
-                    'title': '  dr John',
+                    'title': 'Batman',
                     'start': new Date(2017, 8, 2, 15, 0, 0),
                     'end': new Date(2017, 8, 2, 16, 0, 0),
-                    'desc': '  someone'
+                    'desc': 'someone'
                 },
                 {
-                    'title': '  dr Sean',
+                    'title': 'Batman',
                     'start': new Date(2017, 8, 2, 9, 0, 0),
                     'end': new Date(2017, 8, 2, 10, 0, 0),
-                    'desc': '  someone'
+                    'desc': 'someone'
                 }
             ]
         },
@@ -1185,13 +1211,13 @@ let data = {
             ],
             "appointments": [
                 {
-                    'title': '  dr Hemn',
+                    'title': 'Luke',
                     'start': new Date(2017, 8, 2, 8, 0, 0),
                     'end': new Date(2017, 8, 2, 10, 0, 0),
                     'desc': '  someone'
                 },
                 {
-                    'title': '  dr Hardee',
+                    'title': 'Luke',
                     'start': new Date(2017, 8, 2, 12, 0, 0),
                     'end': new Date(2017, 8, 2, 13, 0, 0),
                     'desc': '  someone'

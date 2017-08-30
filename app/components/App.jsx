@@ -24,30 +24,9 @@ class App extends Component {
             patients: data.patients,
             selected_patient: [],
             events: [],
-            diagnosis_list: [
-                "hypertension",
-                "hypotension",
-                "cancer",
-                "brainworm"
-            ],
-            medicine_list: [
-                "Panodil - Paracetamol - Tablet - 500 mg",
-                "Pancillin - Phenoxymethylpenicillin - Tablet - 0.5 M.IU",
-                "Pancillin - Phenoxymethylpenicillin - Tablet - 1 M.IU",
-                "Pancillin - Phenoxymethylpenicillin - Tablet - 1.5 M.IU",
-                "Benzylpenicillin - Benzylpenicillin - Inj. - 1 M.IU",
-                "Benzylpenicillin - Benzylpenicillin - Inj. - 2 M.IU",
-                "Benzylpenicillin - Benzylpenicillin - Inj. - 5 M.IU",
-                "Furix - Furosemid - Tablet - 40 mg",
-                "Locoid - Hydrocortison-17-butyrat - Cream - 0.1%"
-            ],
-            medicine_dose_list: [
-                "1+1+0+0",
-                "2+1+0+0",
-                "2+2+1+0",
-                "2+2+2+0",
-                "1+2+3+1"
-            ]
+            diagnosis_list: data.diagnosis_list,
+            medicine_list: data.medicine_list,
+            medicine_dose_list: data.medicine_dose_list
         }
     }
 
@@ -85,6 +64,8 @@ class App extends Component {
                             } />
                             <Route path="/appointments" render={props =>
                                 <Appointments
+                                    move_appointment={this.move_appointment.bind(this)}
+                                    navigate={this.navigate.bind(this)}
                                     patients={this.state.patients}
                                     add_appointment={this.add_appointment.bind(this)}
                                     events={this.state.events}
@@ -99,12 +80,12 @@ class App extends Component {
     }
 
     remove_selected_patient() {
-        this.setState({ selected_patient: [] })
+        this.setState({ selected_patient: [] });
     }
 
     darken() {
         let darken_div = document.querySelector(".darken")
-        darken_div.classList.toggle("darken_show")
+        darken_div.classList.toggle("darken_show");
     }
 
     add_patient(patient) {
@@ -140,7 +121,7 @@ class App extends Component {
                 "diagnosis": []
             })
 
-            this.setState({ patients: updated_patients })
+            this.setState({ patients: updated_patients });
         }
     }
 
@@ -149,23 +130,81 @@ class App extends Component {
 
         for (let i = 0; i < patients.length; i++) {
             if (patients[i].name === patient.name) {
-                patients[i][property].unshift(item)
+                patients[i][property].unshift(item);
             }
         }
 
-        this.setState({ patients: patients })
+        this.setState({ patients: patients });
     }
 
-    add_appointment(appointment, patient) {
-        let patients = this.state.patients.slice(), selected_patient;
+    navigate(patient) {
+        let selected_patient,
+            patients = this.state.patients;
 
         for (let i = 0; i < patients.length; i++) {
             if (patients[i].name === patient) {
-                selected_patient = patients[i]
-                patients[i].appointments.unshift(appointment)
+                selected_patient = patients[i];
             }
         }
-        let appointments = []
+
+        this.setState({ selected_patient: [selected_patient] });
+    }
+
+    move_appointment(event, start, end) {
+        let patients = this.state.patients.slice(),
+            appointments = [],
+            patient_index,
+            appointment_index,
+            appointment = {
+                "title": event.title,
+                "start": start,
+                "end": end,
+                "desc": event.desc
+            };
+
+        for (let i = 0; i < patients.length; i++) {
+            if (patients[i].name === event.title) {
+
+                for (let j = 0; j < patients[i].appointments.length; j++) {
+                    if (patients[i].appointments[j].start === event.start) {
+
+                        patient_index = i;
+                        appointment_index = j;
+                        patients[i].appointments.push(appointment);
+                        break;
+                    }
+                }
+            }
+        }
+
+
+        if (typeof (patient_index) === "number") {
+            patients[patient_index].appointments.splice(appointment_index, 1)
+        }
+
+        patients.map((patient) => {
+            patient.appointments.map((apt) => {
+                appointments.push(apt)
+            })
+        })
+
+        this.setState({
+            patients: patients,
+            events: appointments
+        })
+    }
+
+    add_appointment(appointment, patient) {
+        let patients = this.state.patients.slice(),
+            selected_patient,
+            appointments = [];
+
+        for (let i = 0; i < patients.length; i++) {
+            if (patients[i].name === patient) {
+                selected_patient = patients[i];
+                patients[i].appointments.unshift(appointment);
+            }
+        }
 
         this.state.patients.map((patient) => {
             patient.appointments.map((apt) => {
@@ -179,7 +218,6 @@ class App extends Component {
             events: appointments,
             selected_patient: [selected_patient]
         })
-
     }
 
     set_appointments() {
