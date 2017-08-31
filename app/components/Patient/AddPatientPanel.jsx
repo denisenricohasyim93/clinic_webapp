@@ -9,7 +9,6 @@ class AddPatientPanel extends Component {
     }
 
     render() {
-        console.log(this.state);
         return (
             <div id="add_patient_container">
                 <button id="close_patient_panel_btn" onClick={this.props.close_patient_panel}>

@@ -32,20 +32,21 @@ class Appointments extends Component {
     }
 
     render_date(date, condition, key) {
-        let current_date = moment().format("MM-DD-YYYY"),
-            end_date = moment(date.end).format("MM-DD-YYYY")
+        let current_date = moment().format("MM-DD-YYYY, h:mm a"),
+            end_date = moment(date.end).format("MM-DD-YYYY, h:mm a"),
+            start_date = moment(date.start).format("MM-DD-YYYY, h:mm a")
 
         if (condition === "upcoming" && end_date >= current_date) {
             return <div key={key} className="apt_div">
-                <p><span id="span_date_title">Start:</span> {moment(date.start).format("MM-DD-YYYY")}</p>
-                <p><span id="span_date_title">End:</span> {moment(date.end).format("MM-DD-YYYY")}</p>
+                <p><span id="span_date_title">Start:</span> {start_date}</p>
+                <p><span id="span_date_title">End:</span> {end_date}</p>
             </div>
         }
 
         if (condition === "past" && end_date < current_date) {
             return <div key={key} className="apt_div">
-                <p><span id="span_date_title">Start:</span> {moment(date.start).format("MM-DD-YYYY")}</p>
-                <p><span id="span_date_title">End:</span> {moment(date.end).format("MM-DD-YYYY")}</p>
+                <p><span id="span_date_title">Start:</span> {start_date}</p>
+                <p><span id="span_date_title">End:</span> {end_date}</p>
             </div>
 
         }

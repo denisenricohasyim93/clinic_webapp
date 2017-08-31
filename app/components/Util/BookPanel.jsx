@@ -15,7 +15,6 @@ class BookPanel extends Component {
     }
 
     render() {
-        console.log(this.state);
         return (
             <div id="book_panel_container">
                 <button id="close_book_panel_btn" onClick={this.props.close_book_panel}>
@@ -24,10 +23,12 @@ class BookPanel extends Component {
 
                 <div id="book_panel_fields">
                     <DateTime
-                        value="start"
+                        defaultValue={this.props.selected_slot.start}
+                        value={this.state.start_date}
                         onChange={(val) => this.set_date(val, "start")} />
                     <DateTime
-                        value="end"
+                        defaultValue={this.props.selected_slot.end}
+                        value={this.state.end_date}
                         onChange={(val) => this.set_date(val, "end")} />
 
                     <select name="book_patient_select">
@@ -46,51 +47,34 @@ class BookPanel extends Component {
 
     set_date(val, type) {
         if (type === "start") {
-            this.setState({
-                start_date: val._d
-            })
+            this.setState({ start_date: val._d })
         }
 
         if (type === "end") {
-            this.setState({
-                end_date: val._d
-            })
+            this.setState({ end_date: val._d })
         }
-
     }
 
     construct_appointment() {
         let description = document.querySelector("textarea[name=book_appointment_description]"),
             patient = document.querySelector("select[name=book_patient_select]"),
-
-            start = this.props.selected_slot.start.toLocaleString().match(/(\d).(\d\d).(\d+)..(\d).(\d\d)/),
-            end = this.props.selected_slot.end.toLocaleString().match(/(\d).(\d\d).(\d+)..(\d).(\d\d)/),
-
-            start_date = new Date(start[3], start[1] - 1, start[2], start[4], start[5], 0),
-            end_date = new Date(end[3], end[1] - 1, end[2], end[4], end[5], 0)
+            start_date = this.props.selected_slot.start,
+            end_date = this.props.selected_slot.end
 
         if (this.state.start_date && this.state.end_date) {
-            start_date = moment(this.state.start_date).format("MM-DD-YYYY, h:mm:ss a");
-            start_date = new Date(start)
-
-            end_date = moment(this.state.end_date).format("MM-DD-YYYY, h:mm:ss a");
-            end_date = new Date(end)
+            start_date = new Date(this.state.start_date)
+            end_date = new Date(this.state.end_date)
         }
-
 
         if (!patient.value.match(/^\s*$/)) {
 
             let appointment = {
-                date: moment().format("MMM Do YYYY"),
+                date: moment().format("MM-DD-YYYY, h:mm"),
                 title: patient.value,
                 desc: description.value,
                 start: start_date,
                 end: end_date
             }
-
-            console.log(appointment);
-
-
 
             this.props.history.push("/patients")
             this.props.add_appointment(appointment, patient.value, "appointment")
@@ -101,7 +85,6 @@ class BookPanel extends Component {
                 start_date: null,
                 end_date: null
             })
-
         }
     }
 }
