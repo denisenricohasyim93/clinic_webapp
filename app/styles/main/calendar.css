@@ -4,6 +4,7 @@
   position: absolute;
   z-index: 5;
   left: 30%;
+  width: 40%;
   border: 1px solid black;
 }
 
@@ -23,8 +24,6 @@
 }
 
 #book_panel_fields {
-  margin-top: 2.2rem;
-  width: 15rem;
 }
 
 #book_panel_fields select,
