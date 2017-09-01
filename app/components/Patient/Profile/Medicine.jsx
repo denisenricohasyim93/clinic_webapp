@@ -17,6 +17,7 @@ class Medicine extends Component {
     }
 
     render() {
+        console.log(this.state, 444);
         return (
             <div className="patient_profile_route">
                 <div id="medicine_container">
@@ -45,15 +46,14 @@ class Medicine extends Component {
 
                         <Pikaday
                             placeholder="start"
-                            value={this.state.start_date}
                             onChange={(date) => this.setState({
-                                start_date: date
+                                start_date: date.toDateString()
                             })} />
+
                         <Pikaday
                             placeholder="end"
-                            value={this.state.end_date}
                             onChange={(date) => this.setState({
-                                end_date: date
+                                end_date: date.toDateString()
                             })} />
 
                         <button onClick={() => this.create_medicine()}>Create</button>
@@ -93,8 +93,8 @@ class Medicine extends Component {
                 this.props.patient.medicine.map((medicine, x) =>
                     moment(medicine.end) > moment() && !medicine.stopped ?
                         <div key={x} id="medicine">
-                            <h4>{medicine.start}</h4>
-                            <h4>{medicine.end}</h4>
+                            <h4>{moment(medicine.start).format("MM-DD-YYYY")}</h4>
+                            <h4>{moment(medicine.end).format("MM-DD-YYYY")}</h4>
                             <h4>{medicine.name.match(/(\w+)/)[0]}</h4>
                             <h4>{medicine.strength}</h4>
                             <h4>{medicine.dose}</h4>
@@ -110,8 +110,8 @@ class Medicine extends Component {
                 this.props.patient.medicine.map((medicine, x) =>
                     moment(medicine.end) < moment() || medicine.stopped ?
                         <div key={x} id="medicine">
-                            <h4>{medicine.start}</h4>
-                            <h4>{medicine.end}</h4>
+                            <h4>{moment(medicine.start).format("MM-DD-YYYY")}</h4>
+                            <h4>{moment(medicine.end).format("MM-DD-YYYY")}</h4>
                             <h4>{medicine.name.match(/(\w+)/)[0]}</h4>
                             <h4>{medicine.strength}</h4>
                             <h4>{medicine.dose}</h4>
@@ -135,8 +135,8 @@ class Medicine extends Component {
             && selected_medicine_option !== "medicine") {
 
             let medicine = {
-                "start": moment(start_date).format("MM-DD-YYYY"),
-                "end": moment(end_date).format("MM-DD-YYYY"),
+                "start": moment(start_date).format("YYYY-MM-DD"),
+                "end": moment(end_date).format("YYYY-MM-DD"),
                 "name": selected_medicine_option,
                 "dose": selected_medicine_dose_option,
                 "strength": selected_medicine_option.match(/\-\s(\w+[\.\d+\w+\s]*)$/)[1]
