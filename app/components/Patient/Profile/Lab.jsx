@@ -24,7 +24,6 @@ class Lab extends Component {
 
 
     render() {
-        console.log(this.state, 666);
         return (
             <div className="patient_profile_route">
                 <div id="lab_container">

@@ -59,7 +59,7 @@ class AddLabDetailsPanel extends Component {
         }
 
         let lab_obj = {
-            "date": moment().format("YYYY-MM-DD"),
+            "date": moment().format("YYYY-MM-DD"), // h:mm:ss a for later
             "tests": tests
         }
         return this.props.construct_lab(lab_obj);
