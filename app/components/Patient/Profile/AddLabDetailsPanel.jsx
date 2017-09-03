@@ -14,8 +14,9 @@ class AddLabDetailsPanel extends Component {
                         options_list={this.props.lab_list}
                         //set_selected_option={this.set_selected_lab_option.bind(this)}
                         category="lab" />
-                </div>
 
+                </div>
+                <input type="text" name="lab_result_input" placeholder="result" />
             </div>
         );
     }

@@ -116,6 +116,14 @@
 
 #lab_dropdown_container {
   height: 3rem;
-  width: 90%;
-  margin: auto;
+  width: 70%;
+  display: inline-block;
+}
+
+input[name="lab_result_input"] {
+  width: 25%;
+  display: inline-block;
+  height: 3rem;
+  vertical-align: top;
+  text-align: center;
 }
