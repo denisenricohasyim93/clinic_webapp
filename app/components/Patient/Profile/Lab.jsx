@@ -7,7 +7,8 @@ class Lab extends Component {
         this.state = {
             lab_analysis_list: [],
             lab_details: [],
-            add_lab_details_panel: false
+            add_lab_details_panel: false,
+            selected_options: []
         }
     }
 
@@ -43,6 +44,7 @@ class Lab extends Component {
                     {
                         this.state.add_lab_details_panel
                             ? <AddLabDetailsPanel
+                                set_selected_option={this.set_selected_option.bind(this)}
                                 lab_list={this.props.lab_list}
                                 toggle_add_lab_panel={this.toggle_add_lab_panel.bind(this)} />
                             : ""
@@ -51,6 +53,13 @@ class Lab extends Component {
                 </div>
             </div>
         );
+    }
+
+    set_selected_option(option) {
+        let new_selected_options = this.state.selected_options
+        new_selected_options.push(option)
+
+        this.setState({ selected_options: new_selected_options })
     }
 
     toggle_add_lab_panel() {

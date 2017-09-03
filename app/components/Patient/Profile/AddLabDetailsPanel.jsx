@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Searchable from '../../Util/Searchable';
+import AddLabModule from './AddLabModule'
 
 class AddLabDetailsPanel extends Component {
     constructor(props) {
@@ -9,14 +9,36 @@ class AddLabDetailsPanel extends Component {
         return (
             <div id="add_lab_details_panel_container">
                 <button onClick={() => this.props.toggle_add_lab_panel()} id="add_lab_details_panel_close_btn">X</button>
-                <div id="lab_dropdown_container">
-                    <Searchable
-                        options_list={this.props.lab_list}
-                        //set_selected_option={this.set_selected_lab_option.bind(this)}
-                        category="lab" />
 
-                </div>
-                <input type="text" name="lab_result_input" placeholder="result" />
+                <AddLabModule lab_list={this.props.lab_list}
+                    set_selected_option={this.props.set_selected_option}
+                    category="lab" />
+                <AddLabModule lab_list={this.props.lab_list}
+                    set_selected_option={this.props.set_selected_option}
+                    category="lab" />
+                <AddLabModule lab_list={this.props.lab_list}
+                    set_selected_option={this.props.set_selected_option}
+                    category="lab" />
+                <AddLabModule lab_list={this.props.lab_list}
+                    set_selected_option={this.props.set_selected_option}
+                    category="lab" />
+                <AddLabModule lab_list={this.props.lab_list}
+                    set_selected_option={this.props.set_selected_option}
+                    category="lab" />
+                <AddLabModule lab_list={this.props.lab_list}
+                    set_selected_option={this.props.set_selected_option}
+                    category="lab" />
+                <AddLabModule lab_list={this.props.lab_list}
+                    set_selected_option={this.props.set_selected_option}
+                    category="lab" />
+                <AddLabModule lab_list={this.props.lab_list}
+                    set_selected_option={this.props.set_selected_option}
+                    category="lab" />
+                <AddLabModule lab_list={this.props.lab_list}
+                    set_selected_option={this.props.set_selected_option}
+                    category="lab" />
+
+                <button>Create</button>
             </div>
         );
     }

@@ -46,15 +46,12 @@ class Searchable extends Component {
             }
         }
 
-        return this.setState({
-            searched_options: searched_options
-        })
+        return this.setState({ searched_options: searched_options })
     }
 
     set_option(e) {
         this.props.set_selected_option(e.target.textContent)
-        let input = document.querySelector("#search_item_input")
-        input.value = e.target.textContent
+        e.target.parentNode.previousSibling.value = e.target.textContent
 
         return this.setState({ searched_options: [] })
     }
