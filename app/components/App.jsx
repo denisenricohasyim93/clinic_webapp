@@ -28,12 +28,14 @@ import Appointments from './Main/Appointments'
 import Settings from './Main/Settings'
 
 import data from './Util/data'
+import lab from './Util/lab'
 
 class App extends Component {
 
     constructor(props) {
         super(props)
         this.state = {
+            lab: lab,
             patients: data.patients,
             selected_patient: [],
             events: [],
@@ -74,6 +76,7 @@ class App extends Component {
                             <Route exact path="/" component={Home} />
                             <Route path="/patients" render={props =>
                                 <PatientsContainer
+                                    lab_list={this.state.lab}
                                     stop_medicine={this.stop_medicine.bind(this)}
                                     show_patient_profile={this.show_patient_profile.bind(this)}
                                     remove_selected_patient={this.remove_selected_patient.bind(this)}

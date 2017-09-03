@@ -46,9 +46,8 @@ class AddNote extends Component {
     }
 
     construct_note() {
-        let title = document.querySelector("select[name=create_note_title]")
-
-        var contentState = convertToRaw(this.state.editorState.getCurrentContent()),
+        let title = document.querySelector("select[name=create_note_title]"),
+            contentState = convertToRaw(this.state.editorState.getCurrentContent()),
             markup = draftToHtml(contentState);
 
         if (!title.value.match(/^\s*$/)) {

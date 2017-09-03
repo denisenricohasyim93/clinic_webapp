@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import AddLabDetailsPanel from './AddLabDetailsPanel'
 
 class Lab extends Component {
     constructor(props) {
         super(props)
         this.state = {
             lab_analysis_list: [],
-            lab_details: []
+            lab_details: [],
+            add_lab_details_panel: false
         }
     }
 
@@ -15,7 +17,6 @@ class Lab extends Component {
     }
 
     render() {
-        console.log(this.state);
         return (
             <div className="patient_profile_route">
                 <div id="lab_container">
@@ -34,9 +35,30 @@ class Lab extends Component {
                     <div id="patient_lab_details_container">
                         {this.render_columns()}
                     </div>
+
+                    <button id="add_lab_details_btn" onClick={() => this.toggle_add_lab_panel()}>
+                        <i className="fa fa-plus-square" aria-hidden="true"></i>
+                    </button>
+
+                    {
+                        this.state.add_lab_details_panel
+                            ? <AddLabDetailsPanel
+                                lab_list={this.props.lab_list}
+                                toggle_add_lab_panel={this.toggle_add_lab_panel.bind(this)} />
+                            : ""
+                    }
+
                 </div>
             </div>
         );
+    }
+
+    toggle_add_lab_panel() {
+        this.state.add_lab_details_panel
+            ? this.setState({ add_lab_details_panel: false })
+            : this.setState({ add_lab_details_panel: true })
+
+        this.props.darken()
     }
 
     render_lab_unit_list() {
@@ -70,8 +92,8 @@ class Lab extends Component {
         let filtered_tests = lab.tests.filter((test) => { return test.name === lab_analysis_item })
 
         return filtered_tests.length > 0
-        ? <div key={key}  id="lab_test_exists">{filtered_tests[0]["result"]}</div>
-        : <div key={key} id="lab_test_not_exists"></div>
+            ? <div key={key} id="lab_test_exists">{filtered_tests[0]["result"]}</div>
+            : <div key={key} id="lab_test_not_exists"></div>
     }
 
     construct_lab_list() {

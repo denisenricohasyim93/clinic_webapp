@@ -9,12 +9,16 @@
 #search_item_input {
   vertical-align: top;
   width: 100%;
+  height: 100%;
+  text-align: center;
 }
 
 #searchable_options_container {
   background: white;
   border-left: 1px solid black;
   border-right: 1px solid black;
+  overflow: auto;
+  max-height: 30rem;
 }
 
 #found_option {

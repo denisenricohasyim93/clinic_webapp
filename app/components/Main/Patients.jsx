@@ -40,6 +40,7 @@ export default class PatientsContainer extends Component {
                 {
                     selected_patient.length > 0
                         ? <PatientProfile
+                            lab_list={this.props.lab_list}
                             stop_medicine={this.props.stop_medicine}
                             medicine_dose_list={this.props.medicine_dose_list}
                             add_dropdown_item={add_dropdown_item}

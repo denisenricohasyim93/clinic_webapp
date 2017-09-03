@@ -80,3 +80,42 @@
 #lab_test_exists {
   background: lightgray;
 }
+
+#add_lab_details_btn {
+  position: absolute;
+  font-size: 3rem;
+  border: none;
+  outline: none;
+  right: 0.5rem;
+  background: none;
+  top: 0;
+}
+
+#add_lab_details_btn:hover {
+  color: green;
+  cursor: pointer;
+}
+
+#add_lab_details_panel_container {
+  padding: 0.5rem;
+  position: absolute;
+  z-index: 5;
+  width: 50%;
+  height: 80%;
+  background: white;
+  top: 0;
+  left: 25%;
+}
+
+#add_lab_details_panel_close_btn {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.3rem;
+  font-size: 3rem;
+}
+
+#lab_dropdown_container {
+  height: 3rem;
+  width: 90%;
+  margin: auto;
+}
