@@ -17,7 +17,6 @@ class Medicine extends Component {
     }
 
     render() {
-        console.log(this.state, 444);
         return (
             <div className="patient_profile_route">
                 <div id="medicine_container">

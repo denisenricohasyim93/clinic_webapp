@@ -1,7 +1,16 @@
 import React, { Component } from 'react';
 import moment from 'moment'
+import DateTime from 'react-datetime'
 
 class Appointments extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            start_date: null,
+            end_date: null
+        }
+    }
+
     render() {
         return (
             <div className="patient_profile_route">
@@ -21,14 +30,34 @@ class Appointments extends Component {
                     </div>
 
                     <div className="add_appointment_sidebar">
+                        <DateTime
+                            inputProps={{ placeholder: "start" }}
+                            value={this.state.start_date}
+                            onChange={(val) => this.set_date(val, "start")} />
+
+                        <DateTime
+                            inputProps={{ placeholder: "end" }}
+                            value={this.state.end_date}
+                            onChange={(val) => this.set_date(val, "end")} />
+
+                        <textarea id="add_appointment_patient_profile_description">
+                        </textarea>
+
                         <button onClick={() => this.add_appointment()}>Create Appointment</button>
-                        <input name="appointment_date" placeholder="date" />
-                        <input name="appointment_time" placeholder="time" />
-                        <input name="appointment_visiting" placeholder="visiting" />
                     </div>
                 </div>
             </div>
         );
+    }
+
+    set_date(val, type) {
+        if (type === "start") {
+            this.setState({ start_date: val._d })
+        }
+
+        if (type === "end") {
+            this.setState({ end_date: val._d })
+        }
     }
 
     render_date(date, condition, key) {
@@ -53,17 +82,27 @@ class Appointments extends Component {
     }
 
     add_appointment() {
-        let date = document.querySelector("input[name=appointment_date]"),
-            time = document.querySelector("input[name=appointment_time]"),
-            visiting = document.querySelector("input[name=appointment_visiting]"),
+        let description = document.querySelector("#add_appointment_patient_profile_description"),
+            patient = this.props.patient.name,
+            start_date = new Date(this.state.start_date),
+            end_date = new Date(this.state.end_date),
 
             appointment = {
-                date: date.value,
-                time: time.value,
-                visiting: visiting.value
+                date: moment().format("MM-DD-YYYY, h:mm"),
+                title: patient,
+                desc: description.value,
+                start: start_date,
+                end: end_date
             }
 
-        this.props.add_appointment(appointment, this.props.patient)
+        this.props.add_appointment(appointment, patient, "appointment")
+
+        description.value = ""
+
+        this.setState({
+            start_date: null,
+            end_date: null
+        })
     }
 }
 

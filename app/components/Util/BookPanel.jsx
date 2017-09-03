@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import moment from 'moment'
 import Pikaday from 'react-pikaday';
-import TimePicker from 'rc-time-picker';
 import DateTime from 'react-datetime'
 
 class BookPanel extends Component {

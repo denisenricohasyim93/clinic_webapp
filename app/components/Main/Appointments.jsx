@@ -57,7 +57,6 @@ class Appointments extends Component {
         this.props.move_appointment(event, start, end)
     }
 
-
     navigate_to_patient(event) {
         this.props.history.push("/patients")
         this.props.navigate(event.title)
