@@ -75,6 +75,7 @@ export default class PatientsList extends Component {
 
         if (this.state.active_tab === "lab") {
             return <Lab
+                add_lab_item={this.props.add_item}
                 lab_list={this.props.lab_list}
                 darken={props.darken}
                 patient={props.patient[0]} />

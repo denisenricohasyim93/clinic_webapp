@@ -4,6 +4,7 @@
   width: 100%;
   border: 1px solid black;
   background: floralwhite;
+  overflow: auto;
 }
 
 #lab_analysis_container {

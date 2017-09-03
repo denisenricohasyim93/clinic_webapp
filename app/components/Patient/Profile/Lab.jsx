@@ -17,7 +17,14 @@ class Lab extends Component {
         this.construct_lab_details()
     }
 
+    componentWillReceiveProps(nextProps) {
+        this.construct_lab_list()
+        this.construct_lab_details()
+    }
+
+
     render() {
+        console.log(this.state, 666);
         return (
             <div className="patient_profile_route">
                 <div id="lab_container">
@@ -44,15 +51,22 @@ class Lab extends Component {
                     {
                         this.state.add_lab_details_panel
                             ? <AddLabDetailsPanel
+                                construct_lab={this.construct_lab.bind(this)}
                                 set_selected_option={this.set_selected_option.bind(this)}
                                 lab_list={this.props.lab_list}
                                 toggle_add_lab_panel={this.toggle_add_lab_panel.bind(this)} />
                             : ""
                     }
-
                 </div>
             </div>
         );
+    }
+
+    construct_lab(lab_obj) {
+        this.setState({ selected_options: [] })
+        this.props.add_lab_item(lab_obj, this.props.patient, "lab")
+
+        return this.toggle_add_lab_panel()
     }
 
     set_selected_option(option) {
@@ -106,23 +120,21 @@ class Lab extends Component {
     }
 
     construct_lab_list() {
-        let arr = [], lab_analysis_list
+        let lab_analysis_list = this.state.lab_analysis_list.slice()
 
         this.props.patient.lab.map((lab, x) =>
             lab.tests.map((test, z) =>
-                arr.indexOf(test.name) === -1
-                    ? arr.push(test.name)
+                lab_analysis_list.indexOf(test.name) === -1
+                    ? lab_analysis_list.push(test.name)
                     : null
             )
         )
 
-        lab_analysis_list = arr.sort((a, b) => {
+        lab_analysis_list = lab_analysis_list.sort((a, b) => {
             return a > b ? 1 : a < b ? -1 : 0
         })
 
-        return this.setState({
-            lab_analysis_list: lab_analysis_list
-        })
+        return this.setState({ lab_analysis_list: lab_analysis_list })
     }
 
     construct_lab_details() {

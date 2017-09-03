@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import AddLabModule from './AddLabModule'
+import AddLabModule from './AddLabModule';
+import moment from 'moment';
 
 class AddLabDetailsPanel extends Component {
     constructor(props) {
@@ -38,9 +39,30 @@ class AddLabDetailsPanel extends Component {
                     set_selected_option={this.props.set_selected_option}
                     category="lab" />
 
-                <button>Create</button>
+                <button onClick={() => this.construct_lab_details()}>Create</button>
             </div>
         );
+    }
+
+    construct_lab_details() {
+        let lab_results = document.querySelectorAll('input[name="lab_result_input"]'),
+            lab_names = document.querySelectorAll("#search_item_input"),
+            tests = [];
+
+        for (let i = 0; i < lab_names.length; i++) {
+            if (lab_results[i].value && lab_names[i].value) {
+                tests.push({
+                    "name": lab_names[i].value.trim(),
+                    "result": lab_results[i].value
+                })
+            }
+        }
+
+        let lab_obj = {
+            "date": moment().format("YYYY-MM-DD"),
+            "tests": tests
+        }
+        return this.props.construct_lab(lab_obj);
     }
 }
 

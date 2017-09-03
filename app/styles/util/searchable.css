@@ -13,6 +13,7 @@
 }
 
 #searchable_options_container {
+  width: 95%;
   position: absolute;
   background: white;
   border-left: 1px solid black;
