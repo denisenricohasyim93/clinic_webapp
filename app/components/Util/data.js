@@ -179,6 +179,87 @@ let data = {
                     "treatment": "some treatment for hypertension"
                 }
             ],
+
+            "lab":
+            [
+                {
+                    "date": "2017-09-03",
+                    "tests": [
+                        {
+                            "name": "Albumin;Csv, KBA",
+                            "result": 10
+                        },
+                        {
+                            "name": "Retinolbindende protein;P, KBA",
+                            "result": 20
+                        },
+                        {
+                            "name": "Mexiletin;P, KBA",
+                            "result": 7
+                        },
+                        {
+                            "name": "Alzheimer: Pakke (SSI 452), KBA",
+                            "result": 15
+                        }
+                    ]
+                },
+                {
+                    "date": "2017-09-04",
+                    "tests": [
+                        {
+                            "name": "M-komponent;U, KBA",
+                            "result": 10
+                        },
+                        {
+                            "name": "Mycoplasma pneumoniae antistoffer, KMD",
+                            "result": 20
+                        },
+                        {
+                            "name": "Krom;P, KBA",
+                            "result": 7
+                        },
+                        {
+                            "name": "Koag. overflade-induceret [APTT];P, KBA",
+                            "result": 15
+                        }
+                    ]
+                },
+                {
+                    "date": "2017-09-02",
+                    "tests": [
+                        {
+                            "name": "Hæmogl. deriv.gruppe;Csv (Xantochromi), KBA",
+                            "result": 10
+                        },
+                        {
+                            "name": "Immunglobulin G;P, KBA",
+                            "result": 20
+                        },
+                        {
+                            "name": "Herpes Simplexvirus type 1 og 2 IgG antistof, KMD",
+                            "result": 7
+                        },
+                        {
+                            "name": "Glukose;Dialysev (perit), KBA",
+                            "result": 15
+                        }
+                    ]
+                },
+                {
+                    "date": "2017-09-05",
+                    "tests": [
+                        {
+                            "name": "Encefalit P/Csv, KBA",
+                            "result": 10
+                        },
+                        {
+                            "name": "Ferroxidase;P, KBA",
+                            "result": 20
+                        }
+                    ]
+                }
+            ]
+            ,
             "appointments": [
                 {
                     'title': 'Johnny',
@@ -212,6 +293,85 @@ let data = {
                     "treatment": "some treatment for hypertension"
                 }
             ],
+            "lab":
+            [
+                {
+                    "date": "2017-09-03",
+                    "tests": [
+                        {
+                            "name": "Albumin;Csv, KBA",
+                            "result": 10
+                        },
+                        {
+                            "name": "Retinolbindende protein;P, KBA",
+                            "result": 20
+                        },
+                        {
+                            "name": "Mexiletin;P, KBA",
+                            "result": 7
+                        },
+                        {
+                            "name": "Alzheimer: Pakke (SSI 452), KBA",
+                            "result": 15
+                        }
+                    ]
+                },
+                {
+                    "date": "2017-09-04",
+                    "tests": [
+                        {
+                            "name": "M-komponent;U, KBA",
+                            "result": 10
+                        },
+                        {
+                            "name": "Mycoplasma pneumoniae antistoffer, KMD",
+                            "result": 20
+                        },
+                        {
+                            "name": "Krom;P, KBA",
+                            "result": 7
+                        },
+                        {
+                            "name": "Koag. overflade-induceret [APTT];P, KBA",
+                            "result": 15
+                        }
+                    ]
+                },
+                {
+                    "date": "2017-09-02",
+                    "tests": [
+                        {
+                            "name": "Hæmogl. deriv.gruppe;Csv (Xantochromi), KBA",
+                            "result": 10
+                        },
+                        {
+                            "name": "Immunglobulin G;P, KBA",
+                            "result": 20
+                        },
+                        {
+                            "name": "Herpes Simplexvirus type 1 og 2 IgG antistof, KMD",
+                            "result": 7
+                        },
+                        {
+                            "name": "Glukose;Dialysev (perit), KBA",
+                            "result": 15
+                        }
+                    ]
+                },
+                {
+                    "date": "2017-09-05",
+                    "tests": [
+                        {
+                            "name": "Encefalit P/Csv, KBA",
+                            "result": 10
+                        },
+                        {
+                            "name": "Ferroxidase;P, KBA",
+                            "result": 20
+                        }
+                    ]
+                }
+            ]            ,
             "medicine": [
                 {
                     "start": "2017-11-25",
@@ -319,6 +479,86 @@ let data = {
                     "treatment": "some treatment for hypertension"
                 }
             ],
+            "lab":
+            [
+                {
+                    "date": "2017-09-03",
+                    "tests": [
+                        {
+                            "name": "Albumin;Csv, KBA",
+                            "result": 10
+                        },
+                        {
+                            "name": "Retinolbindende protein;P, KBA",
+                            "result": 20
+                        },
+                        {
+                            "name": "Mexiletin;P, KBA",
+                            "result": 7
+                        },
+                        {
+                            "name": "Alzheimer: Pakke (SSI 452), KBA",
+                            "result": 15
+                        }
+                    ]
+                },
+                {
+                    "date": "2017-09-04",
+                    "tests": [
+                        {
+                            "name": "M-komponent;U, KBA",
+                            "result": 10
+                        },
+                        {
+                            "name": "Mycoplasma pneumoniae antistoffer, KMD",
+                            "result": 20
+                        },
+                        {
+                            "name": "Krom;P, KBA",
+                            "result": 7
+                        },
+                        {
+                            "name": "Koag. overflade-induceret [APTT];P, KBA",
+                            "result": 15
+                        }
+                    ]
+                },
+                {
+                    "date": "2017-09-02",
+                    "tests": [
+                        {
+                            "name": "Hæmogl. deriv.gruppe;Csv (Xantochromi), KBA",
+                            "result": 10
+                        },
+                        {
+                            "name": "Immunglobulin G;P, KBA",
+                            "result": 20
+                        },
+                        {
+                            "name": "Herpes Simplexvirus type 1 og 2 IgG antistof, KMD",
+                            "result": 7
+                        },
+                        {
+                            "name": "Glukose;Dialysev (perit), KBA",
+                            "result": 15
+                        }
+                    ]
+                },
+                {
+                    "date": "2017-09-05",
+                    "tests": [
+                        {
+                            "name": "Encefalit P/Csv, KBA",
+                            "result": 10
+                        },
+                        {
+                            "name": "Ferroxidase;P, KBA",
+                            "result": 20
+                        }
+                    ]
+                }
+            ]
+            ,
             "medicine": [
                 {
                     "start": "2017-11-25",
@@ -449,6 +689,86 @@ let data = {
                     "dose": "1x1x7x4"
                 }
             ],
+            "lab":
+            [
+                {
+                    "date": "2017-09-03",
+                    "tests": [
+                        {
+                            "name": "Albumin;Csv, KBA",
+                            "result": 10
+                        },
+                        {
+                            "name": "Retinolbindende protein;P, KBA",
+                            "result": 20
+                        },
+                        {
+                            "name": "Mexiletin;P, KBA",
+                            "result": 7
+                        },
+                        {
+                            "name": "Alzheimer: Pakke (SSI 452), KBA",
+                            "result": 15
+                        }
+                    ]
+                },
+                {
+                    "date": "2017-09-04",
+                    "tests": [
+                        {
+                            "name": "M-komponent;U, KBA",
+                            "result": 10
+                        },
+                        {
+                            "name": "Mycoplasma pneumoniae antistoffer, KMD",
+                            "result": 20
+                        },
+                        {
+                            "name": "Krom;P, KBA",
+                            "result": 7
+                        },
+                        {
+                            "name": "Koag. overflade-induceret [APTT];P, KBA",
+                            "result": 15
+                        }
+                    ]
+                },
+                {
+                    "date": "2017-09-02",
+                    "tests": [
+                        {
+                            "name": "Hæmogl. deriv.gruppe;Csv (Xantochromi), KBA",
+                            "result": 10
+                        },
+                        {
+                            "name": "Immunglobulin G;P, KBA",
+                            "result": 20
+                        },
+                        {
+                            "name": "Herpes Simplexvirus type 1 og 2 IgG antistof, KMD",
+                            "result": 7
+                        },
+                        {
+                            "name": "Glukose;Dialysev (perit), KBA",
+                            "result": 15
+                        }
+                    ]
+                },
+                {
+                    "date": "2017-09-05",
+                    "tests": [
+                        {
+                            "name": "Encefalit P/Csv, KBA",
+                            "result": 10
+                        },
+                        {
+                            "name": "Ferroxidase;P, KBA",
+                            "result": 20
+                        }
+                    ]
+                }
+            ]
+            ,
             "notes": [{
                 "date": "05-08-2017",
                 "title": "note1",
@@ -643,6 +963,86 @@ let data = {
                     "dose": "2x1x3x3"
                 }
             ],
+            "lab":
+            [
+                {
+                    "date": "2017-09-03",
+                    "tests": [
+                        {
+                            "name": "Albumin;Csv, KBA",
+                            "result": 10
+                        },
+                        {
+                            "name": "Retinolbindende protein;P, KBA",
+                            "result": 20
+                        },
+                        {
+                            "name": "Mexiletin;P, KBA",
+                            "result": 7
+                        },
+                        {
+                            "name": "Alzheimer: Pakke (SSI 452), KBA",
+                            "result": 15
+                        }
+                    ]
+                },
+                {
+                    "date": "2017-09-04",
+                    "tests": [
+                        {
+                            "name": "M-komponent;U, KBA",
+                            "result": 10
+                        },
+                        {
+                            "name": "Mycoplasma pneumoniae antistoffer, KMD",
+                            "result": 20
+                        },
+                        {
+                            "name": "Krom;P, KBA",
+                            "result": 7
+                        },
+                        {
+                            "name": "Koag. overflade-induceret [APTT];P, KBA",
+                            "result": 15
+                        }
+                    ]
+                },
+                {
+                    "date": "2017-09-02",
+                    "tests": [
+                        {
+                            "name": "Hæmogl. deriv.gruppe;Csv (Xantochromi), KBA",
+                            "result": 10
+                        },
+                        {
+                            "name": "Immunglobulin G;P, KBA",
+                            "result": 20
+                        },
+                        {
+                            "name": "Herpes Simplexvirus type 1 og 2 IgG antistof, KMD",
+                            "result": 7
+                        },
+                        {
+                            "name": "Glukose;Dialysev (perit), KBA",
+                            "result": 15
+                        }
+                    ]
+                },
+                {
+                    "date": "2017-09-05",
+                    "tests": [
+                        {
+                            "name": "Encefalit P/Csv, KBA",
+                            "result": 10
+                        },
+                        {
+                            "name": "Ferroxidase;P, KBA",
+                            "result": 20
+                        }
+                    ]
+                }
+            ]
+            ,
             "diagnosis": [
                 {
                     "date": "Aug 26th 2017",
@@ -814,6 +1214,86 @@ let data = {
                     "dose": "2x1x3x3"
                 }
             ],
+            "lab":
+            [
+                {
+                    "date": "2017-09-03",
+                    "tests": [
+                        {
+                            "name": "Albumin;Csv, KBA",
+                            "result": 10
+                        },
+                        {
+                            "name": "Retinolbindende protein;P, KBA",
+                            "result": 20
+                        },
+                        {
+                            "name": "Mexiletin;P, KBA",
+                            "result": 7
+                        },
+                        {
+                            "name": "Alzheimer: Pakke (SSI 452), KBA",
+                            "result": 15
+                        }
+                    ]
+                },
+                {
+                    "date": "2017-09-04",
+                    "tests": [
+                        {
+                            "name": "M-komponent;U, KBA",
+                            "result": 10
+                        },
+                        {
+                            "name": "Mycoplasma pneumoniae antistoffer, KMD",
+                            "result": 20
+                        },
+                        {
+                            "name": "Krom;P, KBA",
+                            "result": 7
+                        },
+                        {
+                            "name": "Koag. overflade-induceret [APTT];P, KBA",
+                            "result": 15
+                        }
+                    ]
+                },
+                {
+                    "date": "2017-09-02",
+                    "tests": [
+                        {
+                            "name": "Hæmogl. deriv.gruppe;Csv (Xantochromi), KBA",
+                            "result": 10
+                        },
+                        {
+                            "name": "Immunglobulin G;P, KBA",
+                            "result": 20
+                        },
+                        {
+                            "name": "Herpes Simplexvirus type 1 og 2 IgG antistof, KMD",
+                            "result": 7
+                        },
+                        {
+                            "name": "Glukose;Dialysev (perit), KBA",
+                            "result": 15
+                        }
+                    ]
+                },
+                {
+                    "date": "2017-09-05",
+                    "tests": [
+                        {
+                            "name": "Encefalit P/Csv, KBA",
+                            "result": 10
+                        },
+                        {
+                            "name": "Ferroxidase;P, KBA",
+                            "result": 20
+                        }
+                    ]
+                }
+            ]
+            ,
             "diagnosis": [
                 {
                     "date": "Aug 26th 2017",
@@ -962,6 +1442,86 @@ let data = {
                     "oxygen": "2   "
                 }
             ],
+            "lab":
+            [
+                {
+                    "date": "2017-09-03",
+                    "tests": [
+                        {
+                            "name": "Albumin;Csv, KBA",
+                            "result": 10
+                        },
+                        {
+                            "name": "Retinolbindende protein;P, KBA",
+                            "result": 20
+                        },
+                        {
+                            "name": "Mexiletin;P, KBA",
+                            "result": 7
+                        },
+                        {
+                            "name": "Alzheimer: Pakke (SSI 452), KBA",
+                            "result": 15
+                        }
+                    ]
+                },
+                {
+                    "date": "2017-09-04",
+                    "tests": [
+                        {
+                            "name": "M-komponent;U, KBA",
+                            "result": 10
+                        },
+                        {
+                            "name": "Mycoplasma pneumoniae antistoffer, KMD",
+                            "result": 20
+                        },
+                        {
+                            "name": "Krom;P, KBA",
+                            "result": 7
+                        },
+                        {
+                            "name": "Koag. overflade-induceret [APTT];P, KBA",
+                            "result": 15
+                        }
+                    ]
+                },
+                {
+                    "date": "2017-09-02",
+                    "tests": [
+                        {
+                            "name": "Hæmogl. deriv.gruppe;Csv (Xantochromi), KBA",
+                            "result": 10
+                        },
+                        {
+                            "name": "Immunglobulin G;P, KBA",
+                            "result": 20
+                        },
+                        {
+                            "name": "Herpes Simplexvirus type 1 og 2 IgG antistof, KMD",
+                            "result": 7
+                        },
+                        {
+                            "name": "Glukose;Dialysev (perit), KBA",
+                            "result": 15
+                        }
+                    ]
+                },
+                {
+                    "date": "2017-09-05",
+                    "tests": [
+                        {
+                            "name": "Encefalit P/Csv, KBA",
+                            "result": 10
+                        },
+                        {
+                            "name": "Ferroxidase;P, KBA",
+                            "result": 20
+                        }
+                    ]
+                }
+            ]
+            ,
             "medicine": [
                 {
                     "start": "2017-11-25",
@@ -1164,6 +1724,86 @@ let data = {
                     "dose": "2x1x3x3"
                 }
             ],
+            "lab":
+            [
+                {
+                    "date": "2017-09-03",
+                    "tests": [
+                        {
+                            "name": "Albumin;Csv, KBA",
+                            "result": 10
+                        },
+                        {
+                            "name": "Retinolbindende protein;P, KBA",
+                            "result": 20
+                        },
+                        {
+                            "name": "Mexiletin;P, KBA",
+                            "result": 7
+                        },
+                        {
+                            "name": "Alzheimer: Pakke (SSI 452), KBA",
+                            "result": 15
+                        }
+                    ]
+                },
+                {
+                    "date": "2017-09-04",
+                    "tests": [
+                        {
+                            "name": "M-komponent;U, KBA",
+                            "result": 10
+                        },
+                        {
+                            "name": "Mycoplasma pneumoniae antistoffer, KMD",
+                            "result": 20
+                        },
+                        {
+                            "name": "Krom;P, KBA",
+                            "result": 7
+                        },
+                        {
+                            "name": "Koag. overflade-induceret [APTT];P, KBA",
+                            "result": 15
+                        }
+                    ]
+                },
+                {
+                    "date": "2017-09-02",
+                    "tests": [
+                        {
+                            "name": "Hæmogl. deriv.gruppe;Csv (Xantochromi), KBA",
+                            "result": 10
+                        },
+                        {
+                            "name": "Immunglobulin G;P, KBA",
+                            "result": 20
+                        },
+                        {
+                            "name": "Herpes Simplexvirus type 1 og 2 IgG antistof, KMD",
+                            "result": 7
+                        },
+                        {
+                            "name": "Glukose;Dialysev (perit), KBA",
+                            "result": 15
+                        }
+                    ]
+                },
+                {
+                    "date": "2017-09-05",
+                    "tests": [
+                        {
+                            "name": "Encefalit P/Csv, KBA",
+                            "result": 10
+                        },
+                        {
+                            "name": "Ferroxidase;P, KBA",
+                            "result": 20
+                        }
+                    ]
+                }
+            ]
+            ,
             "diagnosis": [
                 {
                     "date": "Aug 26th 2017",
