@@ -1,5 +1,6 @@
 import ReactDOM from 'react-dom';
 import React, { Component } from 'react';
+
 import {
     remove_selected_patient,
     darken,
@@ -27,22 +28,12 @@ import PatientsContainer from './Main/Patients'
 import Appointments from './Main/Appointments'
 import Settings from './Main/Settings'
 
-import data from './Util/data'
-import lab from './Util/lab'
+import axios from 'axios'
 
 class App extends Component {
 
     constructor(props) {
         super(props)
-        this.state = {
-            lab: lab,
-            patients: data.patients,
-            selected_patient: [],
-            events: [],
-            diagnosis_list: data.diagnosis_list,
-            medicine_list: data.medicine_list,
-            medicine_dose_list: data.medicine_dose_list
-        }
 
         this.darken = darken.bind(this)
         this.remove_selected_patient = remove_selected_patient.bind(this)
@@ -57,8 +48,26 @@ class App extends Component {
         this.show_patient_profile = show_patient_profile.bind(this)
     }
 
+    init_demo_app_state(data) {
+        this.setState({
+            lab_list: data[1],
+            patients: data[0].patients,
+            selected_patient: [],
+            events: [],
+            diagnosis_list: data[0].diagnosis_list,
+            medicine_list: data[0].medicine_list,
+            medicine_dose_list: data[0].medicine_dose_list
+        })
+
+        setTimeout(() => this.set_appointments(), 1000)
+    }
+
     componentDidMount() {
-        this.set_appointments()
+        if (window.location.pathname === '/demo') {
+            axios.get('http://localhost:3000/test')
+                .then((res) => { this.init_demo_app_state(res.data) })
+                .catch(function (error) { console.log(error); });
+        }
     }
 
     render() {
@@ -76,7 +85,7 @@ class App extends Component {
                             <Route exact path="/" component={Home} />
                             <Route path="/patients" render={props =>
                                 <PatientsContainer
-                                    lab_list={this.state.lab}
+                                    lab_list={this.state.lab_list}
                                     stop_medicine={this.stop_medicine.bind(this)}
                                     show_patient_profile={this.show_patient_profile.bind(this)}
                                     remove_selected_patient={this.remove_selected_patient.bind(this)}

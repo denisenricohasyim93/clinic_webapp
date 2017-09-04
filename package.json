@@ -10,6 +10,7 @@
     "build": "brunch build --production"
   },
   "dependencies": {
+    "axios": "^0.16.2",
     "draft-js": "^0.10.1",
     "draftjs-to-html": "^0.7.5",
     "immutable": "^3.8.1",

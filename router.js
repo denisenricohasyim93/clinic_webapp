@@ -1,13 +1,23 @@
 var express = require('express');
 var router = express.Router();
 var User = require('./user');
+var path = require('path');
 
+var lab = require('./lab');
+var data = require('./data');
 
 // GET route for reading data
 router.get('/', function (req, res, next) {
-    return res.sendFile(path.join(__dirname + '/templateLogReg/index.html'));
+    return res.sendFile(path.join(__dirname + '/templateLogReg/login.html'));
 });
 
+router.get('/demo', function (req, res) {
+    return res.sendFile(path.join(__dirname + '/templateLogReg/app.html'));
+})
+
+router.get('/test', function (req, res) {
+    res.send([data, lab])
+})
 
 //POST route for updating data
 router.post('/', function (req, res, next) {

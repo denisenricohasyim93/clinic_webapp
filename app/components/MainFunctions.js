@@ -158,7 +158,11 @@ function set_appointments() {
 
     this.state.patients.map((patient) => {
         patient.appointments.map((apt) => {
-            appointments.push(apt)
+            appointments.push({
+                title: apt.title,
+                start: new Date(apt.start),
+                end: new Date(apt.end)
+            })
         })
     })
 

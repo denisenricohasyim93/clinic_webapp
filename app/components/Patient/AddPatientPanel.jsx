@@ -51,17 +51,19 @@ class AddPatientPanel extends Component {
     }
 
     add_patient() {
+        let gender = document.querySelector("select[name=patient_gender]").value;
+
         let patient_details = {
             name: document.querySelector("input[name=patient_name]").value,
             date: document.querySelector("input[name=patient_birth_date]").value,
-            gender: document.querySelector("select[name=patient_gender]").value,
+            gender: gender,
             address: document.querySelector("input[name=patient_address]").value,
             phone: document.querySelector("input[name=patient_phone]").value,
-            diabetes: document.querySelector("input[name=patient_diabetes]").value,
-            hypertension: document.querySelector("input[name=patient_hypertension]").value,
-            gravida: document.querySelector("input[name=patient_gravida]").value,
+            gravida: gender === "female" ? document.querySelector("input[name=patient_gravida]").value : "",
             smoker: document.querySelector("input[name=patient_smoker]").value
         }
+
+
 
         this.props.add_patient(patient_details)
         this.props.close_patient_panel()

@@ -7,7 +7,7 @@ var MongoStore = require('connect-mongo')(session);
 
 //connect to MongoDB
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/testForAuth');
+mongoose.connect('mongodb://localhost/emr_clinic');
 var db = mongoose.connection;
 
 //handle mongo error

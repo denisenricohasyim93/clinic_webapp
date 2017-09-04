@@ -263,14 +263,14 @@ let data = {
             "appointments": [
                 {
                     'title': 'Johnny',
-                    'start': new Date(2017, 7, 27, 12, 0, 0),
-                    'end': new Date(2017, 7, 27, 13, 0, 0),
+                    'start': new Date("September 07, 2017 11:13:00"),
+                    'end': new Date("September 07, 2017 12:13:00"),
                     'desc': 'someone'
                 },
                 {
                     'title': 'Johnny',
-                    'start': new Date(2017, 7, 28, 14, 0, 0),
-                    'end': new Date(2017, 7, 28, 15, 0, 0),
+                    'start': new Date("September 08, 2017 11:13:00"),
+                    'end': new Date("September 08, 2017 12:13:00"),
                     'desc': 'someone'
                 }
 
@@ -450,14 +450,14 @@ let data = {
             "appointments": [
                 {
                     'title': 'Max',
-                    'start': new Date(2017, 7, 29, 12, 0, 0),
-                    'end': new Date(2017, 7, 29, 13, 0, 0),
+                    'start': new Date("September 07, 2017 10:13:00"),
+                    'end': new Date("September 07, 2017 11:13:00"),
                     'desc': '  someone'
                 },
                 {
                     'title': 'Max',
-                    'start': new Date(2017, 7, 30, 14, 0, 0),
-                    'end': new Date(2017, 7, 31, 15, 0, 0),
+                    'start': new Date("September 07, 2017 09:13:00"),
+                    'end': new Date("September 07, 2017 10:13:00"),
                     'desc': '  someone'
                 }
             ]
@@ -637,14 +637,14 @@ let data = {
             "appointments": [
                 {
                     'title': 'Tyler',
-                    'start': new Date(2017, 7, 31, 12, 0, 0),
-                    'end': new Date(2017, 7, 31, 13, 0, 0),
+                    'start': new Date("September 06, 2017 11:13:00"),
+                    'end': new Date("September 06, 2017 12:13:00"),
                     'desc': '  someone'
                 },
                 {
                     'title': 'Tyler',
-                    'start': new Date(2017, 7, 31, 14, 0, 0),
-                    'end': new Date(2017, 7, 31, 15, 0, 0),
+                    'start': new Date("September 06, 2017 14:13:00"),
+                    'end': new Date("September 06, 2017 15:13:00"),
                     'desc': '  someone'
                 }
             ]
@@ -822,14 +822,14 @@ let data = {
             "appointments": [
                 {
                     'title': 'Julien',
-                    'start': new Date(2017, 8, 2, 12, 0, 0),
-                    'end': new Date(2017, 8, 2, 13, 0, 0),
+                    'start': new Date("September 08, 2017 11:13:00"),
+                    'end': new Date("September 08, 2017 12:13:00"),
                     'desc': '  someone'
                 },
                 {
                     'title': 'Julien',
-                    'start': new Date(2017, 8, 2, 14, 0, 0),
-                    'end': new Date(2017, 8, 2, 15, 0, 0),
+                    'start': new Date("September 08, 2017 11:13:00"),
+                    'end': new Date("September 08,2017 14:13:00"),
                     'desc': '  someone'
                 }
             ]
@@ -1073,14 +1073,14 @@ let data = {
             "appointments": [
                 {
                     'title': 'Lolzie',
-                    'start': new Date(2017, 8, 3, 12, 0, 0),
-                    'end': new Date(2017, 8, 3, 13, 0, 0),
+                    'start': new Date("September 10, 2017 11:13:00"),
+                    'end': new Date("September 10, 2017 12:13:00"),
                     'desc': '  someone'
                 },
                 {
                     'title': 'Lolzie',
-                    'start': new Date(2017, 8, 4, 14, 0, 0),
-                    'end': new Date(2017, 8, 4, 15, 0, 0),
+                    'start': new Date("September 09, 2017 07:13:00"),
+                    'end': new Date("September 09, 2017 08:13:00"),
                     'desc': '  someone'
                 }
             ]
@@ -1324,14 +1324,14 @@ let data = {
             "appointments": [
                 {
                     'title': 'Bane',
-                    'start': new Date(2017, 8, 5, 12, 0, 0),
-                    'end': new Date(2017, 8, 5, 13, 0, 0),
+                    'start': new Date("September 11, 2017 11:13:00"),
+                    'end': new Date("September 11, 2017 12:13:00"),
                     'desc': '  someone'
                 },
                 {
                     'title': 'Bane',
-                    'start': new Date(2017, 8, 5, 14, 0, 0),
-                    'end': new Date(2017, 8, 5, 15, 0, 0),
+                    'start': new Date("September 12, 2017 11:13:00"),
+                    'end': new Date("September 12, 2017 12:13:00"),
                     'desc': '  someone'
                 }
             ]
@@ -1575,14 +1575,14 @@ let data = {
             "appointments": [
                 {
                     'title': 'Batman',
-                    'start': new Date(2017, 8, 2, 15, 0, 0),
-                    'end': new Date(2017, 8, 2, 16, 0, 0),
+                    'start': new Date("September 13, 2017 11:13:00"),
+                    'end': new Date("September 13, 2017 12:13:00"),
                     'desc': 'someone'
                 },
                 {
                     'title': 'Batman',
-                    'start': new Date(2017, 8, 2, 9, 0, 0),
-                    'end': new Date(2017, 8, 2, 10, 0, 0),
+                    'start': new Date("September 14, 2017 11:13:00"),
+                    'end': new Date("September 14, 2017 12:13:00"),
                     'desc': 'someone'
                 }
             ]
@@ -1834,14 +1834,14 @@ let data = {
             "appointments": [
                 {
                     'title': 'Luke',
-                    'start': new Date(2017, 8, 2, 8, 0, 0),
-                    'end': new Date(2017, 8, 2, 10, 0, 0),
+                    'start': new Date("September 12, 2017 14:13:00"),
+                    'end': new Date("September 12, 2017 15:13:00"),
                     'desc': '  someone'
                 },
                 {
                     'title': 'Luke',
-                    'start': new Date(2017, 8, 2, 12, 0, 0),
-                    'end': new Date(2017, 8, 2, 13, 0, 0),
+                    'start': new Date("September 13, 2017 08:13:00"),
+                    'end': new Date("September 13, 2017 09:13:00"),
                     'desc': '  someone'
                 }
             ]
@@ -1849,4 +1849,4 @@ let data = {
     ]
 }
 
-export default data
+module.exports = data
