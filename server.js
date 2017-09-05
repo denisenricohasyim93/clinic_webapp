@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
+var path = require('path');
 
 //connect to MongoDB
 mongoose.Promise = global.Promise;
@@ -18,7 +19,7 @@ db.once('open', function () {
 
 //use sessions for tracking logins
 app.use(session({
-    secret: 'work hard',
+    secret: 'ASjflksdASDLJKSADL:DSAK234245432@#$%$#@%$#@%',
     resave: true,
     saveUninitialized: false,
     store: new MongoStore({
@@ -36,7 +37,7 @@ app.use(function (req, res, next) {
     next();
 });
 // serve static files from template
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(path.join(__dirname, 'public'), { index: false, extensions: ['html'] }));
 
 // include routes
 var routes = require('./server/router');
