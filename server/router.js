@@ -6,6 +6,10 @@ var path = require('path');
 var lab = require('./lab');
 var data = require('./data');
 
+router.get('/demo', function (req, res) {
+    res.sendFile(path.join(__dirname + '/../public/index.html'))
+})
+
 router.get('/demo_data', function (req, res) {
     res.send([data, lab])
 })
