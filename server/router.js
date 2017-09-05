@@ -7,10 +7,38 @@ var lab = require('./lab');
 var data = require('./data');
 
 router.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname + '/../public/login.html'))
+    if (req.session.userId) {
+        return res.sendFile(path.join(__dirname + '/../public/index.html'))
+    }
+    return res.sendFile(path.join(__dirname + '/../public/login.html'))
+})
+
+router.get('/data', function (req, res) {
+    if (req.session.userId) {
+        return User.findById(req.session.userId)
+            .exec(function (error, user) {
+                if (error) {
+                    return next(error);
+                } else {
+                    if (user === null) {
+                        var err = new Error('Not authorized! Go back!');
+                        err.status = 400;
+                        return next(err);
+                    } else {
+                        return res.send(user)
+                    }
+                }
+            });
+    }
+
+    return res.send([data, lab])
 })
 
 router.get('/demo', function (req, res) {
+    res.sendFile(path.join(__dirname + '/../public/index.html'))
+})
+
+router.get('/home', function (req, res) {
     res.sendFile(path.join(__dirname + '/../public/index.html'))
 })
 
@@ -36,8 +64,7 @@ router.post('/', function (req, res, next) {
         var userData = {
             email: req.body.email,
             username: req.body.username,
-            password: req.body.password,
-            passwordConf: req.body.passwordConf,
+            password: req.body.password
         }
 
         User.create(userData, function (error, user) {
@@ -45,7 +72,7 @@ router.post('/', function (req, res, next) {
                 return next(error);
             } else {
                 req.session.userId = user._id;
-                return res.redirect('/profile');
+                return res.redirect('/');
             }
         });
 
@@ -57,7 +84,7 @@ router.post('/', function (req, res, next) {
                 return next(err);
             } else {
                 req.session.userId = user._id;
-                return res.redirect('/profile');
+                return res.redirect('/');
             }
         });
     } else {
