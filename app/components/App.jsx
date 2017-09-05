@@ -57,14 +57,14 @@ class App extends Component {
             diagnosis_list: data[0].diagnosis_list,
             medicine_list: data[0].medicine_list,
             medicine_dose_list: data[0].medicine_dose_list
-        })
+        }) 
 
         setTimeout(() => this.set_appointments(), 1000)
     }
 
-    componentDidMount() {
+    componentDidMount() { 
         if (window.location.pathname === '/demo') {
-            axios.get('http://localhost:3000/test')
+            axios.get('http://localhost:3000/demo_data')
                 .then((res) => { this.init_demo_app_state(res.data) })
                 .catch(function (error) { console.log(error); });
         }

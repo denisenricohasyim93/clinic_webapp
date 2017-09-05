@@ -6,16 +6,7 @@ var path = require('path');
 var lab = require('./lab');
 var data = require('./data');
 
-// GET route for reading data
-router.get('/', function (req, res, next) {
-    return res.sendFile(path.join(__dirname + '/templateLogReg/login.html'));
-});
-
-router.get('/demo', function (req, res) {
-    return res.sendFile(path.join(__dirname + '/templateLogReg/app.html'));
-})
-
-router.get('/test', function (req, res) {
+router.get('/demo_data', function (req, res) {
     res.send([data, lab])
 })
 

@@ -1,4 +1,7 @@
 let data = {
+    "user": {
+        "username": "demo_user"
+    },
     "diagnosis_list": [
         "hypertension",
         "hypotension",

@@ -18,9 +18,26 @@ var UserSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    passwordConf: {
-        type: String,
-        required: true,
+    lab_list: {
+        type: Array,
+    },
+    patients: {
+        type: Array
+    },
+    selected_patient: {
+        type: Array
+    },
+    events:  {
+        type: Array
+    },
+    diagnosis_list:  {
+        type: Array
+    },
+    medicine_list:  {
+        type: Array
+    },
+    medicine_dose_list:  {
+        type: Array
     }
 });
 
