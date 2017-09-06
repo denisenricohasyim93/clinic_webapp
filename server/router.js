@@ -14,24 +14,11 @@ router.get('/', function (req, res) {
 })
 
 router.get('/data', function (req, res) {
-    if (req.session.userId) {
-        return User.findById(req.session.userId)
-            .exec(function (error, user) {
-                if (error) {
-                    return next(error);
-                } else {
-                    if (user === null) {
-                        var err = new Error('Not authorized! Go back!');
-                        err.status = 400;
-                        return next(err);
-                    } else {
-                        return res.send(user)
-                    }
-                }
-            });
-    }
-
-    return res.send([data, lab])
+    User.findById(req.session.userId)
+        .exec(function (error, user) {
+            res.send(user)
+        }
+        );
 })
 
 router.get('/demo', function (req, res) {
@@ -45,6 +32,22 @@ router.get('/home', function (req, res) {
 router.get('/demo_data', function (req, res) {
     res.send([data, lab])
 })
+
+router.post('/insert', function (req, res) {
+    User.findById(req.session.userId).exec(function (err, user) {
+        if (err) throw err;
+        user.patients = req.body.data.patients
+        user.diagnosis_list = req.body.data.diagnosis_list
+        user.medicine_dose_list = req.body.data.medicine_dose_list
+        user.medicine_list = req.body.data.medicine_list
+
+        user.save(function (err) {
+            if (err) throw err;
+            res.send(user.toJSON());
+        })
+    })
+})
+
 
 //POST route for updating data
 router.post('/', function (req, res, next) {

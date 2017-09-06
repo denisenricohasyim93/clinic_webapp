@@ -27,16 +27,16 @@ var UserSchema = new mongoose.Schema({
     selected_patient: {
         type: Array
     },
-    events:  {
+    events: {
         type: Array
     },
-    diagnosis_list:  {
+    diagnosis_list: {
         type: Array
     },
-    medicine_list:  {
+    medicine_list: {
         type: Array
     },
-    medicine_dose_list:  {
+    medicine_dose_list: {
         type: Array
     }
 });

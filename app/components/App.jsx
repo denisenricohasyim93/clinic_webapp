@@ -13,6 +13,7 @@ import {
     add_dropdown_item,
     stop_medicine,
     show_patient_profile,
+    send_post_req
 } from './MainFunctions'
 
 import {
@@ -35,6 +36,7 @@ class App extends Component {
     constructor(props) {
         super(props)
 
+        this.send_post_req = send_post_req.bind(this)
         this.darken = darken.bind(this)
         this.remove_selected_patient = remove_selected_patient.bind(this)
         this.add_item = add_item.bind(this)
@@ -63,6 +65,10 @@ class App extends Component {
 
         if (type === "data") {
             this.setState({
+                username: data.username,
+                _id: data._id,
+                email: data.email,
+                password: data.password,
                 lab_list: data.lab_list,
                 patients: data.patients,
                 selected_patient: [],

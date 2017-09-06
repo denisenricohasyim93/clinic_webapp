@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 export {
     remove_selected_patient,
     darken,
@@ -10,6 +12,17 @@ export {
     add_dropdown_item,
     stop_medicine,
     show_patient_profile,
+    send_post_req
+}
+
+function send_post_req() {
+    if (this.state.username) {
+        axios.post('http://localhost:3000/insert', {
+            data: this.state
+        })
+            .then((res) => { console.log(res); })
+            .catch(function (error) { console.log(error); });
+    }
 }
 
 function remove_selected_patient() {
@@ -33,28 +46,30 @@ function add_patient(patient) {
             date1 = new Date(),
             date2 = new Date(patient.date),
             time_diff = Math.abs(date2.getTime() - date1.getTime()),
-            diff_years = Math.ceil((time_diff / (1000 * 3600 * 24) / 365))
+            diff_years = Math.ceil((time_diff / (1000 * 3600 * 24) / 365)),
+            new_patient = {
+                name: patient.name,
+                birth: reversed_birth,
+                gender: patient.gender,
+                id: Math.floor(Math.random() * (999999 - 100000)) + 100000,
+                age: diff_years,
+                gravida: patient.gravida,
+                hypertension: patient.hypertension,
+                diabetes: patient.diabetes,
+                phone: patient.phone,
+                smoker: patient.smoker,
+                address: patient.address,
+                notes: [],
+                appointments: [],
+                vitals: [],
+                "medicine": [],
+                "diagnosis": []
+            }
 
-        updated_patients.unshift({
-            name: patient.name,
-            birth: reversed_birth,
-            gender: patient.gender,
-            id: Math.floor(Math.random() * (999999 - 100000)) + 100000,
-            age: diff_years,
-            gravida: patient.gravida,
-            hypertension: patient.hypertension,
-            diabetes: patient.diabetes,
-            phone: patient.phone,
-            smoker: patient.smoker,
-            address: patient.address,
-            notes: [],
-            appointments: [],
-            vitals: [],
-            "medicine": [],
-            "diagnosis": []
-        })
+        updated_patients.unshift(new_patient)
 
         this.setState({ patients: updated_patients });
+        setTimeout(() => this.send_post_req(), 2000)
     }
 }
 
@@ -68,6 +83,9 @@ function add_item(item, patient, property) {
     }
 
     this.setState({ patients: patients });
+
+    setTimeout(() => this.send_post_req(), 2000)
+
 }
 
 function navigate(patient) {
@@ -125,6 +143,9 @@ function move_appointment(event, start, end) {
         patients: patients,
         events: appointments
     })
+
+    setTimeout(() => this.send_post_req(), 2000)
+
 }
 
 function add_appointment(appointment, patient) {
@@ -151,6 +172,9 @@ function add_appointment(appointment, patient) {
         events: appointments,
         selected_patient: [selected_patient]
     })
+
+    setTimeout(() => this.send_post_req(), 2000)
+
 }
 
 function set_appointments() {
@@ -167,6 +191,9 @@ function set_appointments() {
     })
 
     this.setState({ events: appointments })
+
+    setTimeout(() => this.send_post_req(), 2000)
+
 }
 
 function add_dropdown_item(item, category) {
@@ -183,6 +210,9 @@ function add_dropdown_item(item, category) {
     if (category === "medicine_dose_list") {
         this.setState({ medicine_dose_list: new_items })
     }
+
+    setTimeout(() => this.send_post_req(), 2000)
+
 }
 
 function stop_medicine(patient, medicine) {
@@ -201,6 +231,9 @@ function stop_medicine(patient, medicine) {
     }
 
     this.setState({ patients: patients })
+
+    setTimeout(() => this.send_post_req(), 2000)
+
 }
 
 function show_patient_profile(patient) {
