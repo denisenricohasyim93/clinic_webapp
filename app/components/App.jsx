@@ -92,14 +92,15 @@ class App extends Component {
         }
 
         else {
-            return axios.get('http://localhost:3000/data')
-                .then((res) => {
-                    if (res.data.length === 2) {
-                        return this.init_app_state(res.data, "demo")
-                    }
-                    this.init_app_state(res.data, "data")
-                })
-                .catch(function (error) { console.log(error); });
+            return axios.request({
+                url: 'http://localhost:3000/data',
+                withCredentials: true
+            }).then((res) => {
+                if (res.data.length === 2) {
+                    return this.init_app_state(res.data, "demo")
+                }
+                this.init_app_state(res.data, "data")
+            }).catch(function (error) { console.log(error); });
         }
     }
 
