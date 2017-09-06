@@ -14,11 +14,10 @@ router.get('/', function (req, res) {
 })
 
 router.get('/data', function (req, res) {
-    User.findById(req.session.userId)
-        .exec(function (error, user) {
-            res.send(user)
-        }
-        );
+    User.findById(req.session.userId, function (error, user) {
+        res.send(user)
+    }
+    );
 })
 
 router.get('/demo', function (req, res) {
