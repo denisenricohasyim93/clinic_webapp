@@ -94,11 +94,9 @@ class App extends Component {
         else {
             return axios.request({
                 url: 'http://localhost:3000/data',
-                withCredentials: true,
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json',
-                    "Access-Control-Allow-Credentials": "true",
                     "Acces-Control-Allow-Origin": "http://ec2-34-212-25-151.us-west-2.compute.amazonaws.com:3000"
                 }
             }).then((res) => {
