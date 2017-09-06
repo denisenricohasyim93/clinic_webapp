@@ -90,7 +90,7 @@ class App extends Component {
         }
 
         else {
-            return axios.get('http://34.212.25.151:3000/data')
+            return axios.get('http://localhost:3000/data')
                 .then((res) => {
                     if (res.data.length === 2) {
                         return this.init_app_state(res.data, "demo")
