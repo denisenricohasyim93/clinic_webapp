@@ -94,7 +94,12 @@ class App extends Component {
         else {
             return axios.request({
                 url: 'http://localhost:3000/data',
-                withCredentials: true
+                withCredentials: true,
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                    "Access-Control-Allow-Credentials": "true"
+                }
             }).then((res) => {
                 if (res.data.length === 2) {
                     return this.init_app_state(res.data, "demo")
