@@ -98,7 +98,7 @@ class App extends Component {
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json',
-                    "Acces-Control-Allow-Origin": "http://ec2-34-212-25-151.us-west-2.compute.amazonaws.com:3000"
+                    "Access-Control-Allow-Origin": "http://ec2-34-212-25-151.us-west-2.compute.amazonaws.com:3000"
                 }
             }).then((res) => {
                 if (res.data.length === 2) {
