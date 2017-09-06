@@ -61,6 +61,7 @@ class App extends Component {
                 medicine_list: data[0].medicine_list,
                 medicine_dose_list: data[0].medicine_dose_list
             })
+            setTimeout(() => this.set_appointments(), 1000)
         }
 
         if (type === "data") {
@@ -77,9 +78,10 @@ class App extends Component {
                 medicine_list: data.medicine_list,
                 medicine_dose_list: data.medicine_dose_list
             })
+            setTimeout(() => this.set_appointments(), 1000)
         }
 
-        setTimeout(() => this.set_appointments(), 1000)
+
     }
 
     componentDidMount() {
