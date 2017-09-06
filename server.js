@@ -29,7 +29,8 @@ app.use(session({
 }));
 
 app.use(cors({
-    origin: "http://ec2-34-212-25-151.us-west-2.compute.amazonaws.com:3000"
+    origin: "http://ec2-34-212-25-151.us-west-2.compute.amazonaws.com:3000",
+    "Access-Control-Allow-Credentials": "true"
 }))
 
 // parse incoming requests
