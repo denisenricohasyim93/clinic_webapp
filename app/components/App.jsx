@@ -94,6 +94,7 @@ class App extends Component {
         else {
             return axios.request({
                 url: 'http://localhost:3000/data',
+                withCredentials: true,
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json',
