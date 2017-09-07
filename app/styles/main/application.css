@@ -64,3 +64,10 @@ body,
 .darken_show {
   visibility: visible !important;
 }
+
+#logout {
+  height: 3.7rem;
+  vertical-align: top;
+  width: 6rem;
+  float: right;
+}

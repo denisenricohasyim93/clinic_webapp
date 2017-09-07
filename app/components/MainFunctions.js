@@ -13,7 +13,8 @@ export {
     add_dropdown_item,
     stop_medicine,
     show_patient_profile,
-    send_post_req
+    send_post_req,
+    logout
 }
 
 function send_post_req() {
@@ -29,6 +30,23 @@ function send_post_req() {
                 }
             }, { data: this.state }
         ).then((res) => { console.log("data inserted"); })
+            .catch(function (error) { console.log(error); });
+    }
+}
+
+function logout() {
+    if (this.state.username) {
+        axios.get(`http://${ip_address}:3000/logout`,
+            {
+                withCredentials: true,
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                    "Access-Control-Allow-Origin": "http://ec2-34-212-25-151.us-west-2.compute.amazonaws.com:3000",
+                    "Access-Control-Allow-Credentials": "true"
+                }
+            }
+        ).then((res) => { window.location = "/" })
             .catch(function (error) { console.log(error); });
     }
 }

@@ -13,7 +13,8 @@ import {
     add_dropdown_item,
     stop_medicine,
     show_patient_profile,
-    send_post_req
+    send_post_req,
+    logout
 } from './MainFunctions'
 
 import {
@@ -37,6 +38,7 @@ class App extends Component {
     constructor(props) {
         super(props)
 
+        this.logout = logout.bind(this)
         this.send_post_req = send_post_req.bind(this)
         this.darken = darken.bind(this)
         this.remove_selected_patient = remove_selected_patient.bind(this)
@@ -121,6 +123,7 @@ class App extends Component {
                         <Link to="/patients" className="route_tab"><i className="fa fa-user-md" aria-hidden="true"></i></Link>
                         <Link to="/appointments" className="route_tab"><i className="fa fa-calendar" aria-hidden="true"></i></Link>
                         <Link to="/settings" className="route_tab"><i className="fa fa-cog" aria-hidden="true"></i></Link>
+                        <button onClick={() => this.logout()} id="logout">Logout</button>
 
                         <Switch>
                             <Route exact path="/" component={Home} />

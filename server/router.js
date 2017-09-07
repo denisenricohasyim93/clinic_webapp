@@ -130,6 +130,7 @@ router.get('/logout', function (req, res, next) {
             if (err) {
                 return next(err);
             } else {
+                res.setHeader("Content-Type", "text/html")
                 return res.redirect('/');
             }
         });

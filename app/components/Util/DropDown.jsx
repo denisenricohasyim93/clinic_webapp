@@ -47,6 +47,8 @@ class DropDown extends Component {
             return parent.nextSibling.classList.toggle("show")
         }
 
+        if (e.target.childNodes[0].nodeName === "STRONG") { return; }
+
         if (e.target.id === "dropdown_option" && e.target.textContent !== "") {
             this.props.set_selected_option(e.target.textContent)
             return e.target.parentNode.classList.toggle("show")
@@ -55,8 +57,6 @@ class DropDown extends Component {
         if (e.target.nextSibling.id === "dropdown_options_container") {
             return e.target.nextSibling.classList.toggle("show")
         }
-
-        if (e.target.childNodes[0].nodeName === "STRONG") { return; }
     }
 }
 
