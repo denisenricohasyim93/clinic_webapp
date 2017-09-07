@@ -47,7 +47,6 @@ router.post('/insert', function (req, res) {
                 res.send(user.toJSON());
             })
         }
-
     })
 })
 
@@ -102,20 +101,25 @@ router.post('/', function (req, res, next) {
 
 // GET route after registering
 router.get('/profile', function (req, res, next) {
-    User.findById(req.session.userId)
-        .exec(function (error, user) {
-            if (error) {
-                return next(error);
+    User.findById(req.session.userId, function (error, user) {
+        if (error) {
+            return next(error);
+        } else {
+            if (user === null) {
+                var err = new Error('Not authorized! Go back!');
+                err.status = 400;
+                req.session.destroy(function (err) {
+                    if (err) {
+                        return next(err);
+                    } else {
+                        return res.redirect('/');
+                    }
+                });
             } else {
-                if (user === null) {
-                    var err = new Error('Not authorized! Go back!');
-                    err.status = 400;
-                    return next(err);
-                } else {
-                    return res.send('<h1>Name: </h1>' + user.username + '<h2>Mail: </h2>' + user.email + '<br><a type="button" href="/logout">Logout</a>')
-                }
+                return res.send('<h1>Name: </h1>' + user.username + '<h2>Mail: </h2>' + user.email + '<br><a type="button" href="/logout">Logout</a>')
             }
-        });
+        }
+    });
 });
 
 // GET for logout logout

@@ -8,39 +8,24 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 
 <head>
-	<title>Register Login with Authentication</title>
-	<!--Custom Theme files-->
+	<title>EMR Authentication</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="keywords" />
-	<script type="application/x-javascript">
-		addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
-	</script>
-	<!-- Custom Theme files -->
-	<link href="/css/style.css" rel="stylesheet" media="all" />
-	<!--web-fonts-->
-	<link href='//fonts.googleapis.com/css?family=Jura:400,300,500,600' rel='stylesheet' type='text/css'>
-	<!--//web-fonts-->
 </head>
 
 <body>
 	<form action="/demo" method="get">
 		<button type="submit" style="position:absolute; top: 0.5rem; right:1rem; background:lightcoral; box-sizing: border-box; padding: 2rem; color: white;">Demo</button>
 	</form>
-	<!-- main -->
 	<div class="main">
-		<!--login-profile-->
-
-		<!--login-profile-->
-		<!--signin-form-->
 		<div class="w3">
 			<div class="signin-form profile">
 				<h3>Login</h3>
 
 				<div class="login-form">
 					<form action="/" method="post">
-						<input type="email" name="logemail" placeholder="E-mail" required="">
-						<input type="password" name="logpassword" placeholder="Password" required="">
+						<input type="email" name="logemail" placeholder="E-mail" required>
+						<input type="password" name="logpassword" placeholder="Password" required>
 						<div class="tp">
 							<input type="submit" value="LOGIN">
 						</div>
@@ -54,17 +39,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 				<div class="login-form">
 					<form action="/" method="post">
-						<input type="email" name="email" placeholder="E-mail" required="">
-						<input type="text" name="username" placeholder="Username" required="">
-						<input type="password" name="password" placeholder="Password" required="">
-						<input type="password" name="passwordConf" placeholder="Confirm Password" required="">
+						<input type="email" name="email" placeholder="E-mail" required>
+						<input type="text" name="username" placeholder="Username" required>
+						<input type="password" name="password" placeholder="Password" required>
+						<input type="password" name="passwordConf" placeholder="Confirm Password" required>
 						<input type="submit" value="REGISTER">
 					</form>
 				</div>
 			</div>
-		</div> 
+		</div>
 		<div class="clear"></div>
 		<!--//signin-form-->
 	</div>
 </body>
+
 </html>

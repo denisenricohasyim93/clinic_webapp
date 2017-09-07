@@ -31,7 +31,7 @@
     "babel-brunch": "^6.1.1",
     "babel-preset-latest": "^6.24.1",
     "babel-preset-react": "^6.24.1",
-    "bcryptjs": "^2.4.3",
+    "bcrypt": "^1.0.2",
     "body-parser": "^1.17.1",
     "brunch": "^2.10.10",
     "clean-css-brunch": "^2.10.0",
