@@ -17,10 +17,17 @@ export {
 
 function send_post_req() {
     if (this.state.username) {
-        axios.post('http://localhost:3000/insert', {
-            data: this.state
-        })
-            .then((res) => { console.log(res); })
+        axios.post('http://localhost:3000/insert',
+            {
+                withCredentials: true,
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                    "Access-Control-Allow-Origin": "http://ec2-34-212-25-151.us-west-2.compute.amazonaws.com:3000",
+                    "Access-Control-Allow-Credentials": "true"
+                }
+            }, { data: this.state }
+        ).then((res) => { console.log("data inserted"); })
             .catch(function (error) { console.log(error); });
     }
 }
@@ -192,7 +199,7 @@ function set_appointments() {
 
     this.setState({ events: appointments })
 
-    setTimeout(() => this.send_post_req(), 2000)
+    setTimeout(() => this.send_post_req(), 1000)
 
 }
 

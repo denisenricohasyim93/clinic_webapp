@@ -33,17 +33,21 @@ router.get('/demo_data', function (req, res) {
 })
 
 router.post('/insert', function (req, res) {
-    User.findById(req.session.userId).exec(function (err, user) {
-        if (err) throw err;
-        user.patients = req.body.data.patients
-        user.diagnosis_list = req.body.data.diagnosis_list
-        user.medicine_dose_list = req.body.data.medicine_dose_list
-        user.medicine_list = req.body.data.medicine_list
+    User.findById(req.session.userId, function (err, user) {
 
-        user.save(function (err) {
-            if (err) throw err;
-            res.send(user.toJSON());
-        })
+        if (err) { throw err; }
+        if (user) {
+            user.patients = req.body.patients
+            user.diagnosis_list = req.body.diagnosis_list
+            user.medicine_dose_list = req.body.medicine_dose_list
+            user.medicine_list = req.body.medicine_list
+
+            user.save(function (err) {
+                if (err) throw err;
+                res.send(user.toJSON());
+            })
+        }
+
     })
 })
 
