@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 var path = require('path');
-var cors = require('cors')
+var cors = require('cors');
 
 //connect to MongoDB
 mongoose.Promise = global.Promise;
@@ -30,7 +30,7 @@ app.use(session({
 
 app.use(cors({
     origin: "http://ec2-34-212-25-151.us-west-2.compute.amazonaws.com:3000",
-    "Access-Control-Allow-Credentials": "true"
+    credentials: true
 }))
 
 // parse incoming requests
