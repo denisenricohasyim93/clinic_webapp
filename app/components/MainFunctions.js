@@ -1,4 +1,5 @@
 import axios from 'axios'
+import ip_address from './Util/config'
 
 export {
     remove_selected_patient,
@@ -17,7 +18,7 @@ export {
 
 function send_post_req() {
     if (this.state.username) {
-        axios.post('http://localhost:3000/insert',
+        axios.post(`http://${ip_address}:3000/insert`,
             {
                 withCredentials: true,
                 headers: {

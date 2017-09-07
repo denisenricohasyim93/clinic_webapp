@@ -30,6 +30,7 @@ import Appointments from './Main/Appointments'
 import Settings from './Main/Settings'
 
 import axios from 'axios'
+import ip_address from './Util/config'
 
 class App extends Component {
 
@@ -86,14 +87,14 @@ class App extends Component {
 
     componentDidMount() {
         if (window.location.pathname === '/demo') {
-            return axios.get('http://localhost:3000/demo_data')
+            return axios.get(`http://${ip_address}:3000/demo_data`)
                 .then((res) => { this.init_app_state(res.data, "demo") })
                 .catch(function (error) { console.log(error); });
         }
 
         else {
             return axios.request({
-                url: 'http://localhost:3000/data',
+                url: `http://${ip_address}:3000/data`,
                 withCredentials: true,
                 headers: {
                     'Accept': 'application/json',
