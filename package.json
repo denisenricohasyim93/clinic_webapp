@@ -6,7 +6,7 @@
   "version": "1.0.0",
   "scripts": {
     "server": "cross-env nodemon server.js",
-    "start": "brunch watch --server",
+    "watch": "brunch watch",
     "build": "brunch build --production"
   },
   "dependencies": {
@@ -35,6 +35,7 @@
     "body-parser": "^1.17.1",
     "brunch": "^2.10.10",
     "clean-css-brunch": "^2.10.0",
+    "concurrently": "^3.5.0",
     "connect-mongo": "^1.3.2",
     "cors": "^2.8.4",
     "cross-env": "^5.0.5",

@@ -19,7 +19,7 @@ export {
 
 function send_post_req() {
     if (this.state.username) {
-        axios.post(`http://${ip_address}:3000/insert`,
+        axios.post(`/insert`,
             {
                 withCredentials: true,
                 headers: {
@@ -36,7 +36,7 @@ function send_post_req() {
 
 function logout() {
     if (this.state.username) {
-        axios.get(`http://${ip_address}:3000/logout`,
+        axios.get(`/logout`,
             {
                 withCredentials: true,
                 headers: {

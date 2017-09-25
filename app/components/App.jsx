@@ -83,20 +83,18 @@ class App extends Component {
             })
             setTimeout(() => this.set_appointments(), 1000)
         }
-
-
     }
 
     componentDidMount() {
         if (window.location.pathname === '/demo') {
-            return axios.get(`http://${ip_address}:3000/demo_data`)
+            return axios.get(`/demo_data`)
                 .then((res) => { this.init_app_state(res.data, "demo") })
                 .catch(function (error) { console.log(error); });
         }
 
         else {
             return axios.request({
-                url: `http://${ip_address}:3000/data`,
+                url: `/data`,
                 withCredentials: true,
                 headers: {
                     'Accept': 'application/json',
