@@ -9,7 +9,8 @@ var cors = require('cors');
 
 //connect to MongoDB
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/emr_clinic');
+console.log(process.env.MONGODB_URI);
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/emr_clinic');
 var db = mongoose.connection;
 
 //handle mongo error
@@ -59,8 +60,5 @@ app.use(function (err, req, res, next) {
     res.send(err.message);
 });
 
-
 // listen on port 3000
-app.listen(3000, function () {
-    console.log('Express app listening on port 3000');
-});
+app.listen(process.env.PORT || 3000)
