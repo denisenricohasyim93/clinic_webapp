@@ -15,7 +15,7 @@ router.get('/', function (req, res) {
 
 router.get('/data', function (req, res) {
     User.findById(req.session.userId, function (error, user) {
-        res.send(user)
+        res.send([user, lab])
     }
     );
 })

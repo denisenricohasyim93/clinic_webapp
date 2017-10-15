@@ -98,11 +98,9 @@
 }
 
 #add_lab_details_panel_container {
-  padding: 0.5rem;
   position: absolute;
   z-index: 5;
   width: 50%;
-  height: 80%;
   background: white;
   top: 0;
   left: 25%;
@@ -110,9 +108,10 @@
 
 #add_lab_details_panel_close_btn {
   position: absolute;
-  right: 0.5rem;
-  top: 0.3rem;
-  font-size: 3rem;
+  right: -3rem;
+  top: 0rem;
+  width: 3rem;
+  font-size: 2rem;
 }
 
 #lab_dropdown_container {
@@ -122,9 +121,14 @@
 }
 
 input[name="lab_result_input"] {
-  width: 25%;
+  width: 30%;
   display: inline-block;
   height: 3rem;
   vertical-align: top;
   text-align: center;
+}
+
+#create_lab_btn {
+  position: absolute;
+  font-size: 1.2rem;
 }

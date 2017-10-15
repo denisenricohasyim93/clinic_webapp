@@ -28,7 +28,6 @@ import {
 import Home from './Main/Home'
 import PatientsContainer from './Main/Patients'
 import Appointments from './Main/Appointments'
-import Settings from './Main/Settings'
 
 import axios from 'axios'
 import ip_address from './Util/config'
@@ -69,17 +68,17 @@ class App extends Component {
 
         if (type === "data") {
             this.setState({
-                username: data.username,
-                _id: data._id,
-                email: data.email,
-                password: data.password,
-                lab_list: data.lab_list,
-                patients: data.patients,
+                username: data[0].username,
+                _id: data[0]._id,
+                email: data[0].email,
+                password: data[0].password,
+                lab_list: data[1],
+                patients: data[0].patients,
                 selected_patient: [],
                 events: [],
-                diagnosis_list: data.diagnosis_list,
-                medicine_list: data.medicine_list,
-                medicine_dose_list: data.medicine_dose_list
+                diagnosis_list: data[0].diagnosis_list,
+                medicine_list: data[0].medicine_list,
+                medicine_dose_list: data[0].medicine_dose_list
             })
             setTimeout(() => this.set_appointments(), 1000)
         }
@@ -120,8 +119,6 @@ class App extends Component {
                         <Link to="/" className="route_tab"><i className="fa fa-home" aria-hidden="true"></i></Link>
                         <Link to="/patients" className="route_tab"><i className="fa fa-user-md" aria-hidden="true"></i></Link>
                         <Link to="/appointments" className="route_tab"><i className="fa fa-calendar" aria-hidden="true"></i></Link>
-                        <Link to="/settings" className="route_tab"><i className="fa fa-cog" aria-hidden="true"></i></Link>
-                        <button onClick={() => this.logout()} id="logout">Logout</button>
 
                         <Switch>
                             <Route exact path="/" component={Home} />
@@ -151,7 +148,6 @@ class App extends Component {
                                     events={this.state.events}
                                     darken={this.darken.bind(this)} />
                             } /> />
-              <Route path="/settings" component={Settings} />
                         </Switch>
                     </div>
                 </Router>

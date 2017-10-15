@@ -39,7 +39,7 @@ class AddLabDetailsPanel extends Component {
                     set_selected_option={this.props.set_selected_option}
                     category="lab" />
 
-                <button onClick={() => this.construct_lab_details()}>Create</button>
+                <button id="create_lab_btn" onClick={() => this.construct_lab_details()}>Create</button>
             </div>
         );
     }
