@@ -9,8 +9,7 @@ var cors = require('cors');
 
 //connect to MongoDB
 mongoose.Promise = global.Promise;
-console.log(process.env.MONGODB_URI);
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/emr_clinic');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/emr_clinic'); //mongodb://zen:zen@ds121575.mlab.com:21575/clinic
 var db = mongoose.connection;
 
 //handle mongo error
@@ -28,11 +27,6 @@ app.use(session({
         mongooseConnection: db
     })
 }));
-
-app.use(cors({
-    origin: "http://ec2-34-212-25-151.us-west-2.compute.amazonaws.com:3000",
-    credentials: true
-}))
 
 // parse incoming requests
 app.use(bodyParser.json());

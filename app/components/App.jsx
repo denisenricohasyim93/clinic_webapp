@@ -98,13 +98,9 @@ class App extends Component {
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json',
-                    "Access-Control-Allow-Origin": "http://ec2-34-212-25-151.us-west-2.compute.amazonaws.com:3000",
                     "Access-Control-Allow-Credentials": "true"
                 }
             }).then((res) => {
-                if (res.data.length === 2) {
-                    return this.init_app_state(res.data, "demo")
-                }
                 this.init_app_state(res.data, "data")
             }).catch(function (error) { console.log(error); });
         }
@@ -119,6 +115,7 @@ class App extends Component {
                         <Link to="/" className="route_tab"><i className="fa fa-home" aria-hidden="true"></i></Link>
                         <Link to="/patients" className="route_tab"><i className="fa fa-user-md" aria-hidden="true"></i></Link>
                         <Link to="/appointments" className="route_tab"><i className="fa fa-calendar" aria-hidden="true"></i></Link>
+                        <button onClick={() => this.logout()} id="logout">Logout</button>
 
                         <Switch>
                             <Route exact path="/" component={Home} />

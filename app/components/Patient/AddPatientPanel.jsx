@@ -63,8 +63,6 @@ class AddPatientPanel extends Component {
             smoker: document.querySelector("input[name=patient_smoker]").value
         }
 
-
-
         this.props.add_patient(patient_details)
         this.props.close_patient_panel()
     }
