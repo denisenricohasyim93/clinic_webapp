@@ -5,7 +5,8 @@
   "author": "zenkurd",
   "version": "1.0.0",
   "scripts": {
-    "start": "cross-env nodemon server.js",
+    "dev": "cross-env nodemon server.js",
+    "start": "node server.js",
     "watch": "brunch watch",
     "build": "brunch build --production"
   },
