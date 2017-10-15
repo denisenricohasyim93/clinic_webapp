@@ -9,7 +9,7 @@ var cors = require('cors');
 
 //connect to MongoDB
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/emr_clinic'); //mongodb://zen:zen@ds121575.mlab.com:21575/clinic
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/emr_clinic');
 var db = mongoose.connection;
 
 //handle mongo error
