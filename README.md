@@ -1,16 +1,16 @@
 Clinic Management Web App:
 
 Features:
-  Accounts
-  Register Patients
-  Search Patients
-  Book / Modify appointments (can be done with drag n drop, or manually filling in date)
-  Create notes for patient (customizable font,...etc)
-  Add Vitals to patient
-  Add Lab Analysis to patient
-  Search and Add medicine, customizable (Include medicine doses, start and end date)
-  Stop active prescriptions
-  Add Diagnosis (Customizable)
+  * Accounts
+  * Register Patients
+  * Search Patients
+  * Book / Modify appointments (can be done with drag n drop, or manually filling in date)
+  * Create notes for patient (customizable font,...etc)
+  * Add Vitals to patient
+  * Add Lab Analysis to patient
+  * Search and Add medicine, customizable (Include medicine doses, start and end date)
+  * Stop active prescriptions
+  * Add Diagnosis (Customizable)
   
 
 Technologies used: 
