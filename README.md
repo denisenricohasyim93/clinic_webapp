@@ -1,4 +1,4 @@
-Demo of a simple private clinic web application
+Demo of private clinic web application
 
 Technologies used: Node JS, Express, Mongoose, MongoDB, React
 
