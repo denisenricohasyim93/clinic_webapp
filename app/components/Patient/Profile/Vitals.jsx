@@ -2,12 +2,6 @@ import React, { Component } from 'react';
 import moment from 'moment'
 
 class Vitals extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-
-        }
-    }
     render() {
         return (
             <div className="patient_profile_route">

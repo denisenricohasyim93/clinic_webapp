@@ -19,7 +19,8 @@
   border-left: 1px solid black;
   border-right: 1px solid black;
   overflow: auto;
-  max-height: 30rem;
+  max-height: 26rem;
+  z-index: 1;
 }
 
 #found_option {

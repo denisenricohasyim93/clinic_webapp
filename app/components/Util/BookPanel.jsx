@@ -4,7 +4,6 @@ import Pikaday from 'react-pikaday';
 import DateTime from 'react-datetime'
 
 class BookPanel extends Component {
-
     constructor(props) {
         super(props)
         this.state = {

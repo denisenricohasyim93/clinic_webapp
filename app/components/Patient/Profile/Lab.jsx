@@ -84,9 +84,7 @@ class Lab extends Component {
     }
 
     render_lab_unit_list() {
-        <div id="lab_analysis_unit_container">
-
-        </div>
+        <div id="lab_analysis_unit_container"> </div>
     }
 
     render_lab_analysis_list() {

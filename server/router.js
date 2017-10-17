@@ -1,10 +1,9 @@
-var express = require('express');
-var router = express.Router();
-var User = require('./user');
-var path = require('path');
-
-var lab = require('./lab');
-var data = require('./data');
+const express = require('express'),
+    router = express.Router(),
+    User = require('./user'),
+    path = require('path'),
+    lab = require('./lab'),
+    data = require('./demo_data')
 
 router.get('/', function (req, res) {
     if (req.session.userId) {
@@ -20,11 +19,11 @@ router.get('/data', function (req, res) {
     );
 })
 
-router.get('/demo', function (req, res) {
-    res.sendFile(path.join(__dirname + '/../public/index.html'))
+router.get(['/patients', '/appointments'], function (req, res) {
+    res.redirect('/')
 })
 
-router.get('/home', function (req, res) {
+router.get('/demo', function (req, res) {
     res.sendFile(path.join(__dirname + '/../public/index.html'))
 })
 
@@ -49,7 +48,6 @@ router.post('/insert', function (req, res) {
         }
     })
 })
-
 
 //POST route for updating data
 router.post('/', function (req, res, next) {
@@ -98,29 +96,6 @@ router.post('/', function (req, res, next) {
         return next(err);
     }
 })
-
-// GET route after registering
-router.get('/profile', function (req, res, next) {
-    User.findById(req.session.userId, function (error, user) {
-        if (error) {
-            return next(error);
-        } else {
-            if (user === null) {
-                var err = new Error('Not authorized! Go back!');
-                err.status = 400;
-                req.session.destroy(function (err) {
-                    if (err) {
-                        return next(err);
-                    } else {
-                        return res.redirect('/');
-                    }
-                });
-            } else {
-                return res.send('<h1>Name: </h1>' + user.username + '<h2>Mail: </h2>' + user.email + '<br><a type="button" href="/logout">Logout</a>')
-            }
-        }
-    });
-});
 
 // GET for logout logout
 router.get('/logout', function (req, res, next) {

@@ -37,6 +37,8 @@ class App extends Component {
     constructor(props) {
         super(props)
 
+        this.state = { username: null }
+
         this.logout = logout.bind(this)
         this.send_post_req = send_post_req.bind(this)
         this.darken = darken.bind(this)
@@ -98,9 +100,16 @@ class App extends Component {
                 <Router>
                     <div id="route_container">
                         <Link to="/" className="route_tab"><i className="fa fa-home" aria-hidden="true"></i></Link>
+
                         <Link to="/patients" className="route_tab"><i className="fa fa-user-md" aria-hidden="true"></i></Link>
+
                         <Link to="/appointments" className="route_tab"><i className="fa fa-calendar" aria-hidden="true"></i></Link>
+
                         <button onClick={() => this.logout()} id="logout">Logout</button>
+
+                        <div id="logged_in_info">
+                            user: {this.state.username || ""}
+                        </div>
 
                         <Switch>
                             <Route exact path="/" component={Home} />

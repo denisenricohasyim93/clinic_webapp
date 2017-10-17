@@ -89254,6 +89254,8 @@ var App = function (_Component) {
 
         var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 
+        _this.state = { username: null };
+
         _this.logout = _MainFunctions.logout.bind(_this);
         _this.send_post_req = _MainFunctions.send_post_req.bind(_this);
         _this.darken = _MainFunctions.darken.bind(_this);
@@ -89355,6 +89357,12 @@ var App = function (_Component) {
                                     return _this4.logout();
                                 }, id: 'logout' },
                             'Logout'
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { id: 'logged_in_info' },
+                            'user: ',
+                            this.state.username || ""
                         ),
                         _react2.default.createElement(
                             _reactRouterDom.Switch,
@@ -89913,6 +89921,7 @@ function add_patient(patient) {
             smoker: patient.smoker,
             address: patient.address,
             notes: [],
+            lab: [],
             appointments: [],
             vitals: [],
             "medicine": [],
@@ -90624,10 +90633,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var AddLabDetailsPanel = function (_Component) {
     _inherits(AddLabDetailsPanel, _Component);
 
-    function AddLabDetailsPanel(props) {
+    function AddLabDetailsPanel() {
         _classCallCheck(this, AddLabDetailsPanel);
 
-        return _possibleConstructorReturn(this, (AddLabDetailsPanel.__proto__ || Object.getPrototypeOf(AddLabDetailsPanel)).call(this, props));
+        return _possibleConstructorReturn(this, (AddLabDetailsPanel.__proto__ || Object.getPrototypeOf(AddLabDetailsPanel)).apply(this, arguments));
     }
 
     _createClass(AddLabDetailsPanel, [{
@@ -91550,7 +91559,11 @@ var Lab = function (_Component) {
     }, {
         key: 'render_lab_unit_list',
         value: function render_lab_unit_list() {
-            _react2.default.createElement('div', { id: 'lab_analysis_unit_container' });
+            _react2.default.createElement(
+                'div',
+                { id: 'lab_analysis_unit_container' },
+                ' '
+            );
         }
     }, {
         key: 'render_lab_analysis_list',
@@ -92129,13 +92142,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Vitals = function (_Component) {
     _inherits(Vitals, _Component);
 
-    function Vitals(props) {
+    function Vitals() {
         _classCallCheck(this, Vitals);
 
-        var _this = _possibleConstructorReturn(this, (Vitals.__proto__ || Object.getPrototypeOf(Vitals)).call(this, props));
-
-        _this.state = {};
-        return _this;
+        return _possibleConstructorReturn(this, (Vitals.__proto__ || Object.getPrototypeOf(Vitals)).apply(this, arguments));
     }
 
     _createClass(Vitals, [{
@@ -92513,10 +92523,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var DropDown = function (_Component) {
     _inherits(DropDown, _Component);
 
-    function DropDown(props) {
+    function DropDown() {
         _classCallCheck(this, DropDown);
 
-        return _possibleConstructorReturn(this, (DropDown.__proto__ || Object.getPrototypeOf(DropDown)).call(this, props));
+        return _possibleConstructorReturn(this, (DropDown.__proto__ || Object.getPrototypeOf(DropDown)).apply(this, arguments));
     }
 
     _createClass(DropDown, [{

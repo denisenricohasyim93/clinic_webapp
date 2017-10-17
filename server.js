@@ -10,7 +10,7 @@ const express = require('express'),
 //connect to MongoDB
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/emr_clinic');
-var db = mongoose.connection;
+let db = mongoose.connection;
 
 //handle mongo error
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -28,10 +28,9 @@ app.use(session({
     })
 }));
 
-// parse incoming requests
+// parse incoming requests 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-
 
 // serve static files from template
 app.use(express.static(path.join(__dirname, 'public'), { index: false, extensions: ['html'] }));

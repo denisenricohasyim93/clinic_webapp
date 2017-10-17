@@ -3,9 +3,6 @@ import AddLabModule from './AddLabModule';
 import moment from 'moment';
 
 class AddLabDetailsPanel extends Component {
-    constructor(props) {
-        super(props)
-    }
     render() {
         return (
             <div id="add_lab_details_panel_container">

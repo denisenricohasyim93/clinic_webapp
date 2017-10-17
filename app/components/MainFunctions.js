@@ -86,6 +86,7 @@ function add_patient(patient) {
                 smoker: patient.smoker,
                 address: patient.address,
                 notes: [],
+                lab: [],
                 appointments: [],
                 vitals: [],
                 "medicine": [],

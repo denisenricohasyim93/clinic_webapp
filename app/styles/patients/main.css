@@ -125,3 +125,10 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
 }
+
+#logged_in_info {
+  background: #bde6b8;
+  padding: 1.25rem 1rem;
+  vertical-align: top;
+  float: right;
+}

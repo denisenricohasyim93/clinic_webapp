@@ -222,6 +222,7 @@ body,
 }
 
 #lab_container {
+  white-space: nowrap;
   position: relative;
   height: 100%;
   width: 100%;
@@ -269,22 +270,23 @@ body,
   position: relative;
   display: inline-block;
   height: 100%;
-  width: 65%;
+  width: 60%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
 }
 
 #patient_lab_columns_container {
-  position: relative;
-  height: 100%;
+  white-space: nowrap;
 }
 
 #patient_lab_column {
   vertical-align: top;
   height: 100%;
-  width: 15%;
+  width: 7rem;
   text-align: center;
   border-left: 1px solid black;
-  float: left;
-  clear: right;
+  display: inline-block;
 }
 
 #patient_lab_column strong,
@@ -482,6 +484,14 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
 }
+
+#logged_in_info {
+  background: #bde6b8;
+  padding: 1.25rem 1rem;
+  vertical-align: top;
+  float: right;
+}
+
 #medicine_container {
   position: relative;
   display: inline-block;
@@ -3265,7 +3275,8 @@ pre {
   border-left: 1px solid black;
   border-right: 1px solid black;
   overflow: auto;
-  max-height: 30rem;
+  max-height: 26rem;
+  z-index: 1;
 }
 
 #found_option {
