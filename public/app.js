@@ -89272,42 +89272,25 @@ var App = function (_Component) {
 
     _createClass(App, [{
         key: 'init_app_state',
-        value: function init_app_state(data, type) {
+        value: function init_app_state(data) {
             var _this2 = this;
 
-            if (type === "demo") {
-                this.setState({
-                    lab_list: data[1],
-                    patients: data[0].patients,
-                    selected_patient: [],
-                    events: [],
-                    diagnosis_list: data[0].diagnosis_list,
-                    medicine_list: data[0].medicine_list,
-                    medicine_dose_list: data[0].medicine_dose_list
-                });
-                setTimeout(function () {
-                    return _this2.set_appointments();
-                }, 1000);
-            }
-
-            if (type === "data") {
-                this.setState({
-                    username: data[0].username,
-                    _id: data[0]._id,
-                    email: data[0].email,
-                    password: data[0].password,
-                    lab_list: data[1],
-                    patients: data[0].patients,
-                    selected_patient: [],
-                    events: [],
-                    diagnosis_list: data[0].diagnosis_list,
-                    medicine_list: data[0].medicine_list,
-                    medicine_dose_list: data[0].medicine_dose_list
-                });
-                setTimeout(function () {
-                    return _this2.set_appointments();
-                }, 1000);
-            }
+            this.setState({
+                username: data[0].username,
+                _id: data[0]._id,
+                email: data[0].email,
+                password: data[0].password,
+                lab_list: data[1],
+                patients: data[0].patients,
+                selected_patient: [],
+                events: [],
+                diagnosis_list: data[0].diagnosis_list,
+                medicine_list: data[0].medicine_list,
+                medicine_dose_list: data[0].medicine_dose_list
+            });
+            setTimeout(function () {
+                return _this2.set_appointments();
+            }, 1000);
         }
     }, {
         key: 'componentDidMount',
@@ -89879,9 +89862,7 @@ function send_post_req() {
 }
 
 function logout() {
-    console.log(this.state);
     if (this.state.username) {
-
         _axios2.default.get('/logout', {
             withCredentials: true,
             headers: {
@@ -90230,7 +90211,7 @@ var AddPatientPanel = function (_Component) {
                         _react2.default.createElement("input", { type: "checkbox", name: "patient_gravida", id: "patient_gravida" })
                     ) : "",
                     _react2.default.createElement("input", { type: "text", placeholder: "address", name: "patient_address" }),
-                    _react2.default.createElement("input", { type: "text", placeholder: "phone", name: "patient_phone" }),
+                    _react2.default.createElement("input", { type: "number", placeholder: "phone", name: "patient_phone" }),
                     _react2.default.createElement(
                         "button",
                         { id: "submit_new_patient", onClick: function onClick() {
@@ -92226,18 +92207,18 @@ var Vitals = function (_Component) {
                         { className: 'add_vitals_container' },
                         _react2.default.createElement('input', { name: 'vitals_date', type: 'date', placeholder: 'date' }),
                         _react2.default.createElement('input', { name: 'vitals_time', placeholder: 'time' }),
-                        _react2.default.createElement('input', { name: 'vitals_bloodpressure_systolic', placeholder: 'sys' }),
+                        _react2.default.createElement('input', { type: 'number', name: 'vitals_bloodpressure_systolic', placeholder: 'sys' }),
                         _react2.default.createElement(
                             'strong',
                             null,
                             '/'
                         ),
-                        _react2.default.createElement('input', { name: 'vitals_bloodpressure_diastolic', placeholder: 'dia' }),
-                        _react2.default.createElement('input', { name: 'vitals_pulse', type: 'number', placeholder: 'pulse' }),
-                        _react2.default.createElement('input', { name: 'vitals_temperature', placeholder: 'temperature' }),
-                        _react2.default.createElement('input', { name: 'vitals_respiratory_rate', placeholder: 'respiratory' }),
-                        _react2.default.createElement('input', { name: 'vitals_saturation', placeholder: 'saturation' }),
-                        _react2.default.createElement('input', { name: 'vitals_oxygen', placeholder: 'oxygen' }),
+                        _react2.default.createElement('input', { type: 'number', name: 'vitals_bloodpressure_diastolic', placeholder: 'dia' }),
+                        _react2.default.createElement('input', { type: 'number', name: 'vitals_pulse', placeholder: 'pulse' }),
+                        _react2.default.createElement('input', { type: 'number', name: 'vitals_temperature', placeholder: 'temperature' }),
+                        _react2.default.createElement('input', { type: 'number', name: 'vitals_respiratory_rate', placeholder: 'respiratory' }),
+                        _react2.default.createElement('input', { type: 'number', name: 'vitals_saturation', placeholder: 'saturation' }),
+                        _react2.default.createElement('input', { type: 'number', name: 'vitals_oxygen', placeholder: 'oxygen' }),
                         _react2.default.createElement(
                             'button',
                             { onClick: function onClick() {

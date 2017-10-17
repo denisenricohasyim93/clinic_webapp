@@ -180,6 +180,7 @@ body,
   float: right;
   width: 7.9rem;
 }
+
 .patient_appointments_container {
   position: relative;
   height: 100%;
@@ -476,6 +477,11 @@ input[name="lab_result_input"] {
   background: none;
   color: red;
 }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
 #medicine_container {
   position: relative;
   display: inline-block;
@@ -538,16 +544,15 @@ input[name="lab_result_input"] {
 }
 
 #create_medicine_container {
-  height: 2rem;
-  line-height: 2rem;
-  margin-bottom: 2rem;
+  font-size: 0;
+  position: relative;
 }
 
 #create_medicine_container input,
 #create_medicine_container select,
 #create_medicine_container button {
   text-align: center;
-  height: 100%;
+  height: 2rem;
 }
 
 #medicine_list_container {
@@ -818,6 +823,10 @@ select[name="create_note_title"] {
 
 #dropdown_selected_option {
   text-align: center;
+}
+
+#dropdown_selected_option:hover {
+  background: rgb(230, 226, 226);
 }
 
 #dropdown_options_container div:hover {
@@ -3261,6 +3270,8 @@ pre {
 
 #found_option {
   border-bottom: 1px solid black;
+  line-height: 2rem;
+  font-size: 0.8rem;
 }
 
 #found_option:hover {

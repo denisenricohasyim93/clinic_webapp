@@ -31,14 +31,14 @@ class Vitals extends Component {
                     <div className="add_vitals_container">
                         <input name="vitals_date" type="date" placeholder="date" />
                         <input name="vitals_time" placeholder="time" />
-                        <input name="vitals_bloodpressure_systolic" placeholder="sys" />
+                        <input type="number" name="vitals_bloodpressure_systolic" placeholder="sys" />
                         <strong>/</strong>
-                        <input name="vitals_bloodpressure_diastolic" placeholder="dia" />
-                        <input name="vitals_pulse" type="number" placeholder="pulse" />
-                        <input name="vitals_temperature" placeholder="temperature" />
-                        <input name="vitals_respiratory_rate" placeholder="respiratory" />
-                        <input name="vitals_saturation" placeholder="saturation" />
-                        <input name="vitals_oxygen" placeholder="oxygen" />
+                        <input type="number" name="vitals_bloodpressure_diastolic" placeholder="dia" />
+                        <input type="number" name="vitals_pulse" placeholder="pulse" />
+                        <input type="number" name="vitals_temperature" placeholder="temperature" />
+                        <input type="number" name="vitals_respiratory_rate" placeholder="respiratory" />
+                        <input type="number" name="vitals_saturation" placeholder="saturation" />
+                        <input type="number" name="vitals_oxygen" placeholder="oxygen" />
                         <button onClick={() => this.add_vitals()}>Add vitals</button>
                     </div>
                 </div>

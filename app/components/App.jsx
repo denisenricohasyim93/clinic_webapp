@@ -52,36 +52,21 @@ class App extends Component {
         this.show_patient_profile = show_patient_profile.bind(this)
     }
 
-    init_app_state(data, type) {
-        if (type === "demo") {
-            this.setState({
-                lab_list: data[1],
-                patients: data[0].patients,
-                selected_patient: [],
-                events: [],
-                diagnosis_list: data[0].diagnosis_list,
-                medicine_list: data[0].medicine_list,
-                medicine_dose_list: data[0].medicine_dose_list
-            })
-            setTimeout(() => this.set_appointments(), 1000)
-        }
-
-        if (type === "data") {
-            this.setState({
-                username: data[0].username,
-                _id: data[0]._id,
-                email: data[0].email,
-                password: data[0].password,
-                lab_list: data[1],
-                patients: data[0].patients,
-                selected_patient: [],
-                events: [],
-                diagnosis_list: data[0].diagnosis_list,
-                medicine_list: data[0].medicine_list,
-                medicine_dose_list: data[0].medicine_dose_list
-            })
-            setTimeout(() => this.set_appointments(), 1000)
-        }
+    init_app_state(data) {
+        this.setState({
+            username: data[0].username,
+            _id: data[0]._id,
+            email: data[0].email,
+            password: data[0].password,
+            lab_list: data[1],
+            patients: data[0].patients,
+            selected_patient: [],
+            events: [],
+            diagnosis_list: data[0].diagnosis_list,
+            medicine_list: data[0].medicine_list,
+            medicine_dose_list: data[0].medicine_dose_list
+        })
+        setTimeout(() => this.set_appointments(), 1000)
     }
 
     componentDidMount() {

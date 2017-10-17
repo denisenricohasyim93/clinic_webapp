@@ -60,16 +60,15 @@
 }
 
 #create_medicine_container {
-  height: 2rem;
-  line-height: 2rem;
-  margin-bottom: 2rem;
+  font-size: 0;
+  position: relative;
 }
 
 #create_medicine_container input,
 #create_medicine_container select,
 #create_medicine_container button {
   text-align: center;
-  height: 100%;
+  height: 2rem;
 }
 
 #medicine_list_container {

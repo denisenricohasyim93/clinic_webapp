@@ -1,7 +1,9 @@
 let data = {
-    "user": {
-        "username": "demo_user"
-    },
+    "username": "demo_user",
+    _id: 1,
+    email: "demo@demo.demo",
+    password: "demo",
+
     "diagnosis_list": [
         "hypertension",
         "hypotension",

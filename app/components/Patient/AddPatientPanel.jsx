@@ -42,7 +42,7 @@ class AddPatientPanel extends Component {
                     }
 
                     <input type="text" placeholder="address" name="patient_address" />
-                    <input type="text" placeholder="phone" name="patient_phone" />
+                    <input type="number" placeholder="phone" name="patient_phone" />
 
                     <button id="submit_new_patient" onClick={() => this.add_patient()}>add</button>
                 </div>

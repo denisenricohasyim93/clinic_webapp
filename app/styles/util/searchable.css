@@ -24,6 +24,8 @@
 
 #found_option {
   border-bottom: 1px solid black;
+  line-height: 2rem;
+  font-size: 0.8rem;
 }
 
 #found_option:hover {

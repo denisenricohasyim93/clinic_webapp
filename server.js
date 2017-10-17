@@ -1,11 +1,11 @@
-var express = require('express');
-var app = express();
-var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
-var session = require('express-session');
-var MongoStore = require('connect-mongo')(session);
-var path = require('path');
-var cors = require('cors');
+const express = require('express'),
+    app = express(),
+    bodyParser = require('body-parser'),
+    mongoose = require('mongoose'),
+    session = require('express-session'),
+    MongoStore = require('connect-mongo')(session),
+    path = require('path'),
+    cors = require('cors')
 
 //connect to MongoDB
 mongoose.Promise = global.Promise;

@@ -1,56 +1,55 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!DOCTYPE html>
-<html>
-
 <head>
-	<title>EMR Authentication</title>
+	<title>Clinic App Login</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 
 <body>
-	<form action="/demo" method="get">
-		<button type="submit" style="position:absolute; top: 0.5rem; right:1rem; background:lightcoral; box-sizing: border-box; padding: 2rem; color: white;">Demo</button>
-	</form>
-	<div class="main">
-		<div class="w3">
-			<div class="signin-form profile">
-				<h3>Login</h3>
+	<div id="container">
+		<form id="demo" action="/demo" method="get">
+			<button type="submit">Demo</button>
+			<span> - > quick demo without login</span>
+		</form>
 
-				<div class="login-form">
-					<form action="/" method="post">
-						<input type="email" name="logemail" placeholder="E-mail" required>
-						<input type="password" name="logpassword" placeholder="Password" required>
-						<div class="tp">
-							<input type="submit" value="LOGIN">
-						</div>
-					</form>
-				</div>
+		<form id="login" action="/" method="post">
+			<input type="email" name="logemail" placeholder="E-mail" required>
+			<input type="password" name="logpassword" placeholder="Password" required>
+			<div class="tp">
+				<input type="submit" value="LOGIN">
 			</div>
-		</div>
-		<div class="agile">
-			<div class="signin-form profile">
-				<h3>Register</h3>
+		</form>
 
-				<div class="login-form">
-					<form action="/" method="post">
-						<input type="email" name="email" placeholder="E-mail" required>
-						<input type="text" name="username" placeholder="Username" required>
-						<input type="password" name="password" placeholder="Password" required>
-						<input type="password" name="passwordConf" placeholder="Confirm Password" required>
-						<input type="submit" value="REGISTER">
-					</form>
-				</div>
-			</div>
-		</div>
-		<div class="clear"></div>
-		<!--//signin-form-->
+		<form id="register" action="/" method="post">
+			<input type="email" name="email" placeholder="E-mail" required>
+			<input type="text" name="username" placeholder="Username" required>
+			<input type="password" name="password" placeholder="Password" required>
+			<input type="password" name="passwordConf" placeholder="Confirm Password" required>
+			<input type="submit" value="REGISTER">
+		</form>
 	</div>
-</body>
 
-</html>
+	<style>
+		body {
+			background-color: rgba(68, 97, 122, 0.35);
+			background-image: url("images/black-linen.png");
+			box-sizing: border-box;
+			padding: 20%;
+		}
+
+		#container {
+			position: relative;
+			border: 1px solid black;
+			background: #d0d3d6;
+			width: 22rem;
+			margin: auto;
+		}
+
+		#login {}
+
+		#register {
+			margin: 0;
+		}
+
+		#demo {}
+	</style>
+</body>
